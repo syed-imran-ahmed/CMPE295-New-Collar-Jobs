@@ -1,0 +1,38 @@
+<div class="content" fxLayout="row" fxLayoutAlign="center none">
+  <app-api-card
+    fxFlex
+    title='"Personas"'
+    subTitle="Public"
+    imgUrl="assets/image/foo.png"
+    content='This endpoint will present the personas to choose from'
+    apiText="/api/foo"
+    [responseObj]="fooResponse"
+    (apiClick)="makeRequest($event)"
+  >
+  </app-api-card>
+
+  <app-api-card
+     fxFlex
+     title='"Who am I"'
+     subTitle="User preferences"
+     imgUrl="assets/image/user.png"
+     content='This endpoint will present the user with a list of preferences like farmer / plumber / maker / writer / hacker'
+     apiText="/api/whoami"
+     [responseObj]="whoamIResponse"
+     (apiClick)="makeRequest($event)"
+  >
+  </app-api-card>
+
+  <app-api-card
+     class="last"
+     fxFlex
+     title='"Dazzle Us!"'
+     subTitle="Show us what have you done?"
+     imgUrl="assets/image/admin.png"
+     content='This endpoint will let the user explain briefly and show what he has created.'
+     apiText="/api/user/all"
+     [responseObj]="allUserResponse"
+     (apiClick)="makeRequest($event)"
+  >
+  </app-api-card>
+</div>
