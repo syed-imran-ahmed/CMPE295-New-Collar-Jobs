@@ -82,12 +82,11 @@ export class RegisterComponent implements OnInit {
     .delay(1000)
     .subscribe(data => {
       //this.userService.getMyInfo().subscribe();
-      this.notification = { msgType: 'Success', msgBody: 'Registration successful' };
-      this.router.navigate(['/']);
+      this.router.navigate(['/login', { msgType: 'success', msgBody: 'User registration Successful! Please sign in.'}]);
     },
     error => {
       this.submitted = false;
-      this.notification = { msgType: 'error', msgBody: 'Registration did not succeed.' };
+      this.notification = { msgType: 'error', msgBody: 'User already exists with same username or emailid' };
     });
 
   }
