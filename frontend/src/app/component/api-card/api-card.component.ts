@@ -25,7 +25,8 @@ export class ApiCardComponent implements OnInit {
 
   onButtonClick() {
     this.expand = true;
-    this.apiClick.next(this.apiText);
+
+    //this.apiClick.next(this.apiText);
   }
 
   responsePanelClass() {

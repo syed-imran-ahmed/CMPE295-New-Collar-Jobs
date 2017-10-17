@@ -1,0 +1,33 @@
+<md-card>
+  <md-card-header>
+    <md-card-title><b>{{title}}</b></md-card-title>
+    <md-card-subtitle>{{subTitle}}</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image [src]="imgUrl">
+  <md-card-content>
+    <p>
+      {{content}}
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-raised-button color="primary" (click)="onButtonClick()">{{apiText}}</button>
+  </md-card-actions>
+  <!--div [class]="responsePanelClass()"-->
+
+  <div *ngIf="expand">
+    <form id="dazzleform" #myForm="ngForm" (ngSubmit)="onsubmit(myForm)">
+      <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" (change)="selectFile($event)">
+        <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" ngModel #comment="ngModel" name="comment" id="comment"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</md-card>

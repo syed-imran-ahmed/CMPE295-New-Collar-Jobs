@@ -38,6 +38,7 @@ import {
 } from './service';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { RegisterComponent } from './component/register/register.component';
+import { DazzleusComponent } from './component/dazzleus/dazzleus.component';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -54,7 +55,8 @@ export function initUserFactory(userService: UserService) {
     NotFoundComponent,
     AccountMenuComponent,
     ChangePasswordComponent,
-    RegisterComponent
+    RegisterComponent,
+    DazzleusComponent
   ],
   imports: [
     BrowserAnimationsModule,

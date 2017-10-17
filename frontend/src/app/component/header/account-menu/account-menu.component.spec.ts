@@ -5,8 +5,8 @@ import {
   ConfigService,
   ApiService,
   UserService
-} from 'app/services';
-import { MockUserService } from 'app/shared/mocks';
+} from 'app/service';
+//import { MockUserService } from 'app/shared/mocks';
 import { AccountMenuComponent } from './account-menu.component';
 
 describe('AccountMenuComponent', () => {
@@ -17,8 +17,8 @@ describe('AccountMenuComponent', () => {
     TestBed.configureTestingModule({
       providers: [
         {
-          provide: UserService,
-          useClass: MockUserService
+          provide: UserService/*,
+          useClass: MockUserService*/
         },
         ConfigService
       ],
