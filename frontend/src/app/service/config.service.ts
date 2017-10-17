@@ -10,6 +10,8 @@ export class ConfigService {
 
   private _login_url = this._api_url + '/login';
 
+  private _register_url = this._api_url + '/register';
+
   private _logout_url = this._api_url + '/logout';
 
   private _change_password_url = this._api_url + '/changePassword';
@@ -43,6 +45,10 @@ export class ConfigService {
   get login_url(): string {
       return this._login_url;
   }
+
+  get register_url(): string {
+    return this._register_url;
+}
 
   get logout_url(): string {
       return this._logout_url;

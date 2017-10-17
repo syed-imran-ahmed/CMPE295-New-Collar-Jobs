@@ -14,6 +14,13 @@ export class AuthService {
     private config: ConfigService
   ) { }
 
+  register(user) {
+    const body = `username=${user.username}&password=${user.password}&emailid=${user.emailid}&firstname=${user.firstname}&lastname=${user.lastname}`;
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    return this.apiService.post(this.config.register_url, body, headers);
+  }
+
   login(user) {
     const body = `username=${user.username}&password=${user.password}`;
     const headers = new Headers();

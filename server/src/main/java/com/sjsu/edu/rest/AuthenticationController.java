@@ -5,18 +5,24 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sjsu.edu.model.Authority;
+import com.sjsu.edu.model.User;
 import com.sjsu.edu.model.UserTokenState;
+import com.sjsu.edu.repository.UserRepository;
 import com.sjsu.edu.security.TokenHelper;
 import com.sjsu.edu.service.impl.CustomUserDetailsService;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,9 +37,15 @@ public class AuthenticationController {
 
     @Autowired
     private CustomUserDetailsService userDetailsService;
+    
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     TokenHelper tokenHelper;
+    
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Value("${jwt.expires_in}")
     private int EXPIRES_IN;
@@ -69,6 +81,22 @@ public class AuthenticationController {
     public ResponseEntity<?> changePassword(@RequestBody PasswordChanger passwordChanger) {
         userDetailsService.changePassword(passwordChanger.oldPassword, passwordChanger.newPassword);
         Map<String, String> result = new HashMap<>();
+        result.put( "result", "success" );
+        return ResponseEntity.accepted().body(result);
+    }
+    
+    @RequestMapping(value = "/register", method = RequestMethod.POST, consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ResponseEntity<?> register( User newUser) {
+    	System.out.println("Inside register");
+    	
+    	User user = userRepository.findByUsername(newUser.getUsername());
+    	if(user==null)
+    	{
+    		newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
+    		//newUser.setAuthorities(new ArrayList));
+    		userRepository.save(newUser);
+    	}
+    	Map<String, String> result = new HashMap<>();
         result.put( "result", "success" );
         return ResponseEntity.accepted().body(result);
     }

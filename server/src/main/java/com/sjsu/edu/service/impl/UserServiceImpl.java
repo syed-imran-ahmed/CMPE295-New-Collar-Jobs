@@ -39,19 +39,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @PreAuthorize("hasRole('USER')")
+    //@PreAuthorize("hasRole('USER')")
     public User findByUsername( String username ) throws UsernameNotFoundException {
         User u = userRepository.findByUsername( username );
         return u;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+   // @PreAuthorize("hasRole('ADMIN')")
     public User findById( Long id ) throws AccessDeniedException {
         User u = userRepository.findOne( id );
         return u;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public List<User> findAll() throws AccessDeniedException {
         List<User> result = userRepository.findAll();
         return result;

@@ -54,7 +54,7 @@ public class UserController {
      *  to access this endpoint.
      */
     @RequestMapping("/whoami")
-    @PreAuthorize("hasRole('USER')")
+    //@PreAuthorize("hasRole('USER')")
     public User user() {
         return (User)SecurityContextHolder
                 .getContext()
