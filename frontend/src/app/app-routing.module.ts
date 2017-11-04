@@ -6,6 +6,7 @@ import { LoginComponent } from './login';
 import { LoginGuard } from './guard';
 import { GuestGuard } from './guard';
 import { NotFoundComponent } from './not-found';
+import { PersonasComponent } from './personas';
 import { ChangePasswordComponent } from './change-password';
 import { RegisterComponent } from './component/register';
 
@@ -24,6 +25,11 @@ export const routes: Routes = [
     path: 'change-password',
     component: ChangePasswordComponent,
     canActivate: [LoginGuard]
+  },
+  {
+    path: 'personas',
+    component: PersonasComponent,
+    pathMatch:'full'
   },
   {
     path:'register',
