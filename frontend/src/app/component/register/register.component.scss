@@ -1,9 +1,14 @@
 .content {
   width: 100%;
 }
+mat-tab-group {
+  width:400px;
+  background-color: rgba(0,0,0,.54);
+}
 
-md-card {
-  max-width: 350px;
+
+mat-card {
+  max-width: 400px;
   text-align: center;
   animation: fadein 1s;
   -o-animation: fadein 1s; /* Opera */
@@ -12,15 +17,18 @@ md-card {
 
 }
 
-md-input-container {
+mat-form-field {
+  width:100%;
   display: block;
 }
 
-md-spinner {
+mat-spinner {
   width: 25px;
   height: 25px;
   margin: 20px auto 0 auto;
 }
+
+
 
 button {
   display: block;
@@ -43,7 +51,7 @@ button {
     display: block !important;
   }
 
-  md-card {
+  mat-card {
     /* https://github.com/angular/flex-layout/issues/295 */
     display: block !important;
     max-width: 999px;

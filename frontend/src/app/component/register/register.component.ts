@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators,FormControl  } from '@angular/forms';
 import { Router,ActivatedRoute } from '@angular/router';
 import { DisplayMessage } from '../../shared/models/display-message';
+import {MatTabChangeEvent} from '@angular/material';
 import {
   UserService,
   AuthService
@@ -27,6 +28,7 @@ export class RegisterComponent implements OnInit {
    * and is awaiting a response
    */
   submitted = false;
+  tabindex = 0;
 
   /**
    * Notification message from received
@@ -56,6 +58,8 @@ export class RegisterComponent implements OnInit {
       password: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])],
       firstname: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64)])],
       lastname: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])],
+      jobtitle: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])],
+      companyname: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])],
       emailid: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64),Validators.pattern(this.emailRegex)])],
       
     });
@@ -70,13 +74,19 @@ export class RegisterComponent implements OnInit {
     window.location.href = this.githubLink;
   }
 
+  tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
+    this.form.reset();
+    console.log('tabChangeEvent => ', tabChangeEvent);
+    this.tabindex= tabChangeEvent.index;
+  }
+
   onSubmit() {
     /**
      * Innocent until proven guilty
      */
     this.notification = undefined;
     this.submitted = true;
-
+    console.log(this.tabindex);
     this.authService.register(this.form.value)
     // show me the animation
     .delay(1000)

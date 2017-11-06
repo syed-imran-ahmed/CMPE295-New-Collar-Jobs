@@ -1,38 +1,38 @@
-<md-toolbar color="primary" class="app-navbar">
-  <button md-button md-ripple routerLink="/">
+<mat-toolbar color="primary" class="app-navbar">
+  <button mat-button matRipple routerLink="/">
     <!--<img alt="New-Collar-Jobs" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">-->
     <span style="font-weight: bold">New Collar Jobs</span>
   </button>
 
   <div class="right">
     <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-end center">
-      <button *ngIf="!hasSignedIn()" routerLink="/login" md-button md-ripple>
+      <button *ngIf="!hasSignedIn()" routerLink="/login" mat-button matRipple>
         <span>Login</span>
       </button>
-      <button class="sign-up-button" *ngIf="!hasSignedIn()" routerLink="/register" md-button md-ripple>
+      <button class="sign-up-button" *ngIf="!hasSignedIn()" routerLink="/register" mat-button matRipple>
         <span>Sign up</span>
       </button>
       <button
         class="greeting-button"
         *ngIf="hasSignedIn()"
-        md-button md-ripple
-        [mdMenuTriggerFor]="accountMenu">
+        mat-button matRipple
+        [matMenuTriggerFor]="accountMenu">
         <span>Aloha, {{userName()}}</span>
       </button>
       <button
         class="greeting-hamburger"
         *ngIf="hasSignedIn()"
-        md-icon-button md-ripple
-        [mdMenuTriggerFor]="accountMenu">
-        <md-icon>menu</md-icon>
+        mat-icon-button matRipple
+        [matMenuTriggerFor]="accountMenu">
+        <mat-icon>menu</mat-icon>
       </button>
-      <md-menu #accountMenu
+      <mat-menu #accountMenu
         class="app-header-accountMenu"
         yposition="below"
         [overlapTrigger]="false">
         <app-account-menu ></app-account-menu>
-      </md-menu>
+      </mat-menu>
     </div>
   </div>
-</md-toolbar>
+</mat-toolbar>
 
