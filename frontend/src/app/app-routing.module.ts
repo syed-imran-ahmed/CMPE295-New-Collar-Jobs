@@ -8,6 +8,8 @@ import { GuestGuard } from './guard';
 import { NotFoundComponent } from './not-found';
 import { ChangePasswordComponent } from './change-password';
 import { RegisterComponent } from './component/register';
+import { ProfileComponent } from './component/profile';
+import { PostjobComponent } from './component/postjob';
 
 export const routes: Routes = [
   {
@@ -23,6 +25,16 @@ export const routes: Routes = [
   {
     path: 'change-password',
     component: ChangePasswordComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'postjob',
+    component: PostjobComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'edit-profile',
+    component: ProfileComponent,
     canActivate: [LoginGuard]
   },
   {

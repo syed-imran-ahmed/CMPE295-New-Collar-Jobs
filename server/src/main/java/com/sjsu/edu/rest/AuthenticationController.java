@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sjsu.edu.model.Company;
 import com.sjsu.edu.model.User;
 import com.sjsu.edu.model.UserTokenState;
+import com.sjsu.edu.repository.CompanyRepository;
 import com.sjsu.edu.repository.UserRepository;
 import com.sjsu.edu.security.TokenHelper;
 import com.sjsu.edu.service.impl.CustomUserDetailsService;
@@ -37,6 +39,9 @@ public class AuthenticationController {
     
     @Autowired
     private UserRepository userRepository;
+    
+    @Autowired
+    private CompanyRepository companyRepository;
 
     @Autowired
     TokenHelper tokenHelper;
@@ -83,14 +88,23 @@ public class AuthenticationController {
     }
     
     @RequestMapping(value = "/register", method = RequestMethod.POST, consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ResponseEntity<?> register( User newUser) {
+    public ResponseEntity<?> register(User newUser) {
     	Map<String, String> result = new HashMap<>();
     	User userWithUserName = userRepository.findByUsername(newUser.getUsername());
     	User userWithEmailid = userRepository.findByEmailid(newUser.getEmailid());
+    	
     	if(userWithUserName == null && userWithEmailid == null)
     	{
     		newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
     		userRepository.save(newUser);
+    		if(newUser.getCompanyname()!=null)
+    		{
+    			Company newCompany = new Company();
+    			newCompany.setCid(newUser.getId());
+    			newCompany.setName(newUser.getCompanyname());
+    			companyRepository.save(newCompany);
+    		}
+    		
     		result.put( "result", "success" );
     		return ResponseEntity.accepted().body(result);
     	}

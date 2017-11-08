@@ -39,6 +39,8 @@ import {
 } from './service';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { RegisterComponent } from './component/register/register.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { PostjobComponent } from './component/postjob/postjob.component';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -55,7 +57,9 @@ export function initUserFactory(userService: UserService) {
     NotFoundComponent,
     AccountMenuComponent,
     ChangePasswordComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    PostjobComponent
   ],
   imports: [
     BrowserAnimationsModule,

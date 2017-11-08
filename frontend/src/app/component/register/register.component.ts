@@ -58,8 +58,8 @@ export class RegisterComponent implements OnInit {
       password: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])],
       firstname: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64)])],
       lastname: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])],
-      jobtitle: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])],
-      companyname: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])],
+      jobtitle: ['', Validators.compose([ Validators.minLength(3), Validators.maxLength(32)])],
+      companyname: ['', Validators.compose([ Validators.minLength(3), Validators.maxLength(32)])],
       emailid: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64),Validators.pattern(this.emailRegex)])],
       
     });
@@ -75,6 +75,12 @@ export class RegisterComponent implements OnInit {
   }
 
   tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
+    this.route.params
+    .takeUntil(this.ngUnsubscribe)
+    .subscribe((params: DisplayMessage) => {
+      this.notification = params;
+    });
+
     this.form.reset();
     console.log('tabChangeEvent => ', tabChangeEvent);
     this.tabindex= tabChangeEvent.index;
@@ -86,19 +92,35 @@ export class RegisterComponent implements OnInit {
      */
     this.notification = undefined;
     this.submitted = true;
-    console.log(this.tabindex);
-    this.authService.register(this.form.value)
-    // show me the animation
-    .delay(1000)
-    .subscribe(data => {
-      //this.userService.getMyInfo().subscribe();
-      this.router.navigate(['/login', { msgType: 'success', msgBody: 'User registration Successful! Please sign in.'}]);
-    },
-    error => {
-      this.submitted = false;
-      this.notification = { msgType: 'error', msgBody: 'User already exists with same username or emailid' };
-    });
-
+    
+    if (this.tabindex==1)
+    {
+      console.log("inside employer");
+      this.authService.empRegister(this.form.value)
+      .delay(1000)
+      .subscribe(data => {
+        //this.userService.getMyInfo().subscribe();
+        this.router.navigate(['/login', { msgType: 'success', msgBody: 'Employer registration Successful! Please sign in.'}]);
+      },
+      error => {
+        this.submitted = false;
+        this.notification = { msgType: 'error', msgBody: 'Employer already exists with same username or emailid' };
+      });
+    }
+    else
+    {
+      this.authService.register(this.form.value)
+      // show me the animation
+      .delay(1000)
+      .subscribe(data => {
+        //this.userService.getMyInfo().subscribe();
+        this.router.navigate(['/login', { msgType: 'success', msgBody: 'User registration Successful! Please sign in.'}]);
+      },
+      error => {
+        this.submitted = false;
+        this.notification = { msgType: 'error', msgBody: 'User already exists with same username or emailid' };
+      });
+    }
   }
 
 }

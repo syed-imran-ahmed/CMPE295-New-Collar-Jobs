@@ -12,6 +12,9 @@
       <button class="sign-up-button" *ngIf="!hasSignedIn()" routerLink="/register" mat-button matRipple>
         <span>Sign up</span>
       </button>
+      <button class="sign-up-button" *ngIf="isCompany()" routerLink="/postjob" mat-button matRipple>
+        <span> Post Job </span>
+      </button>
       <button
         class="greeting-button"
         *ngIf="hasSignedIn()"

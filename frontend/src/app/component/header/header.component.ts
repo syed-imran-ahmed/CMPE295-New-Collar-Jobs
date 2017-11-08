@@ -27,6 +27,11 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  isCompany(){
+    if(this.userService.currentUser)
+      return this.userService.currentUser.companyname!=null;
+  }
+
   hasSignedIn() {
     return !!this.userService.currentUser;
   }

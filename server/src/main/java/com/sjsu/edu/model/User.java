@@ -39,6 +39,11 @@ public class User implements UserDetails, Serializable {
     @Column(name = "lastname")
     private String lastname;
 
+    @Column(name = "jobtitle")
+    private String jobtitle;
+    
+    @Column(name = "companyname")
+    private String companyname;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_authority",
@@ -95,7 +100,23 @@ public class User implements UserDetails, Serializable {
         this.lastname = lastname;
     }
 
-    public void setAuthorities(List<Authority> authorities) {
+    public String getJobtitle() {
+		return jobtitle;
+	}
+
+	public void setJobtitle(String jobtitle) {
+		this.jobtitle = jobtitle;
+	}
+
+	public String getCompanyname() {
+		return companyname;
+	}
+
+	public void setCompanyname(String companyname) {
+		this.companyname = companyname;
+	}
+
+	public void setAuthorities(List<Authority> authorities) {
         this.authorities = authorities;
     }
 
