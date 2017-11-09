@@ -22,22 +22,21 @@ public class Jobs {
 	@Column(name = "title")
 	private String title;
 	
-	@Column(name = "descrip")
-	private String descrip;
+	@Column(name = "description")
+	private String description;
 
-	@Column(name = "resp")
-	private String resp;
+	@Column(name = "responsibility")
+	private String responsibility;
 	
+	@Column(name = "location")
+	private String location;
 	
-	@Column(name = "loc")
-	private String loc;
+	@Column(name = "salary")
+	private int salary;
 	
-	@Column(name = "sal")
-	private int sal;
-	
-	@Column(name = "jobposition")
-	private String jobposition;
-	
+	@Column(name = "traits")
+	private String traits;
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "company_cid")
     private Company company;
@@ -58,36 +57,28 @@ public class Jobs {
 		this.title = title;
 	}
 
-	public String getResp() {
-		return resp;
+	public String getResponsibility() {
+		return responsibility;
 	}
 
-	public void setResp(String resp) {
-		this.resp = resp;
+	public void setResponsibility(String responsibility) {
+		this.responsibility = responsibility;
 	}
 	
-	public String getJobposition() {
-		return jobposition;
+	public String getLocation() {
+		return location;
 	}
 
-	public void setJobposition(String jobposition) {
-		this.jobposition = jobposition;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
-	public String getLoc() {
-		return loc;
+	public int getSalary() {
+		return salary;
 	}
 
-	public void setLoc(String loc) {
-		this.loc = loc;
-	}
-
-	public int getSal() {
-		return sal;
-	}
-
-	public void setSal(int sal) {
-		this.sal = sal;
+	public void setSalary(int salary) {
+		this.salary = salary;
 	}
 
 	public Company getCompany() {
@@ -98,13 +89,20 @@ public class Jobs {
 		this.company = company;
 	}
 		
-	public String getDescrip() {
-		return descrip;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescrip(String descrip) {
-		this.descrip = descrip;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
+	public String getTraits() {
+		return traits;
+	}
+
+	public void setTraits(String traits) {
+		this.traits = traits;
+	}
 	
 }
