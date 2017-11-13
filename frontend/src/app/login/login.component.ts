@@ -99,7 +99,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         }
         else{
           console.log(user);
-          this.router.navigate(['/change-password']);
+          this.router.navigate(['/company-home']);
         }
       });
      

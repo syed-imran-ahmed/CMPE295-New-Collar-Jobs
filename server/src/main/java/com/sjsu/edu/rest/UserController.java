@@ -33,12 +33,25 @@ public class UserController {
 
     @RequestMapping( method = GET, value = "/user/{userId}" )
     public User loadById( @PathVariable Long userId ) {
-        return this.userService.findById( userId );
+    	String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+    	User user = userService.findByUsername(currentUserName);
+    	if (user!=null)
+    	{
+    		return this.userService.findById( userId );
+    	}
+    	else return null;
+        
     }
 
     @RequestMapping( method = GET, value= "/user/all")
     public List<User> loadAll() {
-        return this.userService.findAll();
+    	String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+    	User user = userService.findByUsername(currentUserName);
+    	if (user!=null)
+    	{
+    		return this.userService.findAll();
+    	}
+    	else return null;
     }
 
     @RequestMapping( method = GET, value= "/user/reset-credentials")
