@@ -34,13 +34,13 @@ public class Company {
 	private String description;
 	
 	@OneToMany(orphanRemoval=true, mappedBy = "company", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	private List<Jobs> jobPosts;
+	private List<Job> jobPosts;
 
-	public List<Jobs> getJobPosts() {
+	public List<Job> getJobPosts() {
 		return jobPosts;
 	}
 
-	public void setJobPosts(List<Jobs> jobPosts) {
+	public void setJobPosts(List<Job> jobPosts) {
 		this.jobPosts = jobPosts;
 	}
 

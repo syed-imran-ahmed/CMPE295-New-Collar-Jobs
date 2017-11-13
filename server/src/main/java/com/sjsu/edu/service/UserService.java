@@ -6,7 +6,7 @@ import com.sjsu.edu.model.User;
 
 /**
  * @author imran
- *
+ * 
  */
 public interface UserService {
     void resetCredentials();
