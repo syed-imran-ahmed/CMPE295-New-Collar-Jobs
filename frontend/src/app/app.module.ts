@@ -13,6 +13,7 @@ import {
   MatTabsModule,
   MatInputModule,
   MatIconRegistry,
+  MatPaginatorModule,
   MatProgressSpinnerModule,
   MatSnackBarModule
 } from '@angular/material';
@@ -36,6 +37,7 @@ import {
   AuthService,
   UserService,
   FooService,
+  PostedjobService,
   ConfigService
 } from './service';
 import { ChangePasswordComponent } from './change-password/change-password.component';
@@ -81,6 +83,7 @@ export function initUserFactory(userService: UserService) {
     MatInputModule,
     MatToolbarModule,
     MatCardModule,
+    MatPaginatorModule,
     MatProgressSpinnerModule,
     FlexLayoutModule,
     MatSnackBarModule
@@ -90,6 +93,7 @@ export function initUserFactory(userService: UserService) {
     GuestGuard,
     CompanyGuard,
     FooService,
+    PostedjobService,
     AuthService,
     ApiService,
     UserService,

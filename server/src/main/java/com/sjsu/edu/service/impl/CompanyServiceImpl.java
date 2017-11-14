@@ -1,11 +1,12 @@
 package com.sjsu.edu.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.sjsu.edu.model.Company;
 import com.sjsu.edu.repository.CompanyRepository;
 import com.sjsu.edu.service.CompanyService;
-
+@Service
 public class CompanyServiceImpl implements CompanyService {
 	
 	@Autowired
@@ -18,7 +19,7 @@ public class CompanyServiceImpl implements CompanyService {
 
 	@Override
 	public Company findByCompanyName(String companyName) {
-		return companyRepository.findByCompanyName(companyName);
+		return companyRepository.findByName(companyName);
 	}
 
 	@Override

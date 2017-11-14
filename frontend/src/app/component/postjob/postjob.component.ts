@@ -68,14 +68,7 @@ export class PostjobComponent implements OnInit {
     /**
      * Innocent until proven guilty
      */
-    let snackBarRef = this.snackBar.open('Job has been posted', 'OK',{
-      duration: 3000
-    });
-    snackBarRef.onAction().subscribe(() => {
-      console.log('The snack-bar action was triggered!');
-      snackBarRef.dismiss();
-      this.router.navigate(['/']);      
-    });
+    
     
     // this.notification = undefined;
      this.submitted = true;
@@ -83,6 +76,14 @@ export class PostjobComponent implements OnInit {
      // show me the animation
     .delay(1000)
     .subscribe(data => {
+      let snackBarRef = this.snackBar.open('Job has been posted', 'OK',{
+        duration: 3000
+      });
+      snackBarRef.onAction().subscribe(() => {
+        console.log('The snack-bar action was triggered!');
+        snackBarRef.dismiss();
+        this.router.navigate(['/company-home']);      
+      });
     //this.userService.getMyInfo().subscribe();
        //this.router.navigate(['/login', { msgType: 'success', msgBody: 'User registration Successful! Please sign in.'}]);
     },

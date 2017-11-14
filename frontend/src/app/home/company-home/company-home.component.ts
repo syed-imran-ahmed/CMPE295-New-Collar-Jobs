@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {PageEvent} from '@angular/material';
+import {
+  PostedjobService,
+  ConfigService,
+  UserService
+} from '../../service';
 
 @Component({
   selector: 'app-company-home',
@@ -7,30 +13,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyHomeComponent implements OnInit {
 
-  jobs: Object[];
+  jobs: {};
+  jobsResponse = {};
 
-  constructor() {
+  length = 100;
+  pageSize = 2;
+  pageSizeOptions = [5, 10, 25, 100];
 
-    this.jobs = [
-      {
-        title: "Software Engineer",
-        subtitle: "What did the cheese say when it looked in the mirror?",
-        content: "Hello-Me (Halloumi)"
-      },
-      {
-        title: "Test Engineer",
-        subtitle: "What kind of cheese do you use to disguise a small horse?",
-        content: "Mask-a-pony (Mascarpone)"
-      },
-      {
-        title: "QA Engineer",
-        subtitle: "A kid threw a lump of cheddar at me",
-        content: "I thought ‘That’s not very mature’"
-      },
-    ];
-   }
+  pageEvent: PageEvent;
+
+  constructor(
+    private postedjobService: PostedjobService,
+  ) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData(event?:PageEvent)
+  {
+    console.log(event);
+    this.postedjobService.getJobs(event)
+    .subscribe(res => {
+      console.log(res);
+      this.jobs = res.content;
+    }, err => {
+      //TODO: sill out the error
+    });
   }
 
 }
