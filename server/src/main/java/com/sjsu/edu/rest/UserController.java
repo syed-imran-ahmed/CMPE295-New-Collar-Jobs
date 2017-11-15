@@ -1,6 +1,6 @@
 package com.sjsu.edu.rest;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,9 +12,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sjsu.edu.model.User;
+import com.sjsu.edu.model.UserProfile;
+import com.sjsu.edu.repository.UserProfileRepository;
 import com.sjsu.edu.service.UserService;
 
 
@@ -28,8 +31,11 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private UserProfileRepository profileRepository;
 
-    @RequestMapping( method = GET, value = "/user/{userId}" )
+    @RequestMapping( method = RequestMethod.GET, value = "/user/{userId}" )
     public User loadById( @PathVariable Long userId ) {
     	String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
     	User user = userService.findByUsername(currentUserName);
@@ -41,7 +47,7 @@ public class UserController {
         
     }
 
-    @RequestMapping( method = GET, value= "/user/all")
+    @RequestMapping( method = RequestMethod.GET, value= "/user/all")
     public List<User> loadAll() {
     	String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
     	User user = userService.findByUsername(currentUserName);
@@ -52,7 +58,7 @@ public class UserController {
     	else return null;
     }
 
-    @RequestMapping( method = GET, value= "/user/reset-credentials")
+    @RequestMapping( method = RequestMethod.GET, value= "/user/reset-credentials")
     public ResponseEntity<?> resetCredentials() {
         this.userService.resetCredentials();
         Map<String, String> result = new HashMap<>();
@@ -71,6 +77,20 @@ public class UserController {
                 .getContext()
                 .getAuthentication()
                 .getPrincipal();
+    }
+    
+    @RequestMapping( method = RequestMethod.POST, value= "/user/profile", consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ResponseEntity<?> createProfile( UserProfile profile) {
+    	profileRepository.save(profile);
+    	Map<String, String> result = new HashMap<>();
+        result.put( "result", "success" );
+        return ResponseEntity.accepted().body(result);
+    }
+    
+    @RequestMapping( method = RequestMethod.GET, value= "/user/profile")
+    public List<UserProfile> getProfile() {
+    	List<UserProfile> profiles = profileRepository.findAll();
+        return profiles;
     }
 
 }
