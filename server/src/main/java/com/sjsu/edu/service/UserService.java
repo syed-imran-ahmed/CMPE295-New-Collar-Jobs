@@ -12,5 +12,6 @@ public interface UserService {
     void resetCredentials();
     User findById(Long id);
     User findByUsername(String username);
+    User findByEmailid(String emailid);
     List<User> findAll ();
 }

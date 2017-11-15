@@ -1,0 +1,35 @@
+<h1>Submit New Job</h1>
+
+<div class="content" fxLayout="row" fxLayoutAlign="center">
+
+<form class="postjob-form" *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #postjobForm="ngForm">
+      <mat-form-field class="postjob">
+        <input matInput formControlName="ques1" placeholder="Job title or Who are you looking for?" required >
+        <mat-hint align="end">Eg. A Banker, An Actuarial Analyst, A technical writer etc.</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="postjob">
+        <input matInput formControlName="ques2" placeholder="What traits are you looking for? (other than degree)" required >
+        <mat-hint align="end">Eg. Street Smart, Book Smart, Thinker, Writer, Doer etc.</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="postjob">
+        <textarea matInput formControlName="ques3" placeholder="Please provide description of the job." required  rows="8"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="postjob" >
+        <textarea matInput formControlName="ques4" placeholder="What are the responsibilities held for this job."  rows="8"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="salary">
+          <input matInput formControlName="ques5" type="number" placeholder="Salary" min="1" max="500000" required>
+        </mat-form-field>
+
+      <mat-form-field class="postjob">
+        <input matInput formControlName="ques6" placeholder="Provide location of the job along with the state" required >
+        <mat-hint align="end">Eg. San Jose,CA; Las Vegas,NV; Philadelphia,PA</mat-hint>
+      </mat-form-field>
+  <button type="submit" [disabled]="!postjobForm.form.valid" mat-raised-button color="primary">Submit</button>
+</form>
+
+<div>

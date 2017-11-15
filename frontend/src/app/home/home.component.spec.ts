@@ -4,8 +4,8 @@ import { ApiCardComponent } from '../component';
 import { MockApiService } from '../service/mocks/api.service.mock';
 
 import {
-  MdButtonModule,
-  MdCardModule
+  MatButtonModule,
+  MatCardModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -28,8 +28,8 @@ describe('HomeComponent', () => {
         ApiCardComponent
       ],
       imports: [
-        MdButtonModule,
-        MdCardModule
+        MatButtonModule,
+        MatCardModule
       ],
       providers: [
         {

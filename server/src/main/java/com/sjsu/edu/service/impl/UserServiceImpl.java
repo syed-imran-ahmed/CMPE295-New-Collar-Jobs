@@ -1,8 +1,9 @@
 package com.sjsu.edu.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -10,11 +11,6 @@ import org.springframework.stereotype.Service;
 import com.sjsu.edu.model.User;
 import com.sjsu.edu.repository.UserRepository;
 import com.sjsu.edu.service.UserService;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -39,22 +35,28 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @PreAuthorize("hasRole('USER')")
+    //@PreAuthorize("hasRole('USER')")
     public User findByUsername( String username ) throws UsernameNotFoundException {
         User u = userRepository.findByUsername( username );
         return u;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+   // @PreAuthorize("hasRole('ADMIN')")
     public User findById( Long id ) throws AccessDeniedException {
         User u = userRepository.findOne( id );
         return u;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public List<User> findAll() throws AccessDeniedException {
         List<User> result = userRepository.findAll();
         return result;
     }
+
+	@Override
+	public User findByEmailid(String emailid) throws UsernameNotFoundException {
+		User u = userRepository.findByEmailid( emailid );
+        return u;
+	}
 
 }

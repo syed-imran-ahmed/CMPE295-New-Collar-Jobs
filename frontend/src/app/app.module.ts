@@ -4,15 +4,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 // material
 import {
-  MdButtonModule,
-  MdMenuModule,
-  MdIconModule,
-  MdToolbarModule,
-  MdTooltipModule,
-  MdCardModule,
-  MdInputModule,
-  MdIconRegistry,
-  MdProgressSpinnerModule
+  MatButtonModule,
+  MatMenuModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatCardModule,
+  MatTabsModule,
+  MatInputModule,
+  MatIconRegistry,
+  MatProgressSpinnerModule,
+  MatSnackBarModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -39,6 +41,9 @@ import {
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { RegisterComponent } from './component/register/register.component';
 import { DazzleusComponent } from './component/dazzleus/dazzleus.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { PostjobComponent } from './component/postjob/postjob.component';
+
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -56,7 +61,9 @@ export function initUserFactory(userService: UserService) {
     AccountMenuComponent,
     ChangePasswordComponent,
     RegisterComponent,
-    DazzleusComponent
+    DazzleusComponent,
+    ProfileComponent,
+    PostjobComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -65,15 +72,17 @@ export function initUserFactory(userService: UserService) {
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    MdMenuModule,
-    MdTooltipModule,
-    MdButtonModule,
-    MdIconModule,
-    MdInputModule,
-    MdToolbarModule,
-    MdCardModule,
-    MdProgressSpinnerModule,
-    FlexLayoutModule
+    MatMenuModule,
+    MatTooltipModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTabsModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    FlexLayoutModule,
+    MatSnackBarModule
   ],
   providers: [
     LoginGuard,
@@ -83,7 +92,7 @@ export function initUserFactory(userService: UserService) {
     ApiService,
     UserService,
     ConfigService,
-    MdIconRegistry,
+    MatIconRegistry,
     {
       'provide': APP_INITIALIZER,
       'useFactory': initUserFactory,

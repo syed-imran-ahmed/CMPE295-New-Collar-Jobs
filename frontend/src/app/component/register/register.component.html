@@ -1,18 +1,109 @@
 <div class="content" fxLayout="row" fxLayoutAlign="center">
-  <md-card elevation="5" fxFlex>
-    <md-card-subtitle>User Registration</md-card-subtitle>
-    <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
-    <md-card-content>
-      <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #changePasswordForm="ngForm">
-        <md-input-container>
-          <input mdInput formControlName="oldPassword" required type="password" placeholder="old password">
-        </md-input-container>
-        <md-input-container>
-          <input mdInput formControlName="newPassword" required type="password" placeholder="new password">
-        </md-input-container>
-        <button type="submit" [disabled]="!changePasswordForm.form.valid" md-raised-button color="primary">Change Password</button>
-      </form>
-      <md-spinner *ngIf="submitted" mode="indeterminate"></md-spinner>
-    </md-card-content>
-  </md-card>
-</div>
+    <mat-tab-group mat-stretch-tabs (selectedTabChange)="tabChanged($event)">
+        <mat-tab >
+            <ng-template mat-tab-label>
+              TALENT
+              </ng-template>
+      <mat-card elevation="5" fxFlex >
+
+        <mat-card-title>
+          <h2>TALENT</h2>
+        </mat-card-title>
+  
+        <mat-card-subtitle>
+          <h2>{{title}}</h2>
+        </mat-card-subtitle>
+  
+        <mat-card-content>
+  
+          <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+  
+          <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #registerForm="ngForm">
+            <mat-form-field>
+                <input matInput formControlName="emailid" required placeholder="Email Id">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput formControlName="username" required placeholder="Username">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput formControlName="password" required type="password" placeholder="Password">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="firstname" required placeholder="First Name">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="lastname" required placeholder="Last Name">
+            </mat-form-field>
+            <button type="submit" [disabled]="!registerForm.form.valid" mat-raised-button color="primary">Sign Up</button>
+          </form>
+          <br>
+  
+          <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+          <br>
+          <hr>
+          <p><i>Click below to go to repository</i></p>
+          <button (click)="repository()" mat-raised-button color="accent">GitHub Repository</button>
+  
+        </mat-card-content>
+  
+      </mat-card>
+      </mat-tab>
+      <mat-tab>
+          <ng-template mat-tab-label>
+              EMPLOYER
+              </ng-template>
+          <mat-card elevation="5" fxFlex>
+              
+                      <mat-card-title>
+                        <h2>EMPLOYER</h2>
+                      </mat-card-title>
+                
+                      <mat-card-subtitle>
+                        <h2>{{title}}</h2>
+                      </mat-card-subtitle>
+                
+                      <mat-card-content>
+                
+                        <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+                
+                        <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #registerEmpForm="ngForm">
+                            <mat-form-field>
+                                <input matInput formControlName="firstname" required placeholder="First Name">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput formControlName="lastname" required placeholder="Last Name">
+                            </mat-form-field>
+                          <mat-form-field>
+                              <input matInput formControlName="emailid" required placeholder="Email Id">
+                          </mat-form-field>
+                          <mat-form-field>
+                              <input matInput formControlName="jobtitle"  placeholder="Your role or position">
+                          </mat-form-field>
+                          <mat-form-field>
+                              <input matInput formControlName="companyname"  placeholder="Company Name">
+                          </mat-form-field>
+                          <mat-form-field>
+                            <input matInput formControlName="username" required placeholder="Username">
+                          </mat-form-field>
+                          <mat-form-field>
+                            <input matInput formControlName="password" required type="password" placeholder="Password">
+                          </mat-form-field>
+                         
+                          <button type="submit" [disabled]="!registerEmpForm.form.valid" mat-raised-button color="primary">Sign Up</button>
+                        </form>
+                        <br>
+                
+                        <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+                        <br>
+                        <hr>
+                        <p><i>Click below to go to repository</i></p>
+                        <button (click)="repository()" mat-raised-button color="accent">GitHub Repository</button>
+                
+                      </mat-card-content>
+                
+                    </mat-card>
+      </mat-tab>
+    </mat-tab-group>
+
+    </div>
+  
