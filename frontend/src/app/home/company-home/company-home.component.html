@@ -3,8 +3,9 @@
     <app-job-card
       fxFlex
       title={{job.title}}
-      subTitle={{job.description}}
-      content={{job.location}}
+      subTitle={{job.location}}
+      content='{{job.description | slice:0:100}}...'
+      jobid={{job.jobid}}
     >
     </app-job-card>
 </div>

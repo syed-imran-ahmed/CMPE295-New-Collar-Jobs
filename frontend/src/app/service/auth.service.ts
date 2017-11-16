@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   postjob(data) {
-    const body = `title=${data.ques1}&description=${data.ques3}&responsibility=${data.ques4}&location=${data.ques6}&salary=${data.ques5}&traits=${data.ques2}`;
+    const body = `title=${data.ques1}&description=${data.ques3}&responsibility=${data.ques4}&location=${data.ques6}&salary=${data.ques5}&traits=${data.ques2}&jobid=${data.jobid}`;
     const headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     return this.apiService.post(this.config.postjob_url, body, headers);

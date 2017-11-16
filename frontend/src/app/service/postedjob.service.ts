@@ -25,4 +25,10 @@ export class PostedjobService {
     return this.apiService.get(path);
   }
 
+  getJob(id:number)
+  {
+    let path = this.config.postjob_url+'/'+`${id}`;
+    return this.apiService.get(path);
+  }
+
 }

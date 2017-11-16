@@ -38,7 +38,7 @@ export class CompanyHomeComponent implements OnInit {
       console.log(res);
       this.jobs = res.content;
     }, err => {
-      //TODO: sill out the error
+      //TODO: spill out the error
     });
   }
 
