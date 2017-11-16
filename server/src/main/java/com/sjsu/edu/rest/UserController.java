@@ -1,7 +1,5 @@
 package com.sjsu.edu.rest;
 
-import org.springframework.web.bind.annotation.RequestMethod;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sjsu.edu.model.User;
@@ -61,9 +59,7 @@ public class UserController {
     @RequestMapping( method = RequestMethod.GET, value= "/user/reset-credentials")
     public ResponseEntity<?> resetCredentials() {
         this.userService.resetCredentials();
-        Map<String, String> result = new HashMap<>();
-        result.put( "result", "success" );
-        return ResponseEntity.accepted().body(result);
+        return reportSuccess("Password was reset successfully.");
     }
     /*
      *  We are not using userService.findByUsername here(we could),
@@ -81,10 +77,12 @@ public class UserController {
     
     @RequestMapping( method = RequestMethod.POST, value= "/user/profile", consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity<?> createProfile( UserProfile profile) {
-    	profileRepository.save(profile);
-    	Map<String, String> result = new HashMap<>();
-        result.put( "result", "success" );
-        return ResponseEntity.accepted().body(result);
+	try{
+		profileRepository.save(profile);
+	}catch(Exception e){
+		return reportBadRequest(e);
+	}
+	return reportSuccess("Profile was created successfully.");
     }
     
     @RequestMapping( method = RequestMethod.GET, value= "/user/profile")
@@ -92,5 +90,17 @@ public class UserController {
     	List<UserProfile> profiles = profileRepository.findAll();
         return profiles;
     }
+
+	private ResponseEntity<?> reportSuccess(String message) {
+		Map<String, String> result = new HashMap<>();
+        result.put( "result", message );
+        return ResponseEntity.accepted().body(result);
+	}
+
+	private ResponseEntity<?> reportBadRequest(Exception e) {
+		Map<String, String> result = new HashMap<>();
+		result.put( "result",  e.getMessage());
+		return ResponseEntity.badRequest().body(result);
+	}
 
 }
