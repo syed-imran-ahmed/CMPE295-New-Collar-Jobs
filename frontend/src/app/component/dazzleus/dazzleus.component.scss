@@ -3,7 +3,7 @@
   max-width: 350px;
 }
 
-md-card {
+mat-card {
   text-align: left;
 
   .response-success {
@@ -35,7 +35,7 @@ md-card {
     margin-top: 8px;
   }
 
-  md-card-actions {
+  mat-card-actions {
     margin-bottom: 0;
     padding-bottom: 0;
   }

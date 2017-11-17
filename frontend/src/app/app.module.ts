@@ -43,6 +43,8 @@ import { RegisterComponent } from './component/register/register.component';
 import { DazzleusComponent } from './component/dazzleus/dazzleus.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { PostjobComponent } from './component/postjob/postjob.component';
+import { UserProfileComponent } from './component/user-profile/user-profile/user-profile.component';
+import { ProgressBarOneComponent } from './component/user-profile/progress-bar-one/progress-bar-one.component';
 
 
 export function initUserFactory(userService: UserService) {
@@ -63,7 +65,9 @@ export function initUserFactory(userService: UserService) {
     RegisterComponent,
     DazzleusComponent,
     ProfileComponent,
-    PostjobComponent
+    PostjobComponent,
+    UserProfileComponent,
+    ProgressBarOneComponent
   ],
   imports: [
     BrowserAnimationsModule,

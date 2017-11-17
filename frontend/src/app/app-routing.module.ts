@@ -10,6 +10,7 @@ import { ChangePasswordComponent } from './change-password';
 import { RegisterComponent } from './component/register';
 import { ProfileComponent } from './component/profile';
 import { PostjobComponent } from './component/postjob';
+import { UserProfileComponent } from './component/user-profile/user-profile/user-profile.component';
 
 export const routes: Routes = [
   {
@@ -40,6 +41,11 @@ export const routes: Routes = [
   {
     path:'register',
     component:RegisterComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'user-profile',
+    component: UserProfileComponent,
     pathMatch: 'full'
   },
   {
