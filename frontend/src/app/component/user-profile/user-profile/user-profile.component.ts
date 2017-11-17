@@ -7,16 +7,62 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class UserProfileComponent implements OnInit {
-  //progressBar-One
-  test1:string ="test1";
-  test2:string ="test2";
+
 
   profilePhotoUrl:string="http://www.freeiconspng.com/uploads/trump-face-png-21.png";
   profileQuote:string="\"A quotation that captures this person's personality\"";
   age:number=30;
-  work:string="";//jobTitle
-  family:string="";//familyStatus enum have to map to string values
-  location:string="";// Location class
+  work:string="Engineer";//jobTitle
+  family:string="Single";//familyStatus enum have to map to string values
+  location:string="San Jose, CA, USA";// Location class
+  character: string="Funny";
+
+  //progressBar-One
+  label1:string ="Introvert";
+  label2:string ="Extrovert";
+  score1:number=10;
+
+  label3:string ="Thinking";
+  label4:string ="Feeling";
+  score2:number=20;
+
+  label5:string ="Sensing";
+  label6:string ="Intuition";
+  score3:number=30;
+
+  label7:string ="Judging";
+  label8:string ="Perceiving";
+  score4:number=70;
+
+  goals: Array<string> = ["A Task that needs to be completed","A Task that needs to be done","no goals in life","just bullshitting"];
+  frustrations: Array<string>=["A Task that needs to be completed","A Task that needs to be done","no goals in life","just bullshitting"];
+  biodata: string="I am good at bluffing ";
+
+  /*3rd column progress bars*/
+  p2label1: string="Incentives";
+  p2width1: number=30;
+
+  p2label2: string="Fear";
+  p2width2: number=60;
+
+  p2label3: string="Growth";
+  p2width3: number=90;
+
+  p2label4: string="Power";
+  p2width4: number=75;
+
+  p2label5: string="Social";
+  p2width5: number=40;
+
+  /*May not required*/
+  p2label6: string="Traditional Ads";
+  p2width6: number=40;
+
+  p2label7: string="Online Social Media";
+  p2width7: number=40;
+
+  p2label8: string="Referrals";
+  p2width8: number=40;
 
   constructor() { }
 

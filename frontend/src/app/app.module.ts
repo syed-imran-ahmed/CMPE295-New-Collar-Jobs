@@ -50,6 +50,7 @@ import { UserProfileComponent } from './component/user-profile/user-profile/user
 import { ProgressBarOneComponent } from './component/user-profile/progress-bar-one/progress-bar-one.component';
 import { CompanyHomeComponent } from './home/company-home/company-home.component';
 import { JobCardComponent } from './component/job-card/job-card.component';
+import { ProgressBarTwoComponent } from './component/user-profile/progress-bar-two/progress-bar-two.component';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -73,7 +74,8 @@ export function initUserFactory(userService: UserService) {
     UserProfileComponent,
     ProgressBarOneComponent,
     CompanyHomeComponent,
-    JobCardComponent
+    JobCardComponent,
+    ProgressBarTwoComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -11,7 +11,7 @@ export class ConfigService {
   private _login_url = this._api_url + '/login';
 
   private _register_url = this._api_url + '/register';
-  
+
   private _postjob_url = this._api_url + '/job';
 
   private _logout_url = this._api_url + '/logout';
@@ -29,6 +29,8 @@ export class ConfigService {
   private _foo_url = this._api_url + '/foo';
 
   private _posted_job = this._api_url + '/company-home';
+
+  private _user_profile = this._api_url + '/user/profile';
 
   get reset_credentials_url(): string {
       return this._reset_credentials_url;
@@ -74,4 +76,7 @@ export class ConfigService {
       return this._posted_job;
   }
 
+  get user_profile(): string {
+    return this._user_profile;
+  }
 }

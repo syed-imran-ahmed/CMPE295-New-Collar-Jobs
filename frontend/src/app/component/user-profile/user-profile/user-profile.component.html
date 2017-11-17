@@ -14,7 +14,7 @@
 
       <div class="row custom-margin">
         <div class="col-sm-12">
-          <ul style="list-style: none">
+          <ul style="list-style: none; padding-left: 3px;">
             <li><span>Age:</span> {{age}}</li>
             <li><span>Work:</span> {{work}}</li>
             <li><span>Family:</span> {{family}}</li>
@@ -27,28 +27,10 @@
       <div class="row">
         <div class="col-sm-12 headings custom-margin">Personality</div>
       </div>
-      <app-progress-bar-one class="row" [first_title]="test1" [last_title]="test2" [width]="90"></app-progress-bar-one>
-      <!--div class="row">
-        <div class="col-sm-2">First</div>
-        <div class="col-sm-7"></div>
-        <div class="col-sm-3">Last</div>
-        <div class="col-sm-12">
-          <div class="mycontainer">
-            <div class="skills mytest"></div>
-          </div>
-        </div>
-      </div-->
-
-      <div class="row">
-        <div class="col-sm-2">First</div>
-        <div class="col-sm-7"></div>
-        <div class="col-sm-3">Last</div>
-        <div class="col-sm-12">
-          <div class="mycontainer">
-            <div class="skills mytest"></div>
-          </div>
-        </div>
-      </div>
+      <app-progress-bar-one class="row" [first_title]="label1" [last_title]="label2" [width]="score1"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label3" [last_title]="label4" [width]="score2"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label5" [last_title]="label6" [width]="score3"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label7" [last_title]="label8" [width]="score4"></app-progress-bar-one>
     </div>
 
     <!-- Column 2 Second Row-->
@@ -60,9 +42,7 @@
       <div class="row">
         <div class="col-sm-12">
           <ul class="quote-goals">
-            <li>A Task that needs to be completed</li>
-            <li>A Task that needs to be completed</li>
-            <li>A Task that needs to be completed</li>
+            <li *ngFor="let goal of goals">{{goal}}</li>
           </ul>
         </div>
       </div>
@@ -73,15 +53,16 @@
       <div class="row">
         <div class="col-sm-12">
           <ul class="quote-goals">
-            <li>A Task that needs to be completed</li>
-            <li>A Task that needs to be completed</li>
-            <li>A Task that needs to be completed</li>
+            <li *ngFor="let frustration of frustrations">{{frustration}}</li>
           </ul>
         </div>
       </div>
+
       <div class="row pull-down" style="margin-top:35px">
         <div class="col-sm-12 headings custom-lr-margin">Bio</div>
-        <div class="col-sm-12 custom-lr-margin bio" style="height:100%;"><p>The bio should be a short paragraph to describe the user journey. It should include some of their history leading up to a current use case. It may be helpful to incorporate information listed across the template and add pertinent details that may have been left out. Highlight factors of the user's personal and of professional life that make this user an ideal customer of your product.</p>
+        <div class="col-sm-12 custom-lr-margin bio" style="height:100%;">
+          <p>{{biodata}}</p>
+          <p>The bio should be a short paragraph to describe the user journey. It should include some of their history leading up to a current use case. It may be helpful to incorporate information listed across the template and add pertinent details that may have been left out. Highlight factors of the user's personal and of professional life that make this user an ideal customer of your product.</p>
           <p>Remember - you may modify this template, remove any of the modules or add new ones for your own purpose.</p>
         </div>
       </div>
@@ -92,82 +73,21 @@
       <div class="row">
         <div class="col-sm-12 headings">Motivation</div>
       </div>
+      <app-progress-bar-two class="row custom-margin" [label]="p2label1" [width]="p2width1"></app-progress-bar-two>
+      <app-progress-bar-two class="row custom-margin" [label]="p2label2" [width]="p2width2"></app-progress-bar-two>
+      <app-progress-bar-two class="row custom-margin" [label]="p2label3" [width]="p2width3"></app-progress-bar-two>
+      <app-progress-bar-two class="row custom-margin" [label]="p2label4" [width]="p2width4"></app-progress-bar-two>
+      <app-progress-bar-two class="row custom-margin" [label]="p2label5" [width]="p2width5"></app-progress-bar-two>
+
 
       <div class="row custom-margin">
-        <div class="col-sm-12">Incentive</div>
-        <div class="col-sm-12">
-          <div class="mycontainer" style="height:25px">
-            <div class="skills progress-bar-2">90%</div>
-          </div>
-        </div>
+        <div class="col-sm-12 headings">Channels</div>
       </div>
-
-      <div class="row custom-margin">
-        <div class="col-sm-12">Fear</div>
-        <div class="col-sm-12">
-          <div class="mycontainer" style="height:25px">
-            <div class="skills progress-bar-2">90%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row custom-margin">
-        <div class="col-sm-12">Growth</div>
-        <div class="col-sm-12">
-          <div class="mycontainer" style="height:25px">
-            <div class="skills progress-bar-2">90%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row custom-margin">
-        <div class="col-sm-12">Power</div>
-        <div class="col-sm-12">
-          <div class="mycontainer" style="height:25px">
-            <div class="skills progress-bar-2">90%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row custom-margin">
-        <div class="col-sm-12">Social</div>
-        <div class="col-sm-12">
-          <div class="mycontainer" style="height:25px">
-            <div class="skills progress-bar-2">90%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row custom-margin">
-        <div class="col-sm-12 headings">Preferred Channels</div>
-      </div>
-      <div class="row custom-margin">
-        <div class="col-sm-12">Traditional Ads</div>
-        <div class="col-sm-12">
-          <div class="mycontainer" style="height:25px">
-            <div class="skills progress-bar-2">90%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row custom-margin">
-        <div class="col-sm-12">Online Social Media</div>
-        <div class="col-sm-12">
-          <div class="mycontainer" style="height:25px">
-            <div class="skills progress-bar-2">90%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row custom-margin">
-        <div class="col-sm-12">Referrals</div>
-        <div class="col-sm-12">
-          <div class="mycontainer" style="height:25px">
-            <div class="skills progress-bar-2">90%</div>
-          </div>
-        </div>
-      </div>
-
+      <app-progress-bar-two class="row custom-margin" [label]="p2label6" [width]="p2width6"></app-progress-bar-two>
+      <app-progress-bar-two class="row custom-margin" [label]="p2label7" [width]="p2width7"></app-progress-bar-two>
+      <app-progress-bar-two class="row custom-margin" [label]="p2label8" [width]="p2width8"></app-progress-bar-two>
     </div>
   </div>
 </div>
+
+
