@@ -10,6 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.data.domain.Pageable;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 @Entity
@@ -34,14 +38,15 @@ public class Company {
 	private String description;
 	
 	@OneToMany(orphanRemoval=true, mappedBy = "company", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	private List<Jobs> jobPosts;
+	private List<Job> jobs;
 
-	public List<Jobs> getJobPosts() {
-		return jobPosts;
+	@JsonIgnore
+	public List<Job> getJobs(Pageable pageable) {
+		return jobs;
 	}
 
-	public void setJobPosts(List<Jobs> jobPosts) {
-		this.jobPosts = jobPosts;
+	public void setJobs(List<Job> jobs) {
+		this.jobs = jobs;
 	}
 
 	public long getCid() {

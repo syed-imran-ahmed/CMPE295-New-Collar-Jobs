@@ -28,7 +28,6 @@ import com.sjsu.edu.service.impl.CustomUserDetailsService;
 
 /**
  * @author imran
- *
  */
 @RestController
 @RequestMapping( value = "/api", produces = MediaType.APPLICATION_JSON_VALUE )

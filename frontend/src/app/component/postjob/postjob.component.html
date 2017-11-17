@@ -29,6 +29,11 @@
         <input matInput formControlName="ques6" placeholder="Provide location of the job along with the state" required >
         <mat-hint align="end">Eg. San Jose,CA; Las Vegas,NV; Philadelphia,PA</mat-hint>
       </mat-form-field>
+
+      <mat-form-field class="postjob" *ngIf="isJobId">
+        <input matInput formControlName="jobid" >
+      </mat-form-field>
+
   <button type="submit" [disabled]="!postjobForm.form.valid" mat-raised-button color="primary">Submit</button>
 </form>
 

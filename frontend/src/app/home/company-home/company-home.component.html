@@ -1,0 +1,19 @@
+<h1> POSTED JOBS </h1>
+<div class="content" fxLayout="column" fxLayoutAlign="left none"  *ngFor="let job of jobs">  
+    <app-job-card
+      fxFlex
+      title={{job.title}}
+      subTitle={{job.location}}
+      content='{{job.description | slice:0:100}}...'
+      jobid={{job.jobid}}
+    >
+    </app-job-card>
+</div>
+
+<div class="pagination">
+<mat-paginator [length]="length"
+[pageSize]="pageSize"
+
+(page)="pageEvent = getData($event)">
+</mat-paginator>
+</div>

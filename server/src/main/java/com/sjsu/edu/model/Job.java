@@ -11,8 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="jobs")
-public class Jobs {
+@Table(name="job")
+public class Job {
 	
 	@Id
 	@Column(name = "jid")

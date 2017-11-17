@@ -1,5 +1,10 @@
 <mat-toolbar color="primary" class="app-navbar">
-  <button mat-button matRipple routerLink="/">
+  <button mat-button matRipple *ngIf="isCompany()" routerLink="/company-home">
+    <!--<img alt="New-Collar-Jobs" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">-->
+    <span style="font-weight: bold">New Collar Jobs</span>
+  </button>
+
+  <button mat-button matRipple *ngIf="!isCompany()" routerLink="/">
     <!--<img alt="New-Collar-Jobs" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">-->
     <span style="font-weight: bold">New Collar Jobs</span>
   </button>
