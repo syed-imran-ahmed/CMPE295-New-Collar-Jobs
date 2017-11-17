@@ -13,6 +13,8 @@ import {
   MatTabsModule,
   MatInputModule,
   MatIconRegistry,
+  MatPaginatorModule,
+  MatDialogModule,
   MatProgressSpinnerModule,
   MatSnackBarModule
 } from '@angular/material';
@@ -22,7 +24,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
-import { LoginGuard, GuestGuard } from './guard';
+import { LoginGuard, GuestGuard, CompanyGuard } from './guard';
 import { NotFoundComponent } from './not-found';
 import { AccountMenuComponent } from './component/header/account-menu/account-menu.component';
 import {
@@ -36,12 +38,15 @@ import {
   AuthService,
   UserService,
   FooService,
+  PostedjobService,
   ConfigService
 } from './service';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { PostjobComponent } from './component/postjob/postjob.component';
+import { CompanyHomeComponent } from './home/company-home/company-home.component';
+import { JobCardComponent } from './component/job-card/job-card.component';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -60,7 +65,9 @@ export function initUserFactory(userService: UserService) {
     ChangePasswordComponent,
     RegisterComponent,
     ProfileComponent,
-    PostjobComponent
+    PostjobComponent,
+    CompanyHomeComponent,
+    JobCardComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -77,6 +84,8 @@ export function initUserFactory(userService: UserService) {
     MatInputModule,
     MatToolbarModule,
     MatCardModule,
+    MatDialogModule,
+    MatPaginatorModule,
     MatProgressSpinnerModule,
     FlexLayoutModule,
     MatSnackBarModule
@@ -84,7 +93,9 @@ export function initUserFactory(userService: UserService) {
   providers: [
     LoginGuard,
     GuestGuard,
+    CompanyGuard,
     FooService,
+    PostedjobService,
     AuthService,
     ApiService,
     UserService,

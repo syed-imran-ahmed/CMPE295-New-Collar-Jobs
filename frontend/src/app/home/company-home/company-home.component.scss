@@ -1,0 +1,43 @@
+app-job-card {
+    margin: 10px 50px 0 0;
+    &.last {
+      margin: 0 0 0 0;
+    }
+  }
+  
+  app-github {
+    margin: 50px -70px -50px;
+  }
+  
+  @media screen and (min-width: 600px) and (max-width: 1279px) {
+    app-job-card {
+      margin: 10px 4px 0 0;
+      &.last {
+        margin: 0 0 0 0;
+      }
+    }
+  
+    app-github {
+      margin: 20px -30px -20px;
+    }
+  }
+  
+  @media screen and (max-width: 599px) {
+  
+    .content {
+      /* https://github.com/angular/flex-layout/issues/295 */
+      display: block !important;
+    }
+  
+    app-job-card {
+      /* https://github.com/angular/flex-layout/issues/295 */
+      display: block !important;
+      margin: 0 0 12px 0;
+    }
+  
+    app-github {
+      margin: 8px -12px -8px;
+    }
+  
+  }
+  

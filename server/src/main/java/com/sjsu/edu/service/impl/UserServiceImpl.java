@@ -15,7 +15,7 @@ import com.sjsu.edu.service.UserService;
 
 /**
  * @author imran
- *
+ * 
  */
 @Service
 public class UserServiceImpl implements UserService {
