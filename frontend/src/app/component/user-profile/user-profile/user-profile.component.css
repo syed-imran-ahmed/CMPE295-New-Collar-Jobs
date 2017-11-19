@@ -1,8 +1,9 @@
 .header{
-  background-color:cyan;
+  background-color:rgb(103, 58, 183);
   font-family: proxima-bold, Helvetica, sans-serif;
   font-size:x-large;
   color:white;
+  justify-content: center;
 }
 
 .profilePhoto {
@@ -13,7 +14,7 @@
 }
 
 .quoteProfile{
-  background-color:cyan;
+  background-color:rgb(103, 58, 183);
   font-family:proxima-bold, Helvetica, sans-serif;
   font-style:italic;
   font-weight:bold;
@@ -32,12 +33,12 @@
 }
 
 li span {
-  color:cyan;
+  color:rgb(103, 58, 183);
   font-weight:700;
 }
 
 .headings{
-  color:cyan;
+  color:rgb(103, 58, 183);
   /*font-weight:700;*/
   font-size:medium;
   font-family: Proxima-Light,Helvetica,sans-serif;
@@ -50,7 +51,7 @@ li span {
   background-color: #ddd;
 
 }
-.mytest { height:100%;width: 20px; background-color: cyan;position:relative; left:90%}
+.mytest { height:100%;width: 20px; background-color: rgb(103, 58, 183);position:relative; left:90%}
 
 .quote-goals{
   font-family: Proxima-Light,Helvetica,sans-serif;
@@ -65,7 +66,7 @@ li span {
 .progress-bar-2 {
   width: 90%;
   height:100%;
-  background-color: cyan;
+  background-color: rgb(103, 58, 183);
 }
 
 .skills {

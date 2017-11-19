@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {UserprofileService} from "../../../service/userprofile.service";
 
 @Component({
   selector: 'app-user-profile',
@@ -64,9 +65,38 @@ export class UserProfileComponent implements OnInit {
   p2label8: string="Referrals";
   p2width8: number=40;
 
-  constructor() { }
+  constructor(private profileService: UserprofileService) { }
 
   ngOnInit() {
+    this.profileService.getProfiles().toPromise().then(
+      response => {
+        const resp = response.json();
+        this.profileQuote = resp['quotation'];
+        this.age = parseInt(resp['age'], 10);
+        this.work = resp['jobTitle'];
+        this.family = resp['familyStatus'];
+        const loc = resp['location'];
+        this.location = loc['city'] + ', ' + loc['state'] + ', ' +loc['country'];
+        const personality = resp['personality'];
+        this.score1 = parseInt(personality['introvertExtrovert'], 10);
+        this.score2 = parseInt(personality['thinkingFeeling'], 10);
+        this.score3 = parseInt(personality['sensingIntuition'], 10);
+        this.score4 = parseInt(personality['judgingPerceiving'], 10);
+
+        this.goals = resp['goals'];
+        this.frustrations = resp['frustrations'];
+        this.biodata = resp['bio'];
+
+        const motivation = resp['motivation'];
+        this.p2width1 = motivation['incentive'];
+        this.p2width2 = motivation['fear'];
+        this.p2width3 = motivation['growth'];
+        this.p2width4 = motivation['power'];
+        this.p2width5 = motivation['social'];
+      }
+    ).catch(error => {
+      console.log('Error in getting userProfile' + error);
+    });
   }
 
 }

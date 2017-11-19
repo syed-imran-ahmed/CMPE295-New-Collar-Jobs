@@ -51,6 +51,7 @@ import { ProgressBarOneComponent } from './component/user-profile/progress-bar-o
 import { CompanyHomeComponent } from './home/company-home/company-home.component';
 import { JobCardComponent } from './component/job-card/job-card.component';
 import { ProgressBarTwoComponent } from './component/user-profile/progress-bar-two/progress-bar-two.component';
+import {UserprofileService} from "./service/userprofile.service";
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -109,6 +110,7 @@ export function initUserFactory(userService: UserService) {
     UserService,
     ConfigService,
     MatIconRegistry,
+    UserprofileService,
     {
       'provide': APP_INITIALIZER,
       'useFactory': initUserFactory,

@@ -1,4 +1,4 @@
-<div class="container" style="border-style:solid ;border-color:cyan; border-width:1px;">
+<div class="container-fluid text-info" style="border-style:solid ;border-color:cyan; border-width:1px;">
   <!-- First Row-->
   <div class="row header">User Persona Type</div>
   <!-- Second Row-->
@@ -6,10 +6,10 @@
     <!-- Column 1 Second Row-->
     <div class="col-sm-3" style="background-color:white">
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12 img-thumbnail">
           <img class="profilePhoto" [src]="profilePhotoUrl"/>
         </div>
-        <div class="col-sm-12 quoteProfile custom-margin custom-lr-margin">{{profileQuote}}</div>
+        <div class="col-sm-12 quoteProfile custom-margin">{{profileQuote}}</div>
       </div>
 
       <div class="row custom-margin">
@@ -30,7 +30,7 @@
       <app-progress-bar-one class="row" [first_title]="label1" [last_title]="label2" [width]="score1"></app-progress-bar-one>
       <app-progress-bar-one class="row" [first_title]="label3" [last_title]="label4" [width]="score2"></app-progress-bar-one>
       <app-progress-bar-one class="row" [first_title]="label5" [last_title]="label6" [width]="score3"></app-progress-bar-one>
-      <app-progress-bar-one class="row" [first_title]="label7" [last_title]="label8" [width]="score4"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label7" [last_title]="label8" [width]="score4" style="margin-bottom: 5px"></app-progress-bar-one>
     </div>
 
     <!-- Column 2 Second Row-->
