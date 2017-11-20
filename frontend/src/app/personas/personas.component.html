@@ -1,0 +1,95 @@
+
+<div class="content" fxLayout="row" fxLayoutAlign="center">
+    <md-card elevation="5" fxFlex>
+      <md-card-subtitle>Choose Your Persona</md-card-subtitle>
+      <figure class="figure">
+        <div class="container">
+        <img style="border-radius: 50%;" [src]="netImage" class="image" alt="A generic square placeholder image with rounded corners in a figure.">
+
+        <figcaption class="figure-caption"></figcaption>
+        <div class="overlay">
+    <div class="text">Street Smart</div>
+  </div>
+</div>
+
+<div class="container">
+<img style="border-radius: 50%;" [src]="netImage" class="image" alt="A generic square placeholder image with rounded corners in a figure.">
+
+<figcaption class="figure-caption"></figcaption>
+<div class="overlay">
+<div class="text">Doer</div>
+</div>
+</div>
+
+
+
+<div class="container">
+<img style="border-radius: 50%;" [src]="netImage" class="image" alt="A generic square placeholder image with rounded corners in a figure.">
+
+<figcaption class="figure-caption"></figcaption>
+<div class="overlay">
+<div class="text">Thinker</div>
+</div>
+</div>
+
+
+<div class="container">
+<img style="border-radius: 50%;" [src]="netImage" class="image" alt="A generic square placeholder image with rounded corners in a figure.">
+
+<figcaption class="figure-caption"></figcaption>
+<div class="overlay">
+<div class="text">Thinker</div>
+</div>
+</div>
+
+
+
+      </figure>
+
+    </md-card>
+</div>
+<style>
+.container {
+  display:inline-block;
+  position: relative;
+  width: 40%;
+  float: left;
+}
+
+.image {
+  float: left;
+  display: block;
+  width: 50%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  background-color: #590aa8;
+  overflow: hidden;
+  width: 50%;
+  height:0;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  bottom: 0;
+  height: 100%;
+
+}
+
+.text {
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+</style>
