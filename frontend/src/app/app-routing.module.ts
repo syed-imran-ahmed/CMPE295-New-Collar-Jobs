@@ -7,6 +7,7 @@ import { LoginGuard } from './guard';
 import { GuestGuard } from './guard';
 import { CompanyGuard } from './guard';
 import { NotFoundComponent } from './not-found';
+import { PersonasComponent } from './personas';
 import { ChangePasswordComponent } from './change-password';
 import { RegisterComponent } from './component/register';
 import { ProfileComponent } from './component/profile';
@@ -22,6 +23,11 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [GuestGuard]
+  },
+  {
+    path: 'personas',
+    component: PersonasComponent,
     canActivate: [GuestGuard]
   },
   {

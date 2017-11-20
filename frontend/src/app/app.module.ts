@@ -24,6 +24,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
+import { PersonasComponent } from './personas';
 import { LoginGuard, GuestGuard, CompanyGuard } from './guard';
 import { NotFoundComponent } from './not-found';
 import { AccountMenuComponent } from './component/header/account-menu/account-menu.component';
@@ -60,6 +61,7 @@ export function initUserFactory(userService: UserService) {
     ApiCardComponent,
     HomeComponent,
     LoginComponent,
+    PersonasComponent,
     NotFoundComponent,
     AccountMenuComponent,
     ChangePasswordComponent,
