@@ -40,6 +40,11 @@
         <div class="col-sm-12 headings">Goals</div>
       </div>
       <div class="row">
+        <div class="col-sm-12 custom-lr-margin" style="padding: 0px;">
+          <button class="col-sm-1 editbutton" style="float: right" (click)="openListDialogue('goals')"><mat-icon >edit</mat-icon></button>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-sm-12">
           <ul class="quote-goals">
             <li *ngFor="let goal of goals">{{goal}}</li>
@@ -51,6 +56,9 @@
         <div class="col-sm-12 headings">Frustrations</div>
       </div>
       <div class="row">
+        <div class="col-sm-12 custom-lr-margin" style="padding: 0px;">
+          <button class="col-sm-1 editbutton" style="float: right" (click)="openListDialogue('frustrations')"><mat-icon >edit</mat-icon></button>
+        </div>
         <div class="col-sm-12">
           <ul class="quote-goals">
             <li *ngFor="let frustration of frustrations">{{frustration}}</li>
@@ -59,7 +67,10 @@
       </div>
 
       <div class="row pull-down" style="margin-top:35px">
-        <div class="col-sm-12 headings custom-lr-margin">Bio</div>
+        <div class="col-sm-6 headings custom-lr-margin">Bio</div>
+        <div class="col-sm-12 custom-lr-margin bio" style="padding: 0px;">
+          <button class="col-sm-1 editbutton" style="float: right;outline:none;" (click)="openDialogue()"><mat-icon >edit</mat-icon></button>
+        </div>
         <div class="col-sm-12 custom-lr-margin bio" style="height:100%;">
           <p>{{biodata}}</p>
           <p>The bio should be a short paragraph to describe the user journey. It should include some of their history leading up to a current use case. It may be helpful to incorporate information listed across the template and add pertinent details that may have been left out. Highlight factors of the user's personal and of professional life that make this user an ideal customer of your product.</p>

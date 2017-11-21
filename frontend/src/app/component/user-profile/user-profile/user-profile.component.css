@@ -75,3 +75,10 @@ li span {
   padding-bottom:5px;
   text-align:center;
 }
+
+.editbutton {
+  border: none;
+  outline:none;
+  -webkit-appearance: none;
+  background: inherit;
+}

@@ -52,6 +52,8 @@ import { CompanyHomeComponent } from './home/company-home/company-home.component
 import { JobCardComponent } from './component/job-card/job-card.component';
 import { ProgressBarTwoComponent } from './component/user-profile/progress-bar-two/progress-bar-two.component';
 import {UserprofileService} from "./service/userprofile.service";
+import { TextboxDialogueComponent } from './component/user-profile/textbox-dialogue/textbox-dialogue.component';
+import { ListDialogueComponent } from './component/user-profile/list-dialogue/list-dialogue.component';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -76,7 +78,9 @@ export function initUserFactory(userService: UserService) {
     ProgressBarOneComponent,
     CompanyHomeComponent,
     JobCardComponent,
-    ProgressBarTwoComponent
+    ProgressBarTwoComponent,
+    TextboxDialogueComponent,
+    ListDialogueComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -118,6 +122,7 @@ export function initUserFactory(userService: UserService) {
       'multi': true
     }
   ],
+  entryComponents:[TextboxDialogueComponent, ListDialogueComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
