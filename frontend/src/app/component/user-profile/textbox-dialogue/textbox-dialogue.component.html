@@ -1,8 +1,8 @@
 <mat-card>
-  <mat-card-header>Testing</mat-card-header>
+  <mat-card-header mat-card-title class="text-capitalize">{{data.title}}</mat-card-header>
   <mat-card-content>
     <mat-form-field class="example-full-width w-100">
-      <textarea matInput maxlength="350" [(ngModel)]="data" class="textbox"></textarea>
+      <textarea matInput maxlength="350" [(ngModel)]="data.data" class="textbox"></textarea>
     </mat-form-field>
     <!--textarea maxlength="350" [(ngModel)]="data"></textarea-->
     <mat-dialog-actions fxLayoutAlign="end">

@@ -54,7 +54,7 @@ import { ProgressBarTwoComponent } from './component/user-profile/progress-bar-t
 import {UserprofileService} from "./service/userprofile.service";
 import { TextboxDialogueComponent } from './component/user-profile/textbox-dialogue/textbox-dialogue.component';
 import { ListDialogueComponent } from './component/user-profile/list-dialogue/list-dialogue.component';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
 }
@@ -101,7 +101,8 @@ export function initUserFactory(userService: UserService) {
     MatPaginatorModule,
     MatProgressSpinnerModule,
     FlexLayoutModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCheckboxModule
   ],
   providers: [
     LoginGuard,

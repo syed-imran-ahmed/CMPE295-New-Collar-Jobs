@@ -3,3 +3,10 @@
   height: 150px;
   max-height: 150px;
 }
+
+.mat-card-header{
+  background-color: rgb(103, 58, 183);
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}

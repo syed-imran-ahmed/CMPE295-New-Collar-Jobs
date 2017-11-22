@@ -105,18 +105,21 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  openDialogue() {
+  openDialogue(title : string) {
     console.log("I am clicked for opening dialogue");
+    let custdata = {};
+    custdata['title'] = title;
+    custdata['data'] = this.biodata;
     let dialogHandle = this.mydialogue.open(TextboxDialogueComponent,{
       'width': '600px',
-      'data': this.biodata
+      'data': custdata
     });
 
     dialogHandle.afterClosed().subscribe(result=>{
       console.log('dialogue closed ' + result);
       //assign result to this.biodata
       if(result['ismodified']) {
-        this.biodata = result.data;
+        this.biodata = result.data['data'];
       }
     });
   }

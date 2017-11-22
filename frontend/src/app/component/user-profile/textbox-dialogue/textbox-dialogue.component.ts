@@ -10,7 +10,7 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 export class TextboxDialogueComponent implements OnInit {
 
   text: string;
-  constructor(private dialogueRef: MatDialogRef<TextboxDialogueComponent>, @Inject(MAT_DIALOG_DATA) private data: string) { }
+  constructor(private dialogueRef: MatDialogRef<TextboxDialogueComponent>, @Inject(MAT_DIALOG_DATA) private data: any) { }
 
   ngOnInit() {
 

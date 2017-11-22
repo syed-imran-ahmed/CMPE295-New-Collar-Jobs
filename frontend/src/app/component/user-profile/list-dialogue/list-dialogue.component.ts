@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from "@angular/material";
 import {forEach} from "@angular/router/src/utils/collection";
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 //{title:'', data :'['','','']'}
 @Component({
