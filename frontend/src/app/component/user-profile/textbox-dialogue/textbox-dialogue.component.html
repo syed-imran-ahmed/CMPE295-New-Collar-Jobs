@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-header mat-card-title class="text-capitalize">{{data.title}}</mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="example-full-width w-100">
+      <textarea matInput maxlength="350" [(ngModel)]="data.data" class="textbox"></textarea>
+    </mat-form-field>
+    <!--textarea maxlength="350" [(ngModel)]="data"></textarea-->
+    <mat-dialog-actions fxLayoutAlign="end">
+      <button mat-button (click)="onSave()">Save</button>
+      <button mat-button (click)="onCancel()">Cancel</button>
+    </mat-dialog-actions>
+  </mat-card-content>
+
+</mat-card>

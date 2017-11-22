@@ -11,6 +11,7 @@ import { ChangePasswordComponent } from './change-password';
 import { RegisterComponent } from './component/register';
 import { ProfileComponent } from './component/profile';
 import { PostjobComponent } from './component/postjob';
+import { UserProfileComponent } from './component/user-profile/user-profile/user-profile.component';
 import { CompanyHomeComponent } from './home/company-home';
 
 export const routes: Routes = [
@@ -45,7 +46,11 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path:'company-home',
+    path: 'user-profile',
+    component: UserProfileComponent,
+    pathMatch: 'full'
+  },
+  { path:'company-home',
     component:CompanyHomeComponent,
     canActivate: [CompanyGuard]
   },
