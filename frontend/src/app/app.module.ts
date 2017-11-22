@@ -15,6 +15,7 @@ import {
   MatIconRegistry,
   MatPaginatorModule,
   MatDialogModule,
+  MatSliderModule,
   MatProgressSpinnerModule,
   MatSnackBarModule
 } from '@angular/material';
@@ -93,6 +94,7 @@ export function initUserFactory(userService: UserService) {
     MatTooltipModule,
     MatButtonModule,
     MatIconModule,
+    MatSliderModule,
     MatTabsModule,
     MatInputModule,
     MatToolbarModule,
