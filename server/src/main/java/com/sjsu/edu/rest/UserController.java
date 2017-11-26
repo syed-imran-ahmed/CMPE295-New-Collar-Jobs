@@ -77,12 +77,22 @@ public class UserController {
     
     @RequestMapping( method = RequestMethod.POST, value= "/user/profile", consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity<?> createProfile( UserProfile profile) {
+    
+    String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+    User user = userService.findByUsername(currentUserName);
+    if(user!=null){
+	    profile.setEmailId(user.getEmailid());
+	    profile.setFirstName(user.getFirstname());
+	    profile.setLastName(user.getLastname());
+	    profile.setUsername(user.getUsername());
+    }
+    UserProfile p;
 	try{
-		profileRepository.save(profile);
+		p = profileRepository.save(profile);
 	}catch(Exception e){
 		return reportBadRequest(e);
 	}
-	return reportSuccess("Profile was created successfully.");
+	return ResponseEntity.accepted().body(p);
     }
     
     @RequestMapping( method = RequestMethod.GET, value= "/user/profile")
