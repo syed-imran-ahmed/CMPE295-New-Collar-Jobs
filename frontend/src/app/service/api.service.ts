@@ -57,6 +57,14 @@ export class ApiService {
     return this.post(path, body, true);
   }
 
+  patch(path: string, body: any): Observable<any>{
+    return this.http.request(path, {
+      method: RequestMethod.Patch,
+      headers: this.headers,
+      withCredentials: true,
+      body: body
+    });
+  }
 
   private extractData(res: Response) {
     const body = res.json();

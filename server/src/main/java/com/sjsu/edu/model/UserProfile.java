@@ -13,7 +13,95 @@ public class UserProfile {
 
     @Id
     public String id;
-    String quotation;
+    public String getQuotation() {
+		return quotation;
+	}
+
+	public void setQuotation(String quotation) {
+		this.quotation = quotation;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public String getJobTitle() {
+		return jobTitle;
+	}
+
+	public void setJobTitle(String jobTitle) {
+		this.jobTitle = jobTitle;
+	}
+
+	public FamilyStatus getFamilyStatus() {
+		return familyStatus;
+	}
+
+	public void setFamilyStatus(FamilyStatus familyStatus) {
+		this.familyStatus = familyStatus;
+	}
+
+	public String getBio() {
+		return bio;
+	}
+
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
+	public Personality getPersonality() {
+		return personality;
+	}
+
+	public void setPersonality(Personality personality) {
+		this.personality = personality;
+	}
+
+	public Motivation getMotivation() {
+		return motivation;
+	}
+
+	public void setMotivation(Motivation motivation) {
+		this.motivation = motivation;
+	}
+
+	public List<String> getTraits() {
+		return traits;
+	}
+
+	public void setTraits(List<String> traits) {
+		this.traits = traits;
+	}
+
+	public List<String> getGoals() {
+		return goals;
+	}
+
+	public void setGoals(List<String> goals) {
+		this.goals = goals;
+	}
+
+	public List<String> getFrustrations() {
+		return frustrations;
+	}
+
+	public void setFrustrations(List<String> frustrations) {
+		this.frustrations = frustrations;
+	}
+
+	String quotation;
     Integer age;
     String jobTitle;
     FamilyStatus familyStatus;

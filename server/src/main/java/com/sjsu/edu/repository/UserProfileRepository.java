@@ -5,8 +5,8 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.sjsu.edu.model.UserProfile;
 
-public interface UserProfileRepository extends MongoRepository<UserProfile, Long> {
-
+public interface UserProfileRepository extends MongoRepository<UserProfile, String> {
+	
     Page<UserProfile> findAll(Pageable pageable);
 
 }

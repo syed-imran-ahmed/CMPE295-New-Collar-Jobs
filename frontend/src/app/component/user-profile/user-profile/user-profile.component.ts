@@ -12,7 +12,7 @@ import {ListDialogueComponent} from "../list-dialogue/list-dialogue.component";
 })
 export class UserProfileComponent implements OnInit {
 
-
+  id: string;
   profilePhotoUrl: string = "http://www.freeiconspng.com/uploads/trump-face-png-21.png";
   profileQuote: string = "\"A quotation that captures this person's personality\"";
   age: number = 30;
@@ -77,6 +77,7 @@ export class UserProfileComponent implements OnInit {
     this.profileService.getProfiles().toPromise().then(
       response => {
         const resp = response.json();
+        this.id = resp['id'];
         this.profileQuote = resp['quotation'];
         this.age = parseInt(resp['age'], 10);
         this.work = resp['jobTitle'];
@@ -119,7 +120,12 @@ export class UserProfileComponent implements OnInit {
       console.log('dialogue closed ' + result);
       //assign result to this.biodata
       if(result['ismodified']) {
-        this.biodata = result.data['data'];
+        const patchDoc = {'bio': result.data['data']};
+        this.profileService.patchProfile(this.id, patchDoc).toPromise().then(response => {
+          console.log('Patching response' + response.json());
+          //if success in patching update the dom
+          this.biodata = result.data['data'];
+        }).catch(error => {console.log('Error is Patching ' + error ); });
       }
     });
   }

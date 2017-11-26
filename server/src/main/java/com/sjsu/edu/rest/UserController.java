@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +19,8 @@ import com.sjsu.edu.model.User;
 import com.sjsu.edu.model.UserProfile;
 import com.sjsu.edu.repository.UserProfileRepository;
 import com.sjsu.edu.service.UserService;
+
+
 
 
 /**
@@ -79,6 +83,7 @@ public class UserController {
     public ResponseEntity<?> createProfile( UserProfile profile) {
 	try{
 		profileRepository.save(profile);
+		
 	}catch(Exception e){
 		return reportBadRequest(e);
 	}
@@ -89,6 +94,17 @@ public class UserController {
     public List<UserProfile> getProfile() {
     	List<UserProfile> profiles = profileRepository.findAll();
         return profiles;
+    }
+    
+    @RequestMapping(method=RequestMethod.PATCH, value="/user/profile/{profileId}", consumes= MediaType.APPLICATION_JSON_VALUE )
+    public ResponseEntity<?> patchProfile(@PathVariable(name="profileId") String profileId, @RequestBody UserProfile partialProfile) {
+    		final UserProfile userProfile = profileRepository.findOne(profileId);
+    		
+    		if(partialProfile.getBio()!=null) {
+    			userProfile.setBio(partialProfile.getBio());
+    		}
+    		this.profileRepository.save(userProfile);
+    		return reportSuccess("Profile patched successfully");
     }
 
 	private ResponseEntity<?> reportSuccess(String message) {
