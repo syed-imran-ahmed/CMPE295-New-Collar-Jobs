@@ -36,13 +36,7 @@ public class UserController {
     @RequestMapping( method = RequestMethod.GET, value = "/user/{userId}" )
     public User loadById( @PathVariable Long userId ) {
     	String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-    	User user = userService.findByUsername(currentUserName);
-    	if (user!=null)
-    	{
-    		return this.userService.findById( userId );
-    	}
-    	else return null;
-        
+    	return userService.findByUsername(currentUserName); 
     }
 
     @RequestMapping( method = RequestMethod.GET, value= "/user/all")
@@ -95,10 +89,10 @@ public class UserController {
 	return ResponseEntity.accepted().body(p);
     }
     
-    @RequestMapping( method = RequestMethod.GET, value= "/user/profile")
-    public List<UserProfile> getProfile() {
-    	List<UserProfile> profiles = profileRepository.findAll();
-        return profiles;
+    @RequestMapping( method = RequestMethod.GET, value= "/user/profile/")
+    public UserProfile getProfile() {
+        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+    	return profileRepository.findByUsername(currentUserName);
     }
 
 	private ResponseEntity<?> reportSuccess(String message) {
