@@ -10,8 +10,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Builder;
+import lombok.Data;
+
 @Entity
 @Table(name="job")
+@Data
+@Builder
 public class Job {
 	
 	@Id
@@ -28,8 +33,14 @@ public class Job {
 	@Column(name = "responsibility")
 	private String responsibility;
 	
-	@Column(name = "location")
-	private String location;
+	@Column(name = "city")
+	private String city;
+	
+	@Column(name = "state")
+	private String state;
+	
+	@Column(name = "country")
+	private String country;
 	
 	@Column(name = "salary")
 	private int salary;
@@ -40,69 +51,4 @@ public class Job {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "company_cid")
     private Company company;
-	
-	public Long getJobid() {
-		return jobid;
-	}
-
-	public void setJobid(Long jobid) {
-		this.jobid = jobid;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getResponsibility() {
-		return responsibility;
-	}
-
-	public void setResponsibility(String responsibility) {
-		this.responsibility = responsibility;
-	}
-	
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-	public int getSalary() {
-		return salary;
-	}
-
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
-
-	public Company getCompany() {
-		return company;
-	}
-
-	public void setCompany(Company company) {
-		this.company = company;
-	}
-		
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	public String getTraits() {
-		return traits;
-	}
-
-	public void setTraits(String traits) {
-		this.traits = traits;
-	}
-	
 }

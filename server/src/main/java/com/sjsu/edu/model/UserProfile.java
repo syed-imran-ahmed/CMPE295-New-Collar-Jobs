@@ -20,6 +20,7 @@ public class UserProfile {
     String quotation;
     Integer age;
     String jobTitle;
+    String imageURL;
     FamilyStatus familyStatus;
     String bio;
     Location location;

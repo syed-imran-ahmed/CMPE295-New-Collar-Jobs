@@ -11,8 +11,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sjsu.edu.model.Job;
 import com.sjsu.edu.model.User;
 import com.sjsu.edu.model.UserProfile;
 import com.sjsu.edu.repository.UserProfileRepository;
@@ -73,7 +75,8 @@ public class UserController {
     public ResponseEntity<?> createProfile( UserProfile profile) {
     
     String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-    User user = userService.findByUsername(currentUserName);
+    User user = userService.findByUsername("imran");
+    
     if(user!=null){
 	    profile.setEmailId(user.getEmailid());
 	    profile.setFirstName(user.getFirstname());
@@ -94,6 +97,17 @@ public class UserController {
         String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
     	return profileRepository.findByUsername(currentUserName);
     }
+    
+    @RequestMapping( method = RequestMethod.GET, value= "/user/jobs/")
+    public List<Job> getJobRecommendations( @RequestParam(value = "cityFilter", required = false) boolean cityFilter,
+    		@RequestParam(value = "stateFilter", required = false) boolean stateFilter) {
+        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+        if(currentUserName == null || currentUserName.isEmpty()){
+        	currentUserName = "imran";
+        }
+    	return userService.getJobRecommendations(currentUserName, cityFilter, stateFilter);
+    }
+    
 
 	private ResponseEntity<?> reportSuccess(String message) {
 		Map<String, String> result = new HashMap<>();
