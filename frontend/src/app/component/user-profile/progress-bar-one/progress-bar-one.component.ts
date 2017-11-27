@@ -1,4 +1,5 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Input, Output, OnInit, EventEmitter, ViewEncapsulation} from '@angular/core';
+import {MatSliderModule, MatSliderChange} from '@angular/material';
 
 @Component({
   selector: 'app-progress-bar-one',
@@ -12,14 +13,22 @@ export class ProgressBarOneComponent implements OnInit {
   @Input() last_title: string;
   @Input() width: number;
 
+  @Output()
+  change : EventEmitter<any> = new EventEmitter<any>();
+
   max = 100;
   min = 0;
   thumbLabel = true;
   value = 0;
-
+  
   constructor() { }
 
+  onInputChange(event: any) {
+    this.change.emit(event);
+  }
+
   ngOnInit() {
+    
   }
 
 }
