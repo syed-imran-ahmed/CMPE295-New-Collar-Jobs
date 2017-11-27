@@ -4,3 +4,4 @@ export * from './config.service';
 export * from './auth.service';
 export * from './foo.service';
 export * from './postedjob.service';
+export * from './recommendedjobs.service';

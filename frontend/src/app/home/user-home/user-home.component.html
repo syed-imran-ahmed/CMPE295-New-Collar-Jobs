@@ -1,4 +1,4 @@
-<h1> POSTED JOBS </h1>
+<h1> RECOMMENDED JOBS</h1>
 <div class="content" fxLayout="column" fxLayoutAlign="left none"  *ngFor="let job of jobs">  
     <app-job-card
       fxFlex
@@ -6,7 +6,7 @@
       subTitle={{job.location}}
       content='{{job.description | slice:0:100}}...'
       jobid={{job.jobid}}
-      buttonText="Edit"
+      buttonText="Apply"
     >
     </app-job-card>
 </div>

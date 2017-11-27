@@ -33,16 +33,16 @@ public class DiscoveryService {
 
 	public static void main(String[] args)
 	{
-		Job job = Job.builder()
-				.title("Software Engineer")
-				.description("Software engineering")
-				.traits("Book smart")
-				.city("San Jose")
-				.state("CA")
-				.country("US")
-				.build();
-
-		submitJob(job);
+//		Job job = Job.builder()
+//				.title("Software Engineer")
+//				.description("Software engineering")
+//				.traits("Book smart")
+//				.city("San Jose")
+//				.state("CA")
+//				.country("US")
+//				.build();
+//
+//		submitJob(job);
 	}
 }
 	

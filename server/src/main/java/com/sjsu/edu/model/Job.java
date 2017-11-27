@@ -12,11 +12,12 @@ import javax.persistence.Table;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="job")
 @Data
-@Builder
+@NoArgsConstructor
 public class Job {
 	
 	@Id

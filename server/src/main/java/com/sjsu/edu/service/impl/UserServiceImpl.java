@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.apache.commons.collections4.IteratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -111,6 +112,8 @@ public class UserServiceImpl implements UserService {
 			jobIds.add(Long.parseLong(jobId));
 		});
 		
-		return (List<Job>) jobRepository.findAll(jobIds);
+		Iterable<Job> myObjects = jobRepository.findAll(jobIds);
+		List<Job> myObjectsList = IteratorUtils.toList(myObjects.iterator());
+		return myObjectsList;
 	}
 }

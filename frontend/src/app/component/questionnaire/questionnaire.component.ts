@@ -17,7 +17,7 @@ export class QuestionnaireComponent implements OnInit {
   file: File[];
   //textField: string;
   firebase: any;
-  isLinear = false;
+  isLinear = true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
@@ -32,15 +32,15 @@ export class QuestionnaireComponent implements OnInit {
   ];
 
 
-  personalityOne: any;
-  personalityTwo: any;
-  personalityThree: any;
-  personalityFour: any
+  personalityOne = 0;
+  personalityTwo = 0;
+  personalityThree = 0;
+  personalityFour = 0;
 
-  motivationOne: any;
-  motivationTwo: any;
-  motivationThree: any;
-  motivationFour: any;
+  motivationOne = 0;
+  motivationTwo = 0;
+  motivationThree = 0;
+  motivationFour = 0;
 
   //progressBar-One
   label1: string = "Introvert";
@@ -75,8 +75,7 @@ export class QuestionnaireComponent implements OnInit {
       age: ['', Validators.required],
       work: ['', Validators.required],
       marital_status: ['', Validators.required],
-      quotation : ['',Validators.required],
-      persona1: ['', Validators.required]
+      quotation : ['',Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
       goal1: ['', Validators.required],

@@ -12,7 +12,7 @@ export class CompanyGuard implements CanActivate {
     if (this.userService.currentUser.companyname) {
       return true;
     } else {
-      this.router.navigate(['/company-home']);
+      this.router.navigate(['/']);
       return false;
     }
   }

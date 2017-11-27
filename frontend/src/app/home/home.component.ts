@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   FooService,
   ConfigService,
@@ -18,10 +19,28 @@ export class HomeComponent implements OnInit {
   constructor(
     private config: ConfigService,
     private fooService: FooService,
-    private userService: UserService
+    private userService: UserService,
+    private router : Router
   ) { }
 
   ngOnInit() {
+    this.userService.getMyInfo().subscribe(user =>{
+      console.log(user);
+      if(user!=null || user!=''){
+        if(user.companyname==null){
+          if(user.isProfileComplete){
+            this.router.navigate(['/user-home']);
+          }
+          else{
+            this.router.navigate(['/user-home']);
+            //this.router.navigate(['/questionnaire']);
+          }
+        }
+        else{
+          this.router.navigate(['/company-home']);
+        }
+    }
+    });
   }
 
   makeRequest(path) {
