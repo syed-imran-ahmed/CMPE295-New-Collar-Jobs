@@ -1,0 +1,125 @@
+<mat-horizontal-stepper [linear]="isLinear">
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Basic Information</ng-template>
+      
+<!-- profile -->
+
+<div class="container-fluid text-info">
+  <!-- Second Row-->
+  <div class="row custom-margin" style="display:flex">
+    <!-- Column 1 Second Row-->
+    <div class="col-sm-3" >
+      <div class="row">
+        <div class="col-sm-12">
+          <img class="profilePhoto" [src]="profilePhotoUrl" alt="image description"/>
+          <button class="link" (click)="fileInput.click()"><mat-icon >edit</mat-icon>
+            <input #fileInput type="file" accept="image/*" onclick="this.value = null" (change)="selectFile($event)" style="display:none;" />
+          </button>
+        </div>
+      </div>
+      <mat-form-field>
+        <textarea matInput formControlName="quotation" placeholder="Your mantra in life" required  rows="3"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Age" formControlName="age" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Work" formControlName="work" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Marital Status" formControlName="marital_status" required>
+          <mat-option *ngFor="let s of status" [value]="s.value">
+            {{ s.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-3" style="display: flex;
+    flex-direction: column;justify-content: flex-end;">
+      <div class="row">
+        <div class="col-sm-12 headings custom-margin">Personality</div>
+      </div>
+      <app-progress-bar-one class="row" [first_title]="label1" [last_title]="label2" [width]="score1" (change)="personality1($event)" ></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label3" [last_title]="label4" [width]="score2" (change)="personality2($event)" ></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label5" [last_title]="label6" [width]="score3" (change)="personality3($event)" ></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label7" [last_title]="label8" [width]="score4" (change)="personality4($event)" ></app-progress-bar-one>
+    </div>
+
+    <!-- Column 3 Second Row-->
+    <div class="col-sm-3"style="display: flex;
+    flex-direction: column;justify-content: flex-end;">
+      <div class="row">
+        <div class="col-sm-12 headings custom-margin">Motivation</div>
+      </div>
+      <app-progress-bar-one class="row" [first_title]="label1" [last_title]="label2" [width]="score1" (change)="motivation1($event)"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label3" [last_title]="label4" [width]="score2" (change)="motivation2($event)"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label5" [last_title]="label6" [width]="score3" (change)="motivation3($event)"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label7" [last_title]="label8" [width]="score4" (change)="motivation4($event)"></app-progress-bar-one>
+    </div>
+  </div>
+</div>
+
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Profile building</ng-template>
+      <h2>GOALS</h2>
+      <mat-form-field>
+        <input matInput maxlength="300" placeholder="First Goal" formControlName="goal1" required>
+      </mat-form-field>
+      <mat-form-field>
+         <input matInput maxlength="300" placeholder="Second Goal" formControlName="goal2" required>
+      </mat-form-field>
+      <mat-form-field>
+       <input matInput maxlength="300" placeholder="Third Goal" formControlName="goal3" >
+      </mat-form-field>     
+      <mat-form-field>
+       <input matInput maxlength="300" placeholder="Fourth Goal" formControlName="goal4" >
+      </mat-form-field>
+      <mat-form-field>
+       <input matInput maxlength="300" placeholder="Fifth Goal" formControlName="goal5" >
+      </mat-form-field>
+      <br><br>
+      <h2>FRUSTRATIONS</h2>
+      <mat-form-field>
+        <input matInput maxlength="300" placeholder="Weakness One" formControlName="weakness1" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput maxlength="300" placeholder="Weakness Two" formControlName="weakness2" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput maxlength="300" placeholder="Weakness Three" formControlName="weakness3" >
+      </mat-form-field>     
+      <mat-form-field>
+        <input matInput maxlength="300" placeholder="Weakness Four" formControlName="weakness4" >
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput maxlength="300" placeholder="Weakness Five" formControlName="weakness5" >
+      </mat-form-field>
+      <br><br><br>
+      <h2>BIO</h2>
+      <mat-form-field class ="bio">
+        <textarea matInput  maxlength="300" formControlName="bio" placeholder="Write in 300 characters about yourself" required  rows="10"></textarea>
+      </mat-form-field>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    Your profile will be saved now upon submit button press. You can go back to verify if all the data is correct before submission.
+    <br><br>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button type="submit" mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
