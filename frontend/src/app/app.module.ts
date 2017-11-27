@@ -16,8 +16,11 @@ import {
   MatPaginatorModule,
   MatDialogModule,
   MatSliderModule,
+  MatSliderChange,
   MatProgressSpinnerModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatStepperModule,
+  MatSelectModule,
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -56,6 +59,7 @@ import {UserprofileService} from "./service/userprofile.service";
 import { TextboxDialogueComponent } from './component/user-profile/textbox-dialogue/textbox-dialogue.component';
 import { ListDialogueComponent } from './component/user-profile/list-dialogue/list-dialogue.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { QuestionnaireComponent } from './component/questionnaire/questionnaire.component';
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
 }
@@ -81,7 +85,8 @@ export function initUserFactory(userService: UserService) {
     JobCardComponent,
     ProgressBarTwoComponent,
     TextboxDialogueComponent,
-    ListDialogueComponent
+    ListDialogueComponent,
+    QuestionnaireComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -104,7 +109,9 @@ export function initUserFactory(userService: UserService) {
     MatProgressSpinnerModule,
     FlexLayoutModule,
     MatSnackBarModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatStepperModule,
+    MatSelectModule,
   ],
   providers: [
     LoginGuard,

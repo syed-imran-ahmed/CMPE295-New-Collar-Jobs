@@ -13,6 +13,8 @@ import { ProfileComponent } from './component/profile';
 import { PostjobComponent } from './component/postjob';
 import { UserProfileComponent } from './component/user-profile/user-profile/user-profile.component';
 import { CompanyHomeComponent } from './home/company-home';
+import { QuestionnaireComponent } from './component/questionnaire/questionnaire.component';
+
 
 export const routes: Routes = [
   {
@@ -48,11 +50,17 @@ export const routes: Routes = [
   {
     path: 'user-profile',
     component: UserProfileComponent,
-    pathMatch: 'full'
+    canActivate: [LoginGuard]
   },
-  { path:'company-home',
+  { 
+    path:'company-home',
     component:CompanyHomeComponent,
     canActivate: [CompanyGuard]
+  },
+  { 
+    path:'questionnaire',
+    component:QuestionnaireComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: '404',

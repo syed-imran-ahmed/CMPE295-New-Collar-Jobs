@@ -94,7 +94,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       //const res = 
       this.userService.getMyInfo().subscribe(user =>{
         if(user.companyname==null){
-          this.router.navigate(['/']);
+          this.router.navigate(['/questionnaire']);
         }
         else{
           this.router.navigate(['/company-home']);
