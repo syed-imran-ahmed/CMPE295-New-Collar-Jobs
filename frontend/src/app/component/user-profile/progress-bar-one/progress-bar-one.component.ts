@@ -26,7 +26,7 @@ export class ProgressBarOneComponent implements OnInit {
   min = 0;
   thumbLabel = true;
 
-  @Input() value = 0;
+  @Input() value:number;
   constructor() { }
 
   onInputChange(event: any) {
@@ -35,7 +35,6 @@ export class ProgressBarOneComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
  /* onInput(event) {

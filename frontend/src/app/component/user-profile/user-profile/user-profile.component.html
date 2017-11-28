@@ -36,10 +36,10 @@
           <button *ngIf="isPesonalityEditable" class="col-sm-2 editbutton" style="float: right" (click)="editPersonality()"><mat-icon >save</mat-icon></button>
         </div>
       </div>
-      <app-progress-bar-one class="row" [first_title]="label1" [last_title]="label2"  [value]="score1" [isDisabled]="!isPesonalityEditable" (custchange)="updatePersonality($event,'score1')"></app-progress-bar-one>
-      <app-progress-bar-one class="row" [first_title]="label3" [last_title]="label4"  [value]="score2" [isDisabled]="!isPesonalityEditable" (custchange)="updatePersonality($event,'score2')"></app-progress-bar-one>
-      <app-progress-bar-one class="row" [first_title]="label5" [last_title]="label6"  [value]="score3" [isDisabled]="!isPesonalityEditable" (custchange)="updatePersonality($event,'score3')"></app-progress-bar-one>
-      <app-progress-bar-one class="row" [first_title]="label7" [last_title]="label8"  [value]="score4"[isDisabled]="!isPesonalityEditable" style="margin-bottom: 5px" (custchange)="updatePersonality($event,'score4')"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label1" [last_title]="label2"  value={{score1}} [isDisabled]="!isPesonalityEditable" (custchange)="updatePersonality($event,'score1')"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label3" [last_title]="label4"  value={{score2}} [isDisabled]="!isPesonalityEditable" (custchange)="updatePersonality($event,'score2')"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label5" [last_title]="label6"  value={{score3}} [isDisabled]="!isPesonalityEditable" (custchange)="updatePersonality($event,'score3')"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label7" [last_title]="label8"  value={{score4}} [isDisabled]="!isPesonalityEditable" style="margin-bottom: 5px" (custchange)="updatePersonality($event,'score4')"></app-progress-bar-one>
     </div>
 
     <!-- Column 2 Second Row-->
@@ -80,11 +80,9 @@
         <div class="col-sm-12 custom-lr-margin bio" style="padding: 0px;">
           <button class="col-sm-1 editbutton" style="float: right;outline:none;" (click)="openDialogue('biodata')"><mat-icon >edit</mat-icon></button>
         </div>
-        <div class="col-sm-12 custom-lr-margin bio" style="height:100%;">
+        <div class="col-sm-12 custom-lr-margin bio" style="height:300px;">
           <p>{{biodata}}</p>
-          <p>The bio should be a short paragraph to describe the user journey. It should include some of their history leading up to a current use case. It may be helpful to incorporate information listed across the template and add pertinent details that may have been left out. Highlight factors of the user's personal and of professional life that make this user an ideal customer of your product.</p>
-          <p>Remember - you may modify this template, remove any of the modules or add new ones for your own purpose.</p>
-        </div>
+          </div>
       </div>
     </div>
 
@@ -97,7 +95,7 @@
       <app-progress-bar-two class="row custom-margin" [label]="p2label2" [width]="p2width2"></app-progress-bar-two>
       <app-progress-bar-two class="row custom-margin" [label]="p2label3" [width]="p2width3"></app-progress-bar-two>
       <app-progress-bar-two class="row custom-margin" [label]="p2label4" [width]="p2width4"></app-progress-bar-two>
-      <app-progress-bar-two class="row custom-margin" [label]="p2label5" [width]="p2width5"></app-progress-bar-two>
+      <!-- <app-progress-bar-two class="row custom-margin" [label]="p2label5" [width]="p2width5"></app-progress-bar-two> -->
 
 
       <div class="row custom-margin">

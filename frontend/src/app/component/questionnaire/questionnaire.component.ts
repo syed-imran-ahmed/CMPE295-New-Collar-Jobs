@@ -15,6 +15,8 @@ import {
 export class QuestionnaireComponent implements OnInit {
 
   file: File[];
+
+  image: File;
   //textField: string;
   firebase: any;
   isLinear = true;
@@ -96,27 +98,18 @@ export class QuestionnaireComponent implements OnInit {
   }
 
   selectFile(event) {
-    const fileList: FileList = event.target.files;
-    for ( let i = 0; i < fileList.length; i++ ) {
-      console.log(fileList[i]);
-      this.file.push(fileList[i]);
-    }
-
-    //console.log('logging out form-->' + form.value.comment);
+    this.image = event.target.files[0];
     let auth = this.firebase.auth();
     let storageRef = this.firebase.storage().ref();
     let metadata ={
-      'contentType' : this.file[0].type
+      'contentType' : this.image.type
     };
-    storageRef.child('images/'+this.file[0].name+'?random+\=' + Math.random()).put(this.file[0], metadata).then(
-      snapshot=>{
-       //console.log(snapshot.metadata);
-       const url = snapshot.metadata.downloadURLs[0];
+    storageRef.child('images/' + this.image.name).put(this.image, metadata).then(
+      snapshot => {
+        console.log(snapshot.metadata);
+        const url = snapshot.metadata.downloadURLs[0];
        this.profilePhotoUrl = url;
-       console.log('file available at '+url);
-       event.target.value = '';
-       //console.log('comment is'+ form.value.comment);
-       //we should call our rest service to store file and user correlation
+       console.log(this.profilePhotoUrl);
       }).catch(function (error) {
       console.error(error);
     });

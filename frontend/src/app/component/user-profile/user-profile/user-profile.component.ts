@@ -81,11 +81,9 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     this.firebase = (<any>window).firebase;
     this.isPesonalityEditable = false;
-    this.profileService.getProfiles().toPromise().then(
+    this.profileService.getProfiles().subscribe(
       response => {
-        console.log("Logging the response from GET /user/profile"+response);
         const resp = response;
-        console.log("Logging the response from GET /user/profile"+resp);
         this.id = resp['id'];
         this.profilePhotoUrl = resp['imageURL'];
         this.profileQuote = resp['quotation'];
@@ -93,7 +91,7 @@ export class UserProfileComponent implements OnInit {
         this.work = resp['jobTitle'];
         this.family = resp['familyStatus'];
         const loc = resp['location'];
-        this.location = loc['city'] + ', ' + loc['state'] + ', ' + loc['country'];
+       // this.location = loc['city'] + ', ' + loc['state'] + ', ' + loc['country'];
         const personality = resp['personality'];
         this.score1 = parseInt(personality['introvertExtrovert'], 10);
         this.score2 = parseInt(personality['thinkingFeeling'], 10);
@@ -111,7 +109,7 @@ export class UserProfileComponent implements OnInit {
         this.p2width4 = motivation['power'];
         this.p2width5 = motivation['social'];
       }
-    ).catch(error => {
+    ,error => {
       console.log('Error in getting userProfile' + error);
     });
   }

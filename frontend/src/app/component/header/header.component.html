@@ -10,7 +10,7 @@
   </button>
 
   <div class="searchDiv" *ngIf="isUser()">
-  <input class= "search"  #searchText (keyup)="searchTerm$.next($event.target.value)">
+  <input class= "search" placeholder="Search Jobs..." #searchText (keyup)="searchTerm$.next($event.target.value)">
   <button class="searchButton"  mat-button matRipple (click)="onSearchClick(searchText.value)">
     <!--<img alt="New-Collar-Jobs" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">-->
     <i class="fa fa-search"></i>
