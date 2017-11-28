@@ -20,7 +20,9 @@ md-spinner {
   height: 25px;
   margin: 20px auto 0 auto;
 }
-
+md-card-subtitle {
+  text-align: center;
+}
 .error {
   color: #D50000;
 }
@@ -42,8 +44,4 @@ md-spinner {
     max-width: 999px;
   }
 
-}
-
-mat-grid-tile {
-  background: lightblue;
 }

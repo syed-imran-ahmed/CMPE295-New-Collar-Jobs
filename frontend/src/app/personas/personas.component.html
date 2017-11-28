@@ -2,31 +2,23 @@
 <div class="content" fxLayout="row" fxLayoutAlign="center">
     <md-card elevation="5" fxFlex>
       <md-card-subtitle>Choose Your Persona</md-card-subtitle>
-      <figure class="figure">
+<figure class="figure">
         <div class="container">
-        <img style="border-radius: 50%;" [src]="netImage" class="image" alt="A generic square placeholder image with rounded corners in a figure.">
-
-        <figcaption class="figure-caption"></figcaption>
+        <img style="border-radius: 50%;" [src]="netImage" class="image">
         <div class="overlay">
     <div class="text">Street Smart</div>
   </div>
 </div>
 
 <div class="container">
-<img style="border-radius: 50%;" [src]="netImage" class="image" alt="A generic square placeholder image with rounded corners in a figure.">
-
-<figcaption class="figure-caption"></figcaption>
+<img style="border-radius: 50%;" [src]="netImage" class="image" >
 <div class="overlay">
 <div class="text">Doer</div>
 </div>
 </div>
 
-
-
 <div class="container">
-<img style="border-radius: 50%;" [src]="netImage" class="image" alt="A generic square placeholder image with rounded corners in a figure.">
-
-<figcaption class="figure-caption"></figcaption>
+<img style="border-radius: 50%;" [src]="netImage" class="image" >
 <div class="overlay">
 <div class="text">Thinker</div>
 </div>
@@ -34,23 +26,18 @@
 
 
 <div class="container">
-<img style="border-radius: 50%;" [src]="netImage" class="image" alt="A generic square placeholder image with rounded corners in a figure.">
-
-<figcaption class="figure-caption"></figcaption>
+<img style="border-radius: 50%;" [src]="netImage" class="image" >
 <div class="overlay">
 <div class="text">Thinker</div>
 </div>
 </div>
-
-
-
-      </figure>
+</figure>
 
     </md-card>
 </div>
 <style>
 .container {
-  display:inline-block;
+  display:inline;
   position: relative;
   width: 40%;
   float: left;
@@ -58,9 +45,12 @@
 
 .image {
   float: left;
-  display: block;
+  display: inline;
   width: 50%;
   height: auto;
+  margin-bottom: 50px;
+  padding-right: 10px;
+
 }
 
 .overlay {
