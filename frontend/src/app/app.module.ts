@@ -44,7 +44,8 @@ import {
   FooService,
   PostedjobService,
   RecommendedjobsService,
-  ConfigService
+  ConfigService,
+  SearchService
 } from './service';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { RegisterComponent } from './component/register/register.component';
@@ -62,6 +63,7 @@ import { ListDialogueComponent } from './component/user-profile/list-dialogue/li
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { QuestionnaireComponent } from './component/questionnaire/questionnaire.component';
 import { UserHomeComponent } from './home/user-home/user-home.component';
+import { SearchComponent } from './component/search/search.component';
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
 }
@@ -89,7 +91,8 @@ export function initUserFactory(userService: UserService) {
     TextboxDialogueComponent,
     ListDialogueComponent,
     QuestionnaireComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -127,6 +130,7 @@ export function initUserFactory(userService: UserService) {
     ApiService,
     UserService,
     ConfigService,
+    SearchService,
     MatIconRegistry,
     UserprofileService,
     {

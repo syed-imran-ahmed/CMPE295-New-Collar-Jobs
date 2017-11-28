@@ -14,8 +14,8 @@ import { PostjobComponent } from './component/postjob';
 import { UserProfileComponent } from './component/user-profile/user-profile/user-profile.component';
 import { CompanyHomeComponent } from './home/company-home';
 import { UserHomeComponent } from './home/user-home';
-
 import { QuestionnaireComponent } from './component/questionnaire/questionnaire.component';
+import { SearchComponent } from './component/search/search.component';
 
 
 export const routes: Routes = [
@@ -67,6 +67,11 @@ export const routes: Routes = [
   { 
     path:'questionnaire',
     component:QuestionnaireComponent,
+    canActivate: [LoginGuard]
+  },
+  { 
+    path:'search',
+    component:SearchComponent,
     canActivate: [LoginGuard]
   },
   {

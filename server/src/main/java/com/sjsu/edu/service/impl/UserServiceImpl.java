@@ -116,4 +116,32 @@ public class UserServiceImpl implements UserService {
 		List<Job> myObjectsList = IteratorUtils.toList(myObjects.iterator());
 		return myObjectsList;
 	}
+	
+	
+	@Override
+	public List<Job> search(String queryString){
+		QueryRequest.Builder queryBuilder = new QueryRequest.Builder(environmentId, collectionId);
+		
+		queryBuilder.query("enriched_text.keywords.text:\"" + queryString + "\" , enriched_text.entities.text:\"" + queryString + "\"");
+		Discovery discovery = DiscoveryAuthFactory.getInstance();
+		QueryResponse queryResponse = discovery.query(queryBuilder.build()).execute();
+		
+		List<Map<String, Object>> documents = queryResponse.getResults();
+		List<Long> jobIds = new ArrayList<Long>();
+		documents.forEach(document -> {
+			List<String> keys = document.keySet()
+                    .stream()
+                    .filter(s -> s.endsWith("jobid"))
+                    .collect(Collectors.toList());
+			String jobId = String.valueOf(document.get(keys.get(0)));
+			if(jobId.contains(".")){
+				jobId = jobId.substring(0, jobId.indexOf("."));
+			}
+			jobIds.add(Long.parseLong(jobId));
+		});
+		
+		Iterable<Job> myObjects = jobRepository.findAll(jobIds);
+		List<Job> myObjectsList = IteratorUtils.toList(myObjects.iterator());
+		return myObjectsList;
+	}
 }

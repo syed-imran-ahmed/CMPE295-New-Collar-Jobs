@@ -107,7 +107,8 @@ public class UserController {
     }
     
     @RequestMapping( method = RequestMethod.GET, value= "/user/jobs")
-    public Page<Job> getJobRecommendations( Pageable pageable, @RequestParam(value = "cityFilter", required = false) boolean cityFilter,
+    public Page<Job> getJobRecommendations( Pageable pageable,
+    		@RequestParam(value = "cityFilter", required = false) boolean cityFilter,
     		@RequestParam(value = "stateFilter", required = false) boolean stateFilter) {
         String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
         if(currentUserName == null || currentUserName.isEmpty()){
@@ -115,11 +116,25 @@ public class UserController {
         }
         
 //		Page<Job> page = new PageImpl<>(userService.getJobRecommendations(currentUserName, cityFilter, stateFilter));
-//		return page;
+//		return page;        
         
         Page<Job> jobs = jobRepository.findAll(pageable);
     	return jobs;
         
+    }
+    
+    @RequestMapping( method = RequestMethod.GET, value= "/search/jobs")
+    public Page<Job> search( Pageable pageable,
+    		@RequestParam(value = "search") String search) {
+        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+        if(currentUserName == null || currentUserName.isEmpty()){
+        	currentUserName = "imran";
+        }  
+        
+        Page<Job> jobs = jobRepository.findAll(pageable);
+    	return jobs;
+//        Page<Job> page = new PageImpl<>(userService.search(search));
+//		return page;   
     }
     
 
