@@ -37,7 +37,7 @@ export const routes: Routes = [
   {
     path: 'postjob',
     component: PostjobComponent,
-    canActivate: [LoginGuard]
+    canActivate: [CompanyGuard]
   },
   {
     path: 'edit-profile',
