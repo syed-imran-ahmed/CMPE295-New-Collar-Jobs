@@ -12,7 +12,6 @@ import {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-homeimage:any = "assets/image/homepic.png";
   fooResponse = {};
   whoamIResponse = {};
   allUserResponse = {};
