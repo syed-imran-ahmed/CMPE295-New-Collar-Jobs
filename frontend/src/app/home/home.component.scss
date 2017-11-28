@@ -1,7 +1,12 @@
-app-api-card {
-  margin: 0 50px 0 0;
+.content{
+  background: url("https://static.licdn.com/sc/h/64xk850n3a8uzse6fi11l3vmz");
+  height: 700px;
+}
+
+app-api-card, dazzleus-form {
+  margin: 20px 50px 0 0;
   &.last {
-    margin: 0 0 0 0;
+    margin: 20 0 0 0;
   }
 }
 
@@ -10,7 +15,7 @@ app-github {
 }
 
 @media screen and (min-width: 600px) and (max-width: 1279px) {
-  app-api-card {
+  app-api-card, dazzleus-form {
     margin: 0 4px 0 0;
     &.last {
       margin: 0 0 0 0;
@@ -22,6 +27,10 @@ app-github {
   }
 }
 
+dazzleus-form {
+  max-width: 350px;
+}
+
 @media screen and (max-width: 599px) {
 
   .content {
@@ -29,7 +38,7 @@ app-github {
     display: block !important;
   }
 
-  app-api-card {
+  app-api-card, dazzleus-form {
     /* https://github.com/angular/flex-layout/issues/295 */
     display: block !important;
     margin: 0 0 12px 0;

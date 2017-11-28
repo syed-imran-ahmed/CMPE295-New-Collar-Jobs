@@ -3,6 +3,7 @@ package com.sjsu.edu.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sjsu.edu.ibm.discovery.DiscoveryService;
 import com.sjsu.edu.model.Job;
 import com.sjsu.edu.repository.JobRepository;
 import com.sjsu.edu.service.JobService;
@@ -21,6 +22,8 @@ public class JobServiceImpl implements JobService {
 	@Override
 	public void saveJob(Job job){
 		jobRepository.save(job);
+		//send to discovery as well
+		DiscoveryService.submitJob(job);
 	}
 	
 	@Override

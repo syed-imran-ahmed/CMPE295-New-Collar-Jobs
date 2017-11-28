@@ -1,0 +1,16 @@
+<div class="col-sm-6" style="text-align: left">{{ first_title }}</div>
+<div class="col-sm-6" style="text-align: right">{{last_title}}</div>
+<div class="col-sm-12">
+  
+    <!-- <div class="skills mytest" [style.left.%]="width"></div> -->
+    <mat-slider
+    class="slider"
+    [max]="max"
+    [min]="min"
+    [thumb-label]="thumbLabel"
+    [value]="value"
+    (input)="onInputChange($event)"
+    >
+</mat-slider>
+  
+</div>

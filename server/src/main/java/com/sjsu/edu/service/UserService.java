@@ -2,6 +2,7 @@ package com.sjsu.edu.service;
 
 import java.util.List;
 
+import com.sjsu.edu.model.Job;
 import com.sjsu.edu.model.User;
 
 /**
@@ -14,4 +15,5 @@ public interface UserService {
     User findByUsername(String username);
     User findByEmailid(String emailid);
     List<User> findAll ();
+    List<Job> getJobRecommendations(String username, boolean cityFilter, boolean stateFilter);
 }

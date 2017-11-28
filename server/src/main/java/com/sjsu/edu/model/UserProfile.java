@@ -13,9 +13,14 @@ public class UserProfile {
 
     @Id
     public String id;
+    String username;
+    String firstName;
+    String lastName;
+    String emailId;
     String quotation;
     Integer age;
     String jobTitle;
+    String imageURL;
     FamilyStatus familyStatus;
     String bio;
     Location location;

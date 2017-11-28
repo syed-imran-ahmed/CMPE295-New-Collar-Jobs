@@ -1,0 +1,90 @@
+.header{
+    background-color:rgb(103, 58, 183);
+    font-family: proxima-bold, Helvetica, sans-serif;
+    font-size:x-large;
+    color:white;
+    justify-content: center;
+  }
+  
+  .profilePhoto {
+    display:block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .link {
+    position:absolute;
+    bottom:10px;
+    right:20px;
+}
+  
+  .quoteProfile{
+    background-color:rgb(103, 58, 183);
+    font-family:proxima-bold, Helvetica, sans-serif;
+    font-style:italic;
+    font-weight:bold;
+    font-size:medium;
+    color:white;
+  }
+  
+  .custom-margin {
+      
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .custom-lr-margin{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  li span {
+    color:rgb(103, 58, 183);
+    font-weight:700;
+  }
+  
+  .headings{
+    color:rgb(103, 58, 183);
+    /*font-weight:700;*/
+    font-size:medium;
+    font-family: Proxima-Light,Helvetica,sans-serif;
+    font-size: 30px;
+  }
+  
+  .mycontainer {
+    width: 100%;
+    height: 15px;
+    background-color: #ddd;
+  
+  }
+  .mytest { height:100%;width: 20px; background-color: rgb(103, 58, 183);position:relative; left:90%}
+  
+  .quote-goals{
+    font-family: Proxima-Light,Helvetica,sans-serif;
+    font-size: 16px;
+    text-align:left;
+  }
+    
+  .progress-bar-2 {
+    width: 50%;
+    height:100%;
+    background-color: rgb(103, 58, 183);
+  }
+  
+  .skills {
+    color: white;
+    padding-top:5px;
+    padding-bottom:5px;
+    text-align:center;
+  }
+  
+  .editbutton {
+    border: none;
+    outline:none;
+    -webkit-appearance: none;
+    background: inherit;
+  }
+  
+  .bio{
+      width: 100%;
+  }

@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><b>{{title}}</b></mat-card-title>
+    <mat-card-subtitle>{{subTitle}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="imgUrl">
+  <mat-card-content>
+    <p>
+      {{content}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onButtonClick()">{{apiText}}</button>
+  </mat-card-actions>
+  <!--div [class]="responsePanelClass()"-->
+
+  <div *ngIf="expand">
+    <form id="dazzleform" #myForm="ngForm" (ngSubmit)="onsubmit(myForm)">
+      <div class="form-group">
+        <label for="exampleInputFile">Upload your Work!</label>
+        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" (change)="selectFile($event)">
+        <small id="fileHelp" class="form-text text-muted">Dazzle us with you work, certificates, demo of anything you like!</small>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" ngModel #comment="ngModel" name="comment" id="comment"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</mat-card>

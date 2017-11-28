@@ -13,6 +13,10 @@ export class JobCardComponent implements OnInit {
   @Input() subTitle: string;
   @Input() content: string;
   @Input() jobid: Number;
+  @Input() buttonText: string;
+
+  isCompany= false;
+
   expand = false;
 
   constructor(
@@ -20,10 +24,15 @@ export class JobCardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    if(this.buttonText==="Edit")
+    {
+      this.isCompany = true;
+    }
   }
 
   onEditButtonClick() : void {
-    console.log(this.jobid);
+  if(this.isCompany){
     let dialogRef = this.dialog.open(PostjobComponent, {
       width: '1000px',
       height: '600px',
@@ -37,4 +46,5 @@ export class JobCardComponent implements OnInit {
       //this.animal = result;
     });
   }
+}
 }

@@ -4,17 +4,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.collections4.IteratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sjsu.edu.model.Job;
 import com.sjsu.edu.model.User;
 import com.sjsu.edu.model.UserProfile;
+import com.sjsu.edu.repository.JobRepository;
 import com.sjsu.edu.repository.UserProfileRepository;
 import com.sjsu.edu.service.UserService;
 
@@ -32,17 +39,14 @@ public class UserController {
     
     @Autowired
     private UserProfileRepository profileRepository;
+    
+    @Autowired
+    private JobRepository jobRepository;
 
     @RequestMapping( method = RequestMethod.GET, value = "/user/{userId}" )
     public User loadById( @PathVariable Long userId ) {
     	String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-    	User user = userService.findByUsername(currentUserName);
-    	if (user!=null)
-    	{
-    		return this.userService.findById( userId );
-    	}
-    	else return null;
-        
+    	return userService.findByUsername(currentUserName); 
     }
 
     @RequestMapping( method = RequestMethod.GET, value= "/user/all")
@@ -77,19 +81,47 @@ public class UserController {
     
     @RequestMapping( method = RequestMethod.POST, value= "/user/profile", consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity<?> createProfile( UserProfile profile) {
+    
+    String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+    User user = userService.findByUsername("imran");
+    
+    if(user!=null){
+	    profile.setEmailId(user.getEmailid());
+	    profile.setFirstName(user.getFirstname());
+	    profile.setLastName(user.getLastname());
+	    profile.setUsername(user.getUsername());
+    }
+    UserProfile p;
 	try{
-		profileRepository.save(profile);
+		p = profileRepository.save(profile);
 	}catch(Exception e){
 		return reportBadRequest(e);
 	}
-	return reportSuccess("Profile was created successfully.");
+	return ResponseEntity.accepted().body(p);
     }
     
-    @RequestMapping( method = RequestMethod.GET, value= "/user/profile")
-    public List<UserProfile> getProfile() {
-    	List<UserProfile> profiles = profileRepository.findAll();
-        return profiles;
+    @RequestMapping( method = RequestMethod.GET, value= "/user/profile/")
+    public UserProfile getProfile() {
+        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+    	return profileRepository.findByUsername(currentUserName);
     }
+    
+    @RequestMapping( method = RequestMethod.GET, value= "/user/jobs")
+    public Page<Job> getJobRecommendations( Pageable pageable, @RequestParam(value = "cityFilter", required = false) boolean cityFilter,
+    		@RequestParam(value = "stateFilter", required = false) boolean stateFilter) {
+        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+        if(currentUserName == null || currentUserName.isEmpty()){
+        	currentUserName = "imran";
+        }
+        
+//		Page<Job> page = new PageImpl<>(userService.getJobRecommendations(currentUserName, cityFilter, stateFilter));
+//		return page;
+        
+        Page<Job> jobs = jobRepository.findAll(pageable);
+    	return jobs;
+        
+    }
+    
 
 	private ResponseEntity<?> reportSuccess(String message) {
 		Map<String, String> result = new HashMap<>();
