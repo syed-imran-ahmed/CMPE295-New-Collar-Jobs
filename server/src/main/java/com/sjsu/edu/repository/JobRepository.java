@@ -12,5 +12,5 @@ import com.sjsu.edu.model.Job;
 public interface JobRepository extends PagingAndSortingRepository<Job, Long> {
 	
 	@Query("select job from Company c inner join c.jobs job where c = :company")
-	public Page<Job> findBy(@Param("company") Company compnay, Pageable pageable);
+	public Page<Job> findBy(@Param("company") Company company, Pageable pageable);
 }

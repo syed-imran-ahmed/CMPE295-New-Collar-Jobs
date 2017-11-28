@@ -13,6 +13,7 @@ public class UserProfile {
 
     @Id
     public String id;
+    
     public String getQuotation() {
 		return quotation;
 	}
@@ -101,9 +102,57 @@ public class UserProfile {
 		this.frustrations = frustrations;
 	}
 
-	String quotation;
+	//String quotation;
+
+    String username;
+    String firstName;
+    public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getImageURL() {
+		return imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
+
+	String lastName;
+    String emailId;
+    String quotation;
+
     Integer age;
     String jobTitle;
+    String imageURL;
     FamilyStatus familyStatus;
     String bio;
     Location location;
@@ -115,6 +164,24 @@ public class UserProfile {
 
     @Data
     public static class Location {
+	public String getCity() {
+			return city;
+		}
+		public void setCity(String city) {
+			this.city = city;
+		}
+		public String getState() {
+			return state;
+		}
+		public void setState(String state) {
+			this.state = state;
+		}
+		public String getCountry() {
+			return country;
+		}
+		public void setCountry(String country) {
+			this.country = country;
+		}
 	String city;
 	String state;
 	String country;
@@ -126,6 +193,30 @@ public class UserProfile {
 
     @Data
     public static class Personality {
+	public Integer getIntrovertExtrovert() {
+			return introvertExtrovert;
+		}
+		public void setIntrovertExtrovert(Integer introvertExtrovert) {
+			this.introvertExtrovert = introvertExtrovert;
+		}
+		public Integer getThinkingFeeling() {
+			return thinkingFeeling;
+		}
+		public void setThinkingFeeling(Integer thinkingFeeling) {
+			this.thinkingFeeling = thinkingFeeling;
+		}
+		public Integer getSensingIntuition() {
+			return sensingIntuition;
+		}
+		public void setSensingIntuition(Integer sensingIntuition) {
+			this.sensingIntuition = sensingIntuition;
+		}
+		public Integer getJudgingPerceiving() {
+			return judgingPerceiving;
+		}
+		public void setJudgingPerceiving(Integer judgingPerceiving) {
+			this.judgingPerceiving = judgingPerceiving;
+		}
 	Integer introvertExtrovert;
 	Integer thinkingFeeling;
 	Integer sensingIntuition;
@@ -134,6 +225,36 @@ public class UserProfile {
 
     @Data
     public static class Motivation {
+	public Integer getIncentive() {
+			return incentive;
+		}
+		public void setIncentive(Integer incentive) {
+			this.incentive = incentive;
+		}
+		public Integer getFear() {
+			return fear;
+		}
+		public void setFear(Integer fear) {
+			this.fear = fear;
+		}
+		public Integer getGrowth() {
+			return growth;
+		}
+		public void setGrowth(Integer growth) {
+			this.growth = growth;
+		}
+		public Integer getPower() {
+			return power;
+		}
+		public void setPower(Integer power) {
+			this.power = power;
+		}
+		public Integer getSocial() {
+			return social;
+		}
+		public void setSocial(Integer social) {
+			this.social = social;
+		}
 	Integer incentive;
 	Integer fear;
 	Integer growth;

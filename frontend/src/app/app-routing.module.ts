@@ -48,7 +48,7 @@ export const routes: Routes = [
   {
     path: 'user-profile',
     component: UserProfileComponent,
-    pathMatch: 'full'
+    canActivate: [LoginGuard]
   },
   { path:'company-home',
     component:CompanyHomeComponent,

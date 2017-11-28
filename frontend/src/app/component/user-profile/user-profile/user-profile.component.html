@@ -6,8 +6,11 @@
     <!-- Column 1 Second Row-->
     <div class="col-sm-3" style="background-color:white">
       <div class="row">
-        <div class="col-sm-12">
-          <img mat-card-image class="profilePhoto" [src]="profilePhotoUrl"/>
+        <div class="col-sm-12" style="max-height: 75%">
+          <!--img class="profilePhoto" [src]="profilePhotoUrl" (click)="uploadPicture()"/--> <!--mat-card-image-->
+          <img class="profilePhoto" [src]="profilePhotoUrl" (click)="imgFileInput.click()"/>
+          <p class="img__description">This image looks super neat.</p>
+          <input hidden type="file" #imgFileInput (change)="previewImage($event)"/>
         </div>
         <div class="col-sm-12 quoteProfile custom-margin">{{profileQuote}}</div>
       </div>
@@ -27,10 +30,16 @@
       <div class="row">
         <div class="col-sm-12 headings custom-margin">Personality</div>
       </div>
-      <app-progress-bar-one class="row" [first_title]="label1" [last_title]="label2" [width]="score1"></app-progress-bar-one>
-      <app-progress-bar-one class="row" [first_title]="label3" [last_title]="label4" [width]="score2"></app-progress-bar-one>
-      <app-progress-bar-one class="row" [first_title]="label5" [last_title]="label6" [width]="score3"></app-progress-bar-one>
-      <app-progress-bar-one class="row" [first_title]="label7" [last_title]="label8" [width]="score4" style="margin-bottom: 5px"></app-progress-bar-one>
+      <div class="row">
+        <div class="col-sm-12" style="padding: 0px;">
+          <button *ngIf="!isPesonalityEditable" class="col-sm-2 editbutton" style="float: right" (click)="editPersonality()"><mat-icon >edit</mat-icon></button>
+          <button *ngIf="isPesonalityEditable" class="col-sm-2 editbutton" style="float: right" (click)="editPersonality()"><mat-icon >save</mat-icon></button>
+        </div>
+      </div>
+      <app-progress-bar-one class="row" [first_title]="label1" [last_title]="label2"  [value]="score1" [isDisabled]="!isPesonalityEditable" (custchange)="updatePersonality($event,'score1')"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label3" [last_title]="label4"  [value]="score2" [isDisabled]="!isPesonalityEditable" (custchange)="updatePersonality($event,'score2')"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label5" [last_title]="label6"  [value]="score3" [isDisabled]="!isPesonalityEditable" (custchange)="updatePersonality($event,'score3')"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="label7" [last_title]="label8"  [value]="score4"[isDisabled]="!isPesonalityEditable" style="margin-bottom: 5px" (custchange)="updatePersonality($event,'score4')"></app-progress-bar-one>
     </div>
 
     <!-- Column 2 Second Row-->

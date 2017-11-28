@@ -30,7 +30,7 @@ export class ConfigService {
 
   private _posted_job = this._api_url + '/company-home';
 
-  private _user_profile = this._api_url + '/user/profile';
+  private _user_profile = this._api_url + '/user/profile/';
 
   get reset_credentials_url(): string {
       return this._reset_credentials_url;

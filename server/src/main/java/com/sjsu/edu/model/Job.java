@@ -10,36 +10,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Builder;
+import lombok.Data;
+
 @Entity
 @Table(name="job")
+@Data
+@Builder
 public class Job {
-	
-	@Id
-	@Column(name = "jid")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long jobid;
-	
-	@Column(name = "title")
-	private String title;
-	
-	@Column(name = "description")
-	private String description;
-
-	@Column(name = "responsibility")
-	private String responsibility;
-	
-	@Column(name = "location")
-	private String location;
-	
-	@Column(name = "salary")
-	private int salary;
-	
-	@Column(name = "traits")
-	private String traits;
-
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "company_cid")
-    private Company company;
 	
 	public Long getJobid() {
 		return jobid;
@@ -57,6 +35,14 @@ public class Job {
 		this.title = title;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public String getResponsibility() {
 		return responsibility;
 	}
@@ -64,13 +50,29 @@ public class Job {
 	public void setResponsibility(String responsibility) {
 		this.responsibility = responsibility;
 	}
-	
-	public String getLocation() {
-		return location;
+
+	public String getCity() {
+		return city;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	public int getSalary() {
@@ -81,22 +83,6 @@ public class Job {
 		this.salary = salary;
 	}
 
-	public Company getCompany() {
-		return company;
-	}
-
-	public void setCompany(Company company) {
-		this.company = company;
-	}
-		
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
 	public String getTraits() {
 		return traits;
 	}
@@ -104,5 +90,45 @@ public class Job {
 	public void setTraits(String traits) {
 		this.traits = traits;
 	}
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+
+	@Id
+	@Column(name = "jid")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long jobid;
 	
+	@Column(name = "title")
+	private String title;
+	
+	@Column(name = "description")
+	private String description;
+
+	@Column(name = "responsibility")
+	private String responsibility;
+	
+	@Column(name = "city")
+	private String city;
+	
+	@Column(name = "state")
+	private String state;
+	
+	@Column(name = "country")
+	private String country;
+	
+	@Column(name = "salary")
+	private int salary;
+	
+	@Column(name = "traits")
+	private String traits;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "company_cid")
+    private Company company;
 }
