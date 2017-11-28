@@ -14,8 +14,10 @@ export class JobCardComponent implements OnInit {
   @Input() content: string;
   @Input() jobid: Number;
   @Input() buttonText: string;
+  @Input() responseObj: any;
 
   isCompany= false;
+  count: number;
 
   expand = false;
 
@@ -24,11 +26,30 @@ export class JobCardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    this.count = 0;
+    console.log("initial count "+this.count);
     if(this.buttonText==="Edit")
     {
       this.isCompany = true;
     }
+  }
+
+  onButtonClick(){
+    
+
+    console.log(this.jobid);
+    this.count++;
+    //console.log("inside button count "+this.count);
+    if(this.count%2==1)
+    {
+      this.expand=true;
+    }
+    else{
+      this.expand=false;
+    }
+
+
+    
   }
 
   onEditButtonClick() : void {
@@ -46,5 +67,18 @@ export class JobCardComponent implements OnInit {
       //this.animal = result;
     });
   }
+}
+
+responsePanelClass() {
+  const rClass = ['response'];
+  if (this.expand) {
+    rClass.push('expand');
+  }
+  // if (this.responseObj.status) {
+  //   this.responseObj.status === 200 ?
+  //     rClass.push('response-success') :
+  //     rClass.push('response-error');
+  // }
+  return rClass.join(' ');
 }
 }

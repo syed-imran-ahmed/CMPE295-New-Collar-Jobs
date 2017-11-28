@@ -5,21 +5,23 @@
     </mat-card-header>
     <mat-card-content>
       <p>
-        {{content}}
+        {{content | slice:0:100}}...
       </p>
     </mat-card-content>
     <div >
     <mat-card-actions  align="end">
-      <button mat-raised-button color="primary" (click)="onEditButtonClick()">{{buttonText}}</button>
+        <button class="description" mat-button matRipple (click)="onButtonClick()">
+            Job Description
+          </button>
+      <button mat-raised-button color="primary" (click)="onEditButtonClick()" >{{buttonText}}</button>
       <button *ngIf="isCompany" mat-raised-button color="primary" (click)="onButtonClick()">Check Applicants</button>
-
+      
     </mat-card-actions>
   </div>
-    <!-- <div [class]="responsePanelClass()">
-      <pre>Path: {{responseObj.path}}</pre>
-      <pre>Method: {{responseObj.method}}</pre>
-      <pre>Status: {{responseObj.status}}</pre>
-      <pre>Body: {{responseObj.body}}</pre>
-    </div> -->
+    <div [class]="responsePanelClass()">
+      <pre><b>Title:</b> {{title}}</pre>
+      <pre><b>Location:</b> {{subTitle}}</pre>
+      <pre><b>Description:</b> {{content}}</pre>
+    </div>
   </mat-card>
   
