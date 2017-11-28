@@ -16,4 +16,5 @@ public interface UserService {
     User findByEmailid(String emailid);
     List<User> findAll ();
     List<Job> getJobRecommendations(String username, boolean cityFilter, boolean stateFilter);
+    List<Job> search(String searchString);
 }

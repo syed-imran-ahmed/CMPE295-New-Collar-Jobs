@@ -10,8 +10,9 @@
     </mat-card-content>
     <div >
     <mat-card-actions  align="end">
-      <button mat-raised-button color="primary" (click)="onEditButtonClick()">Edit</button>
-      <button mat-raised-button color="primary" (click)="onButtonClick()">Check Applicants</button>
+      <button mat-raised-button color="primary" (click)="onEditButtonClick()">{{buttonText}}</button>
+      <button *ngIf="isCompany" mat-raised-button color="primary" (click)="onButtonClick()">Check Applicants</button>
+
     </mat-card-actions>
   </div>
     <!-- <div [class]="responsePanelClass()">

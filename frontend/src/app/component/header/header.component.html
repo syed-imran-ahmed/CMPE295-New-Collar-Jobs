@@ -4,10 +4,24 @@
     <span style="font-weight: bold">New Collar Jobs</span>
   </button>
 
-  <button mat-button matRipple *ngIf="!isCompany()" routerLink="/">
+  <button mat-button matRipple *ngIf="!isCompany()" routerLink="/user-home">
     <!--<img alt="New-Collar-Jobs" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">-->
     <span style="font-weight: bold">New Collar Jobs</span>
   </button>
+
+  <input #searchText (keyup)="searchTerm$.next($event.target.value)">
+  <button mat-button matRipple (click)="onSearchClick(searchText.value)">
+    <!--<img alt="New-Collar-Jobs" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">-->
+    <span style="font-weight: bold">Search</span>
+  </button>
+
+  <ul *ngIf="results">
+  <li *ngFor="let result of results | slice:0:9">
+    <a href="{{ result.latest }}" target="_blank">
+      {{ result.name }}
+    </a>
+  </li>
+  </ul>
 
   <div class="right">
     <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-end center">

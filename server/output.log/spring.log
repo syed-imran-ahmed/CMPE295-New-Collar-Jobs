@@ -6188,3 +6188,392 @@ java.lang.NullPointerException: null
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.15.jar:8.5.15]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
 
+2017-11-27 20:31:54.205  INFO 10205 --- [Thread-340] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@541d548b: startup date [Mon Nov 27 02:47:10 PST 2017]; root of context hierarchy
+2017-11-27 20:31:54.275  INFO 10205 --- [Thread-340] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-11-27 20:31:54.284  INFO 10205 --- [Thread-340] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-11-27 20:31:54.288  INFO 10205 --- [Thread-340] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:52, serverValue:54}] to localhost:27017 because the pool has been closed.
+2017-11-27 20:31:54.297  INFO 10205 --- [Thread-340] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-11-27 20:32:07.728  INFO 10205 --- [restartedMain] com.sjsu.edu.Application                 : Starting Application on Omkars-MacBook-Pro.local with PID 10205 (/Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server/target/classes started by orege in /Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server)
+2017-11-27 20:32:07.729 DEBUG 10205 --- [restartedMain] com.sjsu.edu.Application                 : Running with Spring Boot v1.5.4.RELEASE, Spring v4.3.9.RELEASE
+2017-11-27 20:32:07.729  INFO 10205 --- [restartedMain] com.sjsu.edu.Application                 : No active profile set, falling back to default profiles: default
+2017-11-27 20:32:07.742  INFO 10205 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e916ae3: startup date [Mon Nov 27 20:32:07 PST 2017]; root of context hierarchy
+2017-11-27 20:32:08.674  INFO 10205 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-27 20:32:08.749  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.UserProfileRepository.
+2017-11-27 20:32:08.757  INFO 10205 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-27 20:32:08.770  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.JobRepository.
+2017-11-27 20:32:08.770  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.UserRepository.
+2017-11-27 20:32:08.771  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.CompanyRepository.
+2017-11-27 20:32:08.866  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b15cf7c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 20:32:08.871  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$4a0abffe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 20:32:08.876  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 20:32:08.877  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@be98409' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 20:32:08.884  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$6edf62b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 20:32:08.885  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 20:32:09.018  INFO 10205 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-11-27 20:32:09.021  INFO 10205 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-27 20:32:09.021  INFO 10205 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-11-27 20:32:09.046  INFO 10205 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat-16].[localhost].[/]    : Initializing Spring embedded WebApplicationContext
+2017-11-27 20:32:09.364  INFO 10205 --- [localhost-startStop-1] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-11-27 20:32:09.365  INFO 10205 --- [localhost-startStop-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-11-27 20:32:09.377  INFO 10205 --- [localhost-startStop-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-27 20:32:09.418  INFO 10205 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-11-27 20:32:09.472  INFO 10205 --- [localhost-startStop-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-11-27 20:32:09.805  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-27 20:32:09.805  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-27 20:32:09.805  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-27 20:32:09.805  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-27 20:32:09.805  INFO 10205 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-11-27 20:32:09.806  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'jwtAuthenticationTokenFilter' to: [/*]
+2017-11-27 20:32:09.806  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-27 20:32:09.807 DEBUG 10205 --- [localhost-startStop-1] c.s.e.s.auth.TokenAuthenticationFilter   : Initializing filter 'jwtAuthenticationTokenFilter'
+2017-11-27 20:32:09.807 DEBUG 10205 --- [localhost-startStop-1] c.s.e.s.auth.TokenAuthenticationFilter   : Filter 'jwtAuthenticationTokenFilter' configured successfully
+2017-11-27 20:32:09.857  INFO 10205 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-11-27 20:32:09.902  INFO 10205 --- [cluster-ClusterId{value='5a1ce6c9d1a91827dd8e140f', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:53, serverValue:55}] to localhost:27017
+2017-11-27 20:32:09.903  INFO 10205 --- [cluster-ClusterId{value='5a1ce6c9d1a91827dd8e140f', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 10]}, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, roundTripTimeNanos=462766}
+2017-11-27 20:32:09.920  INFO 10205 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-11-27 20:32:09.959  WARN 10205 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController' defined in file [/Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server/target/classes/com/sjsu/edu/rest/UserController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.sjsu.edu.rest.UserController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	Syntax error on tokens, delete these tokens
+	Syntax error on tokens, delete these tokens
+	Syntax error on tokens, delete these tokens
+	Duplicate field UserController.userService
+	Duplicate field UserController.profileRepository
+	Duplicate method loadById(Long) in type UserController
+	Duplicate method loadAll() in type UserController
+	Duplicate method resetCredentials() in type UserController
+	Duplicate method user() in type UserController
+	Duplicate method createProfile(UserProfile) in type UserController
+	Duplicate method getProfile() in type UserController
+	Syntax error on tokens, delete these tokens
+	Duplicate field UserController.userService
+	Duplicate field UserController.profileRepository
+	Duplicate method loadById(Long) in type UserController
+	Duplicate method loadAll() in type UserController
+	Duplicate method resetCredentials() in type UserController
+	Duplicate method user() in type UserController
+	Duplicate method createProfile(UserProfile) in type UserController
+	Duplicate method getProfile() in type UserController
+	Syntax error on tokens, delete these tokens
+
+2017-11-27 20:32:09.960  INFO 10205 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-11-27 20:32:09.968  INFO 10205 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2017-11-27 20:32:09.974  INFO 10205 --- [restartedMain] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2017-11-27 20:32:09.976 ERROR 10205 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController' defined in file [/Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server/target/classes/com/sjsu/edu/rest/UserController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.sjsu.edu.rest.UserController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	Syntax error on tokens, delete these tokens
+	Syntax error on tokens, delete these tokens
+	Syntax error on tokens, delete these tokens
+	Duplicate field UserController.userService
+	Duplicate field UserController.profileRepository
+	Duplicate method loadById(Long) in type UserController
+	Duplicate method loadAll() in type UserController
+	Duplicate method resetCredentials() in type UserController
+	Duplicate method user() in type UserController
+	Duplicate method createProfile(UserProfile) in type UserController
+	Duplicate method getProfile() in type UserController
+	Syntax error on tokens, delete these tokens
+	Duplicate field UserController.userService
+	Duplicate field UserController.profileRepository
+	Duplicate method loadById(Long) in type UserController
+	Duplicate method loadAll() in type UserController
+	Duplicate method resetCredentials() in type UserController
+	Duplicate method user() in type UserController
+	Duplicate method createProfile(UserProfile) in type UserController
+	Duplicate method getProfile() in type UserController
+	Syntax error on tokens, delete these tokens
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1155) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at com.sjsu.edu.Application.main(Application.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_144]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.sjsu.edu.rest.UserController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	Syntax error on tokens, delete these tokens
+	Syntax error on tokens, delete these tokens
+	Syntax error on tokens, delete these tokens
+	Duplicate field UserController.userService
+	Duplicate field UserController.profileRepository
+	Duplicate method loadById(Long) in type UserController
+	Duplicate method loadAll() in type UserController
+	Duplicate method resetCredentials() in type UserController
+	Duplicate method user() in type UserController
+	Duplicate method createProfile(UserProfile) in type UserController
+	Duplicate method getProfile() in type UserController
+	Syntax error on tokens, delete these tokens
+	Duplicate field UserController.userService
+	Duplicate field UserController.profileRepository
+	Duplicate method loadById(Long) in type UserController
+	Duplicate method loadAll() in type UserController
+	Duplicate method resetCredentials() in type UserController
+	Duplicate method user() in type UserController
+	Duplicate method createProfile(UserProfile) in type UserController
+	Duplicate method getProfile() in type UserController
+	Syntax error on tokens, delete these tokens
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:154) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:89) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1147) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	Syntax error on tokens, delete these tokens
+	Syntax error on tokens, delete these tokens
+	Syntax error on tokens, delete these tokens
+	Duplicate field UserController.userService
+	Duplicate field UserController.profileRepository
+	Duplicate method loadById(Long) in type UserController
+	Duplicate method loadAll() in type UserController
+	Duplicate method resetCredentials() in type UserController
+	Duplicate method user() in type UserController
+	Duplicate method createProfile(UserProfile) in type UserController
+	Duplicate method getProfile() in type UserController
+	Syntax error on tokens, delete these tokens
+	Duplicate field UserController.userService
+	Duplicate field UserController.profileRepository
+	Duplicate method loadById(Long) in type UserController
+	Duplicate method loadAll() in type UserController
+	Duplicate method resetCredentials() in type UserController
+	Duplicate method user() in type UserController
+	Duplicate method createProfile(UserProfile) in type UserController
+	Duplicate method getProfile() in type UserController
+	Syntax error on tokens, delete these tokens
+
+	at com.sjsu.edu.rest.UserController.<init>(UserController.java:9) ~[classes/:na]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_144]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_144]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:142) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 24 common frames omitted
+
+2017-11-27 23:06:09.051  INFO 10205 --- [restartedMain] com.sjsu.edu.Application                 : Starting Application on Omkars-MacBook-Pro.local with PID 10205 (/Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server/target/classes started by orege in /Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server)
+2017-11-27 23:06:09.052 DEBUG 10205 --- [restartedMain] com.sjsu.edu.Application                 : Running with Spring Boot v1.5.4.RELEASE, Spring v4.3.9.RELEASE
+2017-11-27 23:06:09.052  INFO 10205 --- [restartedMain] com.sjsu.edu.Application                 : No active profile set, falling back to default profiles: default
+2017-11-27 23:06:09.056  INFO 10205 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@223dd6b9: startup date [Mon Nov 27 23:06:09 PST 2017]; root of context hierarchy
+2017-11-27 23:06:09.663  INFO 10205 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-27 23:06:09.735  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.UserProfileRepository.
+2017-11-27 23:06:09.756  INFO 10205 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-27 23:06:09.775  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.JobRepository.
+2017-11-27 23:06:09.776  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.UserRepository.
+2017-11-27 23:06:09.777  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.CompanyRepository.
+2017-11-27 23:06:09.891  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b15cf7c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:09.899  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$4a0abffe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:09.909  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:09.911  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3f60b5d5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:09.917  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$6edf62b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:09.917  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:10.003  INFO 10205 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-11-27 23:06:10.006  INFO 10205 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-27 23:06:10.006  INFO 10205 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-11-27 23:06:10.021  INFO 10205 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat-17].[localhost].[/]    : Initializing Spring embedded WebApplicationContext
+2017-11-27 23:06:10.316  INFO 10205 --- [localhost-startStop-1] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-11-27 23:06:10.316  INFO 10205 --- [localhost-startStop-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-11-27 23:06:10.334  INFO 10205 --- [localhost-startStop-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-27 23:06:10.383  INFO 10205 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-11-27 23:06:10.447  INFO 10205 --- [localhost-startStop-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-11-27 23:06:10.761  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-27 23:06:10.763  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-27 23:06:10.763  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-27 23:06:10.763  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-27 23:06:10.763  INFO 10205 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-11-27 23:06:10.763  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'jwtAuthenticationTokenFilter' to: [/*]
+2017-11-27 23:06:10.763  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-27 23:06:10.764 DEBUG 10205 --- [localhost-startStop-1] c.s.e.s.auth.TokenAuthenticationFilter   : Initializing filter 'jwtAuthenticationTokenFilter'
+2017-11-27 23:06:10.764 DEBUG 10205 --- [localhost-startStop-1] c.s.e.s.auth.TokenAuthenticationFilter   : Filter 'jwtAuthenticationTokenFilter' configured successfully
+2017-11-27 23:06:10.808  INFO 10205 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-11-27 23:06:10.845  INFO 10205 --- [cluster-ClusterId{value='5a1d0ae2d1a91827dd8e1410', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:54, serverValue:56}] to localhost:27017
+2017-11-27 23:06:10.845  INFO 10205 --- [cluster-ClusterId{value='5a1d0ae2d1a91827dd8e1410', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 10]}, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, roundTripTimeNanos=313479}
+2017-11-27 23:06:10.863  INFO 10205 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-11-27 23:06:10.894  WARN 10205 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController' defined in file [/Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server/target/classes/com/sjsu/edu/rest/UserController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.sjsu.edu.rest.UserController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on tokens, delete these tokens
+
+2017-11-27 23:06:10.895  INFO 10205 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-11-27 23:06:10.916  INFO 10205 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2017-11-27 23:06:10.928  INFO 10205 --- [restartedMain] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2017-11-27 23:06:10.933 ERROR 10205 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController' defined in file [/Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server/target/classes/com/sjsu/edu/rest/UserController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.sjsu.edu.rest.UserController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on tokens, delete these tokens
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1155) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+	at com.sjsu.edu.Application.main(Application.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_144]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.4.RELEASE.jar:1.5.4.RELEASE]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.sjsu.edu.rest.UserController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on tokens, delete these tokens
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:154) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:89) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1147) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	Syntax error on tokens, delete these tokens
+
+	at com.sjsu.edu.rest.UserController.<init>(UserController.java:180) ~[classes/:na]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_144]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_144]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:142) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 24 common frames omitted
+
+2017-11-27 23:06:53.636  INFO 10205 --- [restartedMain] com.sjsu.edu.Application                 : Starting Application on Omkars-MacBook-Pro.local with PID 10205 (/Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server/target/classes started by orege in /Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server)
+2017-11-27 23:06:53.636 DEBUG 10205 --- [restartedMain] com.sjsu.edu.Application                 : Running with Spring Boot v1.5.4.RELEASE, Spring v4.3.9.RELEASE
+2017-11-27 23:06:53.637  INFO 10205 --- [restartedMain] com.sjsu.edu.Application                 : No active profile set, falling back to default profiles: default
+2017-11-27 23:06:53.638  INFO 10205 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@79b1b6be: startup date [Mon Nov 27 23:06:53 PST 2017]; root of context hierarchy
+2017-11-27 23:06:54.159  INFO 10205 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-27 23:06:54.177  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.UserProfileRepository.
+2017-11-27 23:06:54.185  INFO 10205 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-27 23:06:54.215  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.JobRepository.
+2017-11-27 23:06:54.215  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.UserRepository.
+2017-11-27 23:06:54.215  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.CompanyRepository.
+2017-11-27 23:06:54.258  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b15cf7c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:54.262  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$4a0abffe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:54.263  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:54.263  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@f0dada3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:54.267  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$6edf62b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:54.267  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:06:54.315  INFO 10205 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-11-27 23:06:54.316  INFO 10205 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-27 23:06:54.316  INFO 10205 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-11-27 23:06:54.322  INFO 10205 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat-18].[localhost].[/]    : Initializing Spring embedded WebApplicationContext
+2017-11-27 23:06:54.635  INFO 10205 --- [localhost-startStop-1] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-11-27 23:06:54.636  INFO 10205 --- [localhost-startStop-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-11-27 23:06:54.647  INFO 10205 --- [localhost-startStop-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-27 23:06:54.675  INFO 10205 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-11-27 23:06:54.765  INFO 10205 --- [localhost-startStop-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-11-27 23:06:55.168  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-27 23:06:55.168  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-27 23:06:55.168  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-27 23:06:55.168  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-27 23:06:55.169  INFO 10205 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-11-27 23:06:55.169  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'jwtAuthenticationTokenFilter' to: [/*]
+2017-11-27 23:06:55.169  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-27 23:06:55.169 DEBUG 10205 --- [localhost-startStop-1] c.s.e.s.auth.TokenAuthenticationFilter   : Initializing filter 'jwtAuthenticationTokenFilter'
+2017-11-27 23:06:55.169 DEBUG 10205 --- [localhost-startStop-1] c.s.e.s.auth.TokenAuthenticationFilter   : Filter 'jwtAuthenticationTokenFilter' configured successfully
+2017-11-27 23:06:55.235  INFO 10205 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-11-27 23:06:55.300  INFO 10205 --- [cluster-ClusterId{value='5a1d0b0fd1a91827dd8e1411', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:55, serverValue:57}] to localhost:27017
+2017-11-27 23:06:55.301  INFO 10205 --- [cluster-ClusterId{value='5a1d0b0fd1a91827dd8e1411', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 10]}, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, roundTripTimeNanos=173602}
+2017-11-27 23:06:55.395  INFO 10205 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-11-27 23:06:55.743  INFO 10205 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2017-11-27 23:06:56.005  INFO 10205 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+2017-11-27 23:06:56.020  INFO 10205 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3af79734, org.springframework.security.web.context.SecurityContextPersistenceFilter@2622327c, org.springframework.security.web.header.HeaderWriterFilter@41ed5a5f, org.springframework.security.web.authentication.logout.LogoutFilter@393da2ac, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5e215611, com.sjsu.edu.security.auth.TokenAuthenticationFilter@66cb0c67, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@587e432, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e13697f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d8b6560, org.springframework.security.web.session.SessionManagementFilter@2106c7e6, org.springframework.security.web.access.ExceptionTranslationFilter@224245e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@96ae148]
+2017-11-27 23:06:56.024  INFO 10205 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@27348975, org.springframework.security.web.context.SecurityContextPersistenceFilter@6df9eedb, org.springframework.security.web.header.HeaderWriterFilter@19b77467, org.springframework.security.web.authentication.logout.LogoutFilter@5555bd8d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@77781eca, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2446768f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f03a2c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c6a7b41, org.springframework.security.web.session.SessionManagementFilter@77a818e, org.springframework.security.web.access.ExceptionTranslationFilter@3c6ea308, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@28432815]
+2017-11-27 23:06:56.072  INFO 10205 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-11-27 23:06:56.129  INFO 10205 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-27 23:06:56.132  INFO 10205 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-27 23:06:56.132  INFO 10205 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2017-11-27 23:06:56.135  INFO 10205 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2017-11-27 23:06:56.154  INFO 10205 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2017-11-27 23:06:56.209  INFO 10205 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: loadByIdUsingGET_1
+2017-11-27 23:06:56.264  INFO 10205 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getJobRecommendationsUsingGET_1
+2017-11-27 23:06:56.275  INFO 10205 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: loadByIdUsingGET_2
+2017-11-27 23:06:56.471  INFO 10205 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-11-27 23:06:56.476  INFO 10205 --- [restartedMain] com.sjsu.edu.Application                 : Started Application in 12.878 seconds (JVM running for 127661.086)
+2017-11-27 23:09:01.150  INFO 10205 --- [Thread-348] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@79b1b6be: startup date [Mon Nov 27 23:06:53 PST 2017]; root of context hierarchy
+2017-11-27 23:09:01.152  INFO 10205 --- [Thread-348] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-11-27 23:09:01.152  INFO 10205 --- [Thread-348] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-11-27 23:09:01.154  INFO 10205 --- [Thread-348] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-11-27 23:09:12.032  INFO 10205 --- [restartedMain] com.sjsu.edu.Application                 : Starting Application on Omkars-MacBook-Pro.local with PID 10205 (/Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server/target/classes started by orege in /Users/orege/Documents/final_project/UI/CMPE295-New-Collar-Jobs/server)
+2017-11-27 23:09:12.033 DEBUG 10205 --- [restartedMain] com.sjsu.edu.Application                 : Running with Spring Boot v1.5.4.RELEASE, Spring v4.3.9.RELEASE
+2017-11-27 23:09:12.033  INFO 10205 --- [restartedMain] com.sjsu.edu.Application                 : No active profile set, falling back to default profiles: default
+2017-11-27 23:09:12.035  INFO 10205 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4323be58: startup date [Mon Nov 27 23:09:12 PST 2017]; root of context hierarchy
+2017-11-27 23:09:12.430  INFO 10205 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-27 23:09:12.443  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.UserProfileRepository.
+2017-11-27 23:09:12.451  INFO 10205 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2017-11-27 23:09:12.461  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.JobRepository.
+2017-11-27 23:09:12.461  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.UserRepository.
+2017-11-27 23:09:12.462  INFO 10205 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sjsu.edu.repository.CompanyRepository.
+2017-11-27 23:09:12.506  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b15cf7c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:09:12.509  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$4a0abffe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:09:12.510  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:09:12.511  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1fd64c04' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:09:12.513  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$6edf62b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:09:12.513  INFO 10205 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-27 23:09:12.561  INFO 10205 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-11-27 23:09:12.561  INFO 10205 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-27 23:09:12.561  INFO 10205 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-11-27 23:09:12.567  INFO 10205 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat-18].[localhost].[/]    : Initializing Spring embedded WebApplicationContext
+2017-11-27 23:09:12.776  INFO 10205 --- [localhost-startStop-1] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-11-27 23:09:12.776  INFO 10205 --- [localhost-startStop-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-11-27 23:09:12.782  INFO 10205 --- [localhost-startStop-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-27 23:09:12.817  INFO 10205 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-11-27 23:09:12.894  INFO 10205 --- [localhost-startStop-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-11-27 23:09:13.130  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-27 23:09:13.130  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-27 23:09:13.130  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-27 23:09:13.130  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-27 23:09:13.130  INFO 10205 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-11-27 23:09:13.130  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'jwtAuthenticationTokenFilter' to: [/*]
+2017-11-27 23:09:13.130  INFO 10205 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-27 23:09:13.131 DEBUG 10205 --- [localhost-startStop-1] c.s.e.s.auth.TokenAuthenticationFilter   : Initializing filter 'jwtAuthenticationTokenFilter'
+2017-11-27 23:09:13.131 DEBUG 10205 --- [localhost-startStop-1] c.s.e.s.auth.TokenAuthenticationFilter   : Filter 'jwtAuthenticationTokenFilter' configured successfully
+2017-11-27 23:09:13.173  INFO 10205 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-11-27 23:09:13.200  INFO 10205 --- [cluster-ClusterId{value='5a1d0b99d1a91827dd8e1412', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:56, serverValue:58}] to localhost:27017
+2017-11-27 23:09:13.200  INFO 10205 --- [cluster-ClusterId{value='5a1d0b99d1a91827dd8e1412', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 10]}, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, roundTripTimeNanos=122238}
+2017-11-27 23:09:13.220  INFO 10205 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-11-27 23:09:13.343  INFO 10205 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2017-11-27 23:09:13.531  INFO 10205 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+2017-11-27 23:09:13.542  INFO 10205 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41da9d12, org.springframework.security.web.context.SecurityContextPersistenceFilter@3be3f07d, org.springframework.security.web.header.HeaderWriterFilter@7fbfecd1, org.springframework.security.web.authentication.logout.LogoutFilter@aeb1a68, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@39ef55a8, com.sjsu.edu.security.auth.TokenAuthenticationFilter@27f74802, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25bb8a6c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25e2336e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ad8ee7e, org.springframework.security.web.session.SessionManagementFilter@77bb13a1, org.springframework.security.web.access.ExceptionTranslationFilter@7a1c8b56, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@404314e5]
+2017-11-27 23:09:13.545  INFO 10205 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1150c296, org.springframework.security.web.context.SecurityContextPersistenceFilter@3bfc2f68, org.springframework.security.web.header.HeaderWriterFilter@18520947, org.springframework.security.web.authentication.logout.LogoutFilter@44cdf29e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1e901200, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39a889ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31b8a7ad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ca89c03, org.springframework.security.web.session.SessionManagementFilter@225aeb57, org.springframework.security.web.access.ExceptionTranslationFilter@766e870e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@22170526]
+2017-11-27 23:09:13.571  INFO 10205 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-11-27 23:09:13.611  INFO 10205 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-27 23:09:13.614  INFO 10205 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-11-27 23:09:13.614  INFO 10205 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2017-11-27 23:09:13.615  INFO 10205 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2017-11-27 23:09:13.624  INFO 10205 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2017-11-27 23:09:13.672  INFO 10205 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: loadByIdUsingGET_1
+2017-11-27 23:09:13.710  INFO 10205 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getJobRecommendationsUsingGET_1
+2017-11-27 23:09:13.745  INFO 10205 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: loadByIdUsingGET_2
+2017-11-27 23:09:13.815  INFO 10205 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-11-27 23:09:13.820  INFO 10205 --- [restartedMain] com.sjsu.edu.Application                 : Started Application in 11.824 seconds (JVM running for 127798.431)
+2017-11-27 23:22:51.892  INFO 10205 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat-18].[localhost].[/]    : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-27 23:23:33.100  INFO 10205 --- [http-nio-8080-exec-6] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:57, serverValue:59}] to localhost:27017

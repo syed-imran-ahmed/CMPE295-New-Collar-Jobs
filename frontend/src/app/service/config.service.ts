@@ -32,6 +32,10 @@ export class ConfigService {
 
   private _user_profile = this._api_url + '/user/profile/';
 
+  private _recommended_jobs = this._api_url + '/user/jobs';
+
+  private _search_jobs = this._api_url + '/search/jobs';
+
   get reset_credentials_url(): string {
       return this._reset_credentials_url;
   }
@@ -78,5 +82,13 @@ export class ConfigService {
 
   get user_profile(): string {
     return this._user_profile;
+  }
+
+  get recommended_jobs(): string {
+      return this._recommended_jobs;
+  }
+
+  get search_jobs(): string {
+      return this._search_jobs;
   }
 }
