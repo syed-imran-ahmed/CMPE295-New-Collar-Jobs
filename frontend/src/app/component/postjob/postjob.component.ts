@@ -100,22 +100,20 @@ export class PostjobComponent implements OnInit {
     /**
      * Innocent until proven guilty
      */
-    
-    this.dialogRef.close();
+    if(this.dialogRef!=null)
+      this.dialogRef.close();
     // this.notification = undefined;
     this.submitted = true;
     this.authService.postjob(this.form.value)
      // show me the animation
-    .delay(1000)
     .subscribe(data => {
       let snackBarRef = this.snackBar.open('Job has been Saved', 'OK',{
-        duration: 3000
+        duration: 5000
       });
         snackBarRef.onAction().subscribe(() => {
-        snackBarRef.dismiss();
-        this.router.navigate(['/company-home']);      
+        snackBarRef.dismiss();      
       });
-
+      this.router.navigate(['/company-home']);
       
     //this.userService.getMyInfo().subscribe();
        //this.router.navigate(['/login', { msgType: 'success', msgBody: 'User registration Successful! Please sign in.'}]);
