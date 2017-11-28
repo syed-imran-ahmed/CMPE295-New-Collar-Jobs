@@ -9,11 +9,14 @@
     <span style="font-weight: bold">New Collar Jobs</span>
   </button>
 
-  <input #searchText (keyup)="searchTerm$.next($event.target.value)">
-  <button mat-button matRipple (click)="onSearchClick(searchText.value)">
+  <div class="searchDiv" *ngIf="isUser()">
+  <input class= "search"  #searchText (keyup)="searchTerm$.next($event.target.value)">
+  <button class="searchButton"  mat-button matRipple (click)="onSearchClick(searchText.value)">
     <!--<img alt="New-Collar-Jobs" class="app-angular-logo" src="assets/image/angular-white-transparent.svg">-->
-    <span style="font-weight: bold">Search</span>
+    <i class="fa fa-search"></i>
   </button>
+  </div>
+
 
   <ul *ngIf="results">
   <li *ngFor="let result of results | slice:0:9">

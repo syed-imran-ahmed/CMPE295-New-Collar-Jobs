@@ -13,6 +13,7 @@ import { SearchService } from '../../service/search.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  
 
   searchTerm$ = new Subject<string>();
 
@@ -26,6 +27,7 @@ export class HeaderComponent implements OnInit {
 
   onSearchClick(searchText: string)
   {
+    console.log("search button clicked");
     this.searchService.searchEntries(searchText)
     .subscribe(results => {
       this.searchService.searchData = results.content;
@@ -46,6 +48,14 @@ export class HeaderComponent implements OnInit {
   isCompany(){
     if(this.userService.currentUser)
       return this.userService.currentUser.companyname!=null;
+  }
+
+  isUser(){
+    if(this.userService.currentUser)
+    {
+      //console.log(this.userService.currentUser.companyname);
+      return this.userService.currentUser.companyname===null;
+    }
   }
 
   hasSignedIn() {

@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 :host {
   position: relative;
   z-index: 10;
@@ -37,6 +39,37 @@
   color:white;
   background-color: #473F64;
 }
+
+.searchDiv{
+  width:700px;
+}
+
+.search {
+  margin-left:50px; 
+  width: 130px;
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px; 
+ // padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.search:focus {
+  outline: none;
+  width: 50%;
+}
+
+.searchButton {
+  outline: none;
+  position: relative;  
+  text-align: left;
+  color: #fff;
+  font-size: 30px;
+}
+
 
 /deep/ {
   .app-header-accountMenu.mat-menu-panel {

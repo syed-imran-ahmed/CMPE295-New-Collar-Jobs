@@ -1,5 +1,10 @@
 <br>
-<h1> SEARCH RESULTS</h1>
+<h1> JOB SEARCH </h1>
+
+<div *ngIf="searched">
+  <h3> Search results for <b>{{searchTxt}}</b></h3>
+</div> 
+
 <div class="content" fxLayout="column" fxLayoutAlign="left none"  *ngFor="let job of jobs">  
     <app-job-card
       fxFlex
