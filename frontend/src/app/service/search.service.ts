@@ -32,11 +32,11 @@ export class SearchService {
     let path:string;
     if(event)
     {
-      path =  this.configService.search_jobs + `?page=${event.pageIndex}&size=2`+ `&` + this.queryUrl + term ;
+      path =  this.configService.search_jobs + `?page=${event.pageIndex}&size=10`+ `&` + this.queryUrl + term ;
       
     }
     else {
-      path =  this.configService.search_jobs + `?page=0&size=2`+ `&` +this.queryUrl + term;
+      path =  this.configService.search_jobs + `?page=0&size=10`+ `&` +this.queryUrl + term;
     }
       
     return this.apiService.get(path);

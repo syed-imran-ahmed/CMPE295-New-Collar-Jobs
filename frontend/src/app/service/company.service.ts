@@ -5,29 +5,16 @@ import { ConfigService } from './config.service';
 import {PageEvent} from '@angular/material';
 
 @Injectable()
-export class PostedjobService {
+export class CompanyService {
   
   constructor(
     private apiService: ApiService,
     private config: ConfigService
   ) { }
 
-  getJobs(event?:PageEvent) {
-    let path:string;
-    if(event)
-    {
-      path =  this.config.posted_job + `?page=${event.pageIndex}&size=10`;
-    }
-    else {
-      path =  this.config.posted_job + `?page=0&size=10`;
-    }
-    
-    return this.apiService.get(path);
-  }
-
-  getJob(id:number)
+  getCompany(id:number)
   {
-    let path = this.config.postjob_url+'/'+`${id}`;
+    let path = this.config.get_company+'/'+`${id}`;
     return this.apiService.get(path);
   }
 

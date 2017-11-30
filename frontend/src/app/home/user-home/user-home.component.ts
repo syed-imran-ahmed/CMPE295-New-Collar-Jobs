@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {PageEvent} from '@angular/material';
 import {
   RecommendedjobsService,
-  ConfigService
+  ConfigService,
+  CompanyService
 } from '../../service';
 
 @Component({
@@ -17,14 +18,15 @@ export class UserHomeComponent implements OnInit {
 
   submitted=false;
 
-  length = 100;
-  pageSize = 2;
+  length = 300;
+  pageSize = 10;
   pageSizeOptions = [5, 10, 25, 100];
 
   pageEvent: PageEvent;
 
   constructor(
     private recommendedjobservice: RecommendedjobsService,
+    private companyService: CompanyService
   ) { }
 
   ngOnInit() {
@@ -39,6 +41,9 @@ export class UserHomeComponent implements OnInit {
     .subscribe(res => {
       this.jobs = res.content;
       this.submitted = false;
+      //this.companyService.getCompany(jobs.)
+
+
     }, err => {
       this.submitted = false;
       //TODO: spill out the error

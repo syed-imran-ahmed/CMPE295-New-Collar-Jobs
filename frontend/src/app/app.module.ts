@@ -45,7 +45,8 @@ import {
   PostedjobService,
   RecommendedjobsService,
   ConfigService,
-  SearchService
+  SearchService,
+  CompanyService
 } from './service';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { RegisterComponent } from './component/register/register.component';
@@ -138,6 +139,7 @@ export function initUserFactory(userService: UserService) {
     SearchService,
     MatIconRegistry,
     UserprofileService,
+    CompanyService,
     {
       'provide': APP_INITIALIZER,
       'useFactory': initUserFactory,

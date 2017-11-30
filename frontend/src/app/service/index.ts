@@ -6,3 +6,4 @@ export * from './foo.service';
 export * from './postedjob.service';
 export * from './search.service';
 export * from './recommendedjobs.service';
+export * from './company.service';

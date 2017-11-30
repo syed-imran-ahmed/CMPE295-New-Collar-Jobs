@@ -16,6 +16,8 @@ export class JobCardComponent implements OnInit {
   @Input() buttonText: string;
   @Input() responseObj: any;
 
+  @Input() imagePath: any;
+
   isCompany= false;
   count: number;
 
@@ -28,14 +30,14 @@ export class JobCardComponent implements OnInit {
   ngOnInit() {
     this.count = 0;
     console.log("initial count "+this.count);
-    if(this.buttonText==="Edit")
+    if(this.buttonText==="edit")
     {
       this.isCompany = true;
     }
   }
 
   onButtonClick(){
-    
+
 
     console.log(this.jobid);
     this.count++;

@@ -1,21 +1,25 @@
 <mat-card>
+    <img src="{{imagePath || 'http://sschit.in/wp-content/uploads/2015/11/headshot.png'}}" class ="image" align="left" />
     <mat-card-header>
+        <mat-icon mat-card-avatar>job</mat-icon>
       <mat-card-title><b>{{title}}</b></mat-card-title>
       <mat-card-subtitle>{{subTitle}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <p>
-        {{content | slice:0:100}}...
+        {{content | slice:0:500}}...
       </p>
     </mat-card-content>
     <div >
     <mat-card-actions  align="end">
-        <button class="description" mat-button matRipple (click)="onButtonClick()">
-            Job Description
-          </button>
-      <button mat-raised-button color="primary" (click)="onEditButtonClick()" >{{buttonText}}</button>
-      <button *ngIf="isCompany" mat-raised-button color="primary" (click)="onButtonClick()">Check Applicants</button>
-      
+        <button  matRipple (click)="onButtonClick()">
+            <mat-icon color="primary">description</mat-icon>
+        </button>
+      <button  color="primary" (click)="onEditButtonClick()" *ngIf="isCompany"><mat-icon color="primary">edit</mat-icon></button>
+      <button  color="primary" *ngIf="!isCompany"mat-raised-button color="primary" (click)="onEditButtonClick()" >Apply</button>
+      <button *ngIf="isCompany"  matRipple color="primary" (click)="onButtonClick()">
+          <mat-icon color="primary">people</mat-icon>
+      </button>
     </mat-card-actions>
   </div>
     <div [class]="responsePanelClass()">

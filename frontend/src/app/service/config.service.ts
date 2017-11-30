@@ -36,6 +36,8 @@ export class ConfigService {
 
   private _search_jobs = this._api_url + '/search/jobs';
 
+  private _get_company = this._api_url + '/company/';
+
   get reset_credentials_url(): string {
       return this._reset_credentials_url;
   }
@@ -90,5 +92,9 @@ export class ConfigService {
 
   get search_jobs(): string {
       return this._search_jobs;
+  }
+
+  get get_company(): string {
+      return this._get_company;
   }
 }

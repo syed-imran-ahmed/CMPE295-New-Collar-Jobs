@@ -16,10 +16,10 @@ export class RecommendedjobsService {
     let path:string;
     if(event)
     {
-      path =  this.config.recommended_jobs + `?page=${event.pageIndex}&size=2`;
+      path =  this.config.recommended_jobs + `?page=${event.pageIndex}&size=10`;
     }
     else {
-      path =  this.config.recommended_jobs + `?page=0&size=2`;
+      path =  this.config.recommended_jobs + `?page=0&size=10`;
     }
     
     return this.apiService.get(path);
