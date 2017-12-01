@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.collections4.IteratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -19,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sjsu.edu.model.Applications;
 import com.sjsu.edu.model.Job;
 import com.sjsu.edu.model.User;
 import com.sjsu.edu.model.UserProfile;
+import com.sjsu.edu.repository.ApplicationsRepository;
 import com.sjsu.edu.repository.JobRepository;
 import com.sjsu.edu.repository.UserProfileRepository;
 import com.sjsu.edu.service.UserService;
@@ -34,6 +35,9 @@ import com.sjsu.edu.service.UserService;
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
 
+	
+	@Autowired
+	ApplicationsRepository appRepository;
 
 	@RequestMapping(method = RequestMethod.PATCH, value = "/user/profile/{profileId}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> patchProfile(@PathVariable(name = "profileId") String profileId,
@@ -171,10 +175,22 @@ public class UserController {
         	currentUserName = "imran";
         }  
         
-        Page<Job> jobs = jobRepository.findAll(pageable);
-    	return jobs;
-//        Page<Job> page = new PageImpl<>(userService.search(search));
-//		return page;   
+//        Page<Job> jobs = jobRepository.findAll(pageable);
+//    	return jobs;
+        Page<Job> page = new PageImpl<>(userService.search(search));
+		return page;   
+    }
+    
+    @RequestMapping( method = RequestMethod.POST, value= "/apply",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ResponseEntity<?> apply( Applications app) {
+        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+        if(currentUserName == null || currentUserName.isEmpty()){
+        	currentUserName = "imran";
+        }  
+        User user = userService.findByUsername(currentUserName);
+        app.setUserid(user.getId());
+        Applications application = appRepository.save(app);
+    	return ResponseEntity.accepted().body(application);  
     }
     
 

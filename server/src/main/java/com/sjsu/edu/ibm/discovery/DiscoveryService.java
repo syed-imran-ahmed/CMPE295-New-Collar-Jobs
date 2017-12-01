@@ -11,8 +11,8 @@ import com.sjsu.edu.model.Job;
 
 public class DiscoveryService {
 
-	private static final String environmentId = "6d3d9103-19b2-46bf-ba67-3b9e9cab891b";
-	private static final String collectionId = "7bbe91ad-c555-47ae-9f3d-a024e0a71ab6";
+	private static final String environmentId = "502c7158-c198-4fe5-98f8-a4b80a5dd633";
+	private static final String collectionId = "896a1909-3667-4748-851e-9e7bdd3eafdd";
 	
 	public static void submitJob(Job job)
 	{
@@ -22,7 +22,7 @@ public class DiscoveryService {
 				,jobId, 
 				job.getTitle(),
 				/* Combine the below fields into 'text' because DiscoveryService analyzes 'text' field */
-				job.getTitle() + job.getDescription() + job.getResponsibility() + job.getTraits(), 
+				job.getTitle() + job.getDescription() + job.getTraits(), 
 				job.getCity(), job.getState(), job.getCountry());
 		
 		InputStream documentStream = new ByteArrayInputStream(documentJson.getBytes());

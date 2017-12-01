@@ -62,12 +62,11 @@ import {UserprofileService} from "./service/userprofile.service";
 import { TextboxDialogueComponent } from './component/user-profile/textbox-dialogue/textbox-dialogue.component';
 import { ListDialogueComponent } from './component/user-profile/list-dialogue/list-dialogue.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
 import { ImageDialogueComponent } from './component/user-profile/image-dialogue/image-dialogue.component';
-
 import { QuestionnaireComponent } from './component/questionnaire/questionnaire.component';
 import { UserHomeComponent } from './home/user-home/user-home.component';
 import { SearchComponent } from './component/search/search.component';
+import { ApplyjobComponent } from './component/applyjob/applyjob.component';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -98,7 +97,8 @@ export function initUserFactory(userService: UserService) {
     ImageDialogueComponent,
     QuestionnaireComponent,
     UserHomeComponent,
-    SearchComponent
+    SearchComponent,
+    ApplyjobComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -147,7 +147,7 @@ export function initUserFactory(userService: UserService) {
       'multi': true
     }
   ],
-  entryComponents: [TextboxDialogueComponent, ListDialogueComponent, ImageDialogueComponent],
+  entryComponents: [TextboxDialogueComponent, ListDialogueComponent, ImageDialogueComponent,ApplyjobComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

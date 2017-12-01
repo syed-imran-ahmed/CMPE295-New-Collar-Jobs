@@ -33,6 +33,7 @@ export class PostjobComponent implements OnInit {
    * Notification message from received
    * form request or router
    */
+  title= "Post New Job";
   notification: DisplayMessage;
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 
@@ -55,6 +56,7 @@ export class PostjobComponent implements OnInit {
   ngOnInit() {
     if(this.data!=null && this.data.isModel==1)
     {
+      this.title = "Edit Job";
       this.postedJobService.getJob(this.data.jobId)
       .delay(1000)
       .subscribe(data => {
@@ -63,7 +65,7 @@ export class PostjobComponent implements OnInit {
           ques1:data.title,
           ques2:data.traits,
           ques3:data.description,
-          ques4:data.responsibility,
+         // ques4:data.responsibility,
           ques5:data.salary,
           ques6:data.location,
           jobid:data.jobid
@@ -83,7 +85,7 @@ export class PostjobComponent implements OnInit {
       ques1: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64)])],
       ques2: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64)])],
       ques3: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(500)])],
-      ques4: ['', Validators.compose([Validators.minLength(3), Validators.maxLength(500)])],
+      //ques4: ['', Validators.compose([Validators.minLength(3), Validators.maxLength(500)])],
       ques5: ['', Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(6)])],
       ques6: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64)])],
       jobid: ['']

@@ -64,4 +64,13 @@ export class AuthService {
     return this.apiService.post(this.config.user_profile, body, headers);
   }
 
+  applyJob(data)
+  {
+    const body = `jobid=${data.jobid}&userid=0`;
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    return this.apiService.post(this.config.apply_url, body, headers);
+
+  }
+
 }

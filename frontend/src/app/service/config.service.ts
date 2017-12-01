@@ -38,6 +38,8 @@ export class ConfigService {
 
   private _get_company = this._api_url + '/company/';
 
+  private _apply_url = this._api_url + '/apply';
+
   get reset_credentials_url(): string {
       return this._reset_credentials_url;
   }
@@ -96,5 +98,9 @@ export class ConfigService {
 
   get get_company(): string {
       return this._get_company;
+  }
+
+  get apply_url(): string {
+      return this._apply_url;
   }
 }

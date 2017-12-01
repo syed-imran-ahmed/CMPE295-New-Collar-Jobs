@@ -44,14 +44,6 @@ public class Job {
 		this.description = description;
 	}
 
-	public String getResponsibility() {
-		return responsibility;
-	}
-
-	public void setResponsibility(String responsibility) {
-		this.responsibility = responsibility;
-	}
-
 	public String getCity() {
 		return city;
 	}
@@ -101,7 +93,7 @@ public class Job {
 	}
 
 	@Id
-	@Column(name = "jid")
+	@Column(name = "jobid")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long jobid;
 	
@@ -110,9 +102,6 @@ public class Job {
 	
 	@Column(name = "description")
 	private String description;
-
-	@Column(name = "responsibility")
-	private String responsibility;
 	
 	@Column(name = "city")
 	private String city;

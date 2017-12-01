@@ -16,6 +16,7 @@ import { CompanyHomeComponent } from './home/company-home';
 import { UserHomeComponent } from './home/user-home';
 import { QuestionnaireComponent } from './component/questionnaire/questionnaire.component';
 import { SearchComponent } from './component/search/search.component';
+import { ApplyjobComponent } from './component/applyjob/applyjob.component';
 
 
 export const routes: Routes = [
@@ -72,6 +73,11 @@ export const routes: Routes = [
   {
     path:'search',
     component:SearchComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path:'apply',
+    component:ApplyjobComponent,
     canActivate: [LoginGuard]
   },
   {

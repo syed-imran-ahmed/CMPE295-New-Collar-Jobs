@@ -66,6 +66,16 @@ export class ApiService {
     });
   }
 
+  applyJob(path: string, body: any, customHeaders?): Observable<any>{
+    console.log(body);
+    return this.http.request(path, {
+      method: RequestMethod.Post,
+      headers: customHeaders,
+      withCredentials: true,
+      body: body
+    });
+  }
+
   private extractData(res: Response) {
     const body = res.json();
     return body || { };

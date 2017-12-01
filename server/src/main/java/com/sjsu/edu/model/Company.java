@@ -14,8 +14,6 @@ import org.springframework.data.domain.Pageable;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-
 @Entity
 @Table(name="company")
 public class Company {

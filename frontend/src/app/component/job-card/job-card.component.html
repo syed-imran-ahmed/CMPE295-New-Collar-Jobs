@@ -12,12 +12,14 @@
     </mat-card-content>
     <div >
     <mat-card-actions  align="end">
-        <button  matRipple (click)="onButtonClick()">
-            <mat-icon color="primary">description</mat-icon>
-        </button>
-      <button  color="primary" (click)="onEditButtonClick()" *ngIf="isCompany"><mat-icon color="primary">edit</mat-icon></button>
-      <button  color="primary" *ngIf="!isCompany"mat-raised-button color="primary" (click)="onEditButtonClick()" >Apply</button>
-      <button *ngIf="isCompany"  matRipple color="primary" (click)="onButtonClick()">
+      <button mat-raised-button color="accent" (click)="onButtonClick()">
+        <mat-icon color="primary">description</mat-icon>
+      </button>
+      <button  mat-raised-button color="accent" (click)="onEditButtonClick()" *ngIf="isCompany">
+        <mat-icon color="primary">edit</mat-icon>
+      </button>
+      <button  color="primary" *ngIf="!isCompany" mat-raised-button color="accent" (click)="onEditButtonClick()" >Apply</button>
+      <button *ngIf="isCompany"  mat-raised-button color="accent" (click)="onApplicantsClick()">
           <mat-icon color="primary">people</mat-icon>
       </button>
     </mat-card-actions>

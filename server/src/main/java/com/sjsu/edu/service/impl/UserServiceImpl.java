@@ -44,8 +44,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-	private static final String environmentId = "6d3d9103-19b2-46bf-ba67-3b9e9cab891b";
-	private static final String collectionId = "7bbe91ad-c555-47ae-9f3d-a024e0a71ab6";
+	private static final String environmentId = "502c7158-c198-4fe5-98f8-a4b80a5dd633";
+	private static final String collectionId = "896a1909-3667-4748-851e-9e7bdd3eafdd";
 
     public void resetCredentials() {
         List<User> users = userRepository.findAll();
@@ -122,7 +122,7 @@ public class UserServiceImpl implements UserService {
 	public List<Job> search(String queryString){
 		QueryRequest.Builder queryBuilder = new QueryRequest.Builder(environmentId, collectionId);
 		
-		queryBuilder.query("enriched_text.keywords.text:\"" + queryString + "\" , enriched_text.entities.text:\"" + queryString + "\"");
+		queryBuilder.query("text:\"" + queryString +"\"");
 		Discovery discovery = DiscoveryAuthFactory.getInstance();
 		QueryResponse queryResponse = discovery.query(queryBuilder.build()).execute();
 		

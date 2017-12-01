@@ -20,7 +20,7 @@ public class DiscoveryAuthFactory {
                 	discovery = new Discovery("2017-10-16");
                     single_instance = discovery;
                     single_instance.setEndPoint("https://gateway.watsonplatform.net/discovery/api/");
-                    single_instance.setUsernameAndPassword("fedffdb5-cf7e-4810-b4db-2c3e30b8ab14", "EoAP7fC173cU");
+                    single_instance.setUsernameAndPassword("025decac-dbe3-4c66-ba36-7048f10c8f2f", "iAPwXASlFgo4");
                 } 
             } 
         } 

@@ -1,6 +1,9 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { PostjobComponent } from '../postjob';
+import { AuthService } from '../../service';
+import {ApplyjobComponent} from '../applyjob';
+
 
 @Component({
   selector: 'app-job-card',
@@ -24,8 +27,8 @@ export class JobCardComponent implements OnInit {
   expand = false;
 
   constructor(
-    public dialog: MatDialog
-  ) { }
+    public dialog: MatDialog,
+    ) { }
 
   ngOnInit() {
     this.count = 0;
@@ -37,11 +40,7 @@ export class JobCardComponent implements OnInit {
   }
 
   onButtonClick(){
-
-
-    console.log(this.jobid);
     this.count++;
-    //console.log("inside button count "+this.count);
     if(this.count%2==1)
     {
       this.expand=true;
@@ -49,9 +48,23 @@ export class JobCardComponent implements OnInit {
     else{
       this.expand=false;
     }
+  }
 
-
+  onApplicantsClick(){
     
+  }
+
+  responsePanelClass() {
+    const rClass = ['response'];
+    if (this.expand) {
+      rClass.push('expand');
+    }
+    // if (this.responseObj.status) {
+    //   this.responseObj.status === 200 ?
+    //     rClass.push('response-success') :
+    //     rClass.push('response-error');
+    // }
+    return rClass.join(' ');
   }
 
   onEditButtonClick() : void {
@@ -69,18 +82,18 @@ export class JobCardComponent implements OnInit {
       //this.animal = result;
     });
   }
+  else{
+    let dialogRef = this.dialog.open(ApplyjobComponent, {
+      width: '600px',
+      data: { jobid: this.jobid }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      
+    });
+  }
 }
 
-responsePanelClass() {
-  const rClass = ['response'];
-  if (this.expand) {
-    rClass.push('expand');
-  }
-  // if (this.responseObj.status) {
-  //   this.responseObj.status === 200 ?
-  //     rClass.push('response-success') :
-  //     rClass.push('response-error');
-  // }
-  return rClass.join(' ');
-}
+
 }

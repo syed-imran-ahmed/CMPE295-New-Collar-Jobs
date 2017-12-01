@@ -23,7 +23,7 @@ public class JobServiceImpl implements JobService {
 	public void saveJob(Job job){
 		jobRepository.save(job);
 		//send to discovery as well
-		DiscoveryService.submitJob(job);
+		//DiscoveryService.submitJob(job);
 	}
 	
 	@Override
