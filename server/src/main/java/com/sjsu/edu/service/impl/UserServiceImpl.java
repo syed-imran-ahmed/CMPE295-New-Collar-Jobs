@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
     private PasswordEncoder passwordEncoder;
 
 	private static final String environmentId = "502c7158-c198-4fe5-98f8-a4b80a5dd633";
-	private static final String collectionId = "896a1909-3667-4748-851e-9e7bdd3eafdd";
+	private static final String collectionId = "0d057ffb-35dd-4b19-8d36-8306c6774e96";
 
     public void resetCredentials() {
         List<User> users = userRepository.findAll();

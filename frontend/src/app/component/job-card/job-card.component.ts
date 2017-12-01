@@ -32,7 +32,6 @@ export class JobCardComponent implements OnInit {
 
   ngOnInit() {
     this.count = 0;
-    console.log("initial count "+this.count);
     if(this.buttonText==="edit")
     {
       this.isCompany = true;
@@ -78,8 +77,6 @@ export class JobCardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      //this.animal = result;
     });
   }
   else{
@@ -89,8 +86,7 @@ export class JobCardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      
+    
     });
   }
 }

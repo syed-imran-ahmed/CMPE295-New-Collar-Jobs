@@ -27,12 +27,12 @@ export class HomeComponent implements OnInit {
       console.log(user);
       if(user!=null || user!=''){
         if(user.companyname==null){
-          if(user.isProfileComplete){
+          if(user.profileComplete){
             this.router.navigate(['/user-home']);
           }
           else{
-            this.router.navigate(['/user-home']);
-            //this.router.navigate(['/questionnaire']);
+            //this.router.navigate(['/user-home']);
+            this.router.navigate(['/questionnaire']);
           }
         }
         else{

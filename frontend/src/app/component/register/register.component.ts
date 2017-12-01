@@ -82,7 +82,6 @@ export class RegisterComponent implements OnInit {
     });
 
     this.form.reset();
-    console.log('tabChangeEvent => ', tabChangeEvent);
     this.tabindex= tabChangeEvent.index;
   }
 
@@ -95,7 +94,6 @@ export class RegisterComponent implements OnInit {
     
     if (this.tabindex==1)
     {
-      console.log("inside employer");
       this.authService.empRegister(this.form.value)
       .delay(1000)
       .subscribe(data => {

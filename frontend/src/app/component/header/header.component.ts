@@ -27,11 +27,9 @@ export class HeaderComponent implements OnInit {
 
   onSearchClick(searchText: string)
   {
-    console.log("search button clicked");
     this.searchService.searchEntries(searchText)
     .subscribe(results => {
       this.searchService.searchData = results.content;
-      console.log(this.searchService.searchData);
       this.router.navigate(['/']).then(()=>{this.router.navigate(['/search'])});
     });
   }
@@ -53,7 +51,6 @@ export class HeaderComponent implements OnInit {
   isUser(){
     if(this.userService.currentUser)
     {
-      //console.log(this.userService.currentUser.companyname);
       return this.userService.currentUser.companyname===null;
     }
   }

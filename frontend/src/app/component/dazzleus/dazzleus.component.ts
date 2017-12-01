@@ -24,7 +24,6 @@ export class DazzleusComponent implements OnInit {
     this.file = [];
     this.firebase = (<any>window).firebase;
     this.expand = false;
-    console.log('Printing firebase instance' + this.firebase);
   }
 
   ngOnInit() {
@@ -35,15 +34,12 @@ export class DazzleusComponent implements OnInit {
 
 
   selectFile(event) {
-    console.log(event);
     const fileList: FileList = event.target.files;
     for ( let i = 0; i < fileList.length; i++ ) {
-      console.log(fileList[i]);
       this.file.push(fileList[i]);
     }
   }
   onsubmit(form) {
-    console.log('logging out form-->' + form.value.comment);
     let auth = this.firebase.auth();
     let storageRef = this.firebase.storage().ref();
     let metadata ={
@@ -51,10 +47,7 @@ export class DazzleusComponent implements OnInit {
     };
     storageRef.child('images/'+this.file[0].name).put(this.file[0], metadata).then(
       snapshot=>{
-       console.log(snapshot.metadata);
        const url = snapshot.metadata.downloadURLs[0];
-       console.log('file available at'+url);
-       console.log('comment is'+ form.value.comment);
        //we should call our rest service to store file and user correlation
       }).catch(function (error) {
       console.error(error);

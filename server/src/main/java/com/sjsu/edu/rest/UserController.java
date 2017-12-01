@@ -25,6 +25,7 @@ import com.sjsu.edu.model.UserProfile;
 import com.sjsu.edu.repository.ApplicationsRepository;
 import com.sjsu.edu.repository.JobRepository;
 import com.sjsu.edu.repository.UserProfileRepository;
+import com.sjsu.edu.repository.UserRepository;
 import com.sjsu.edu.service.UserService;
 
 /**
@@ -38,6 +39,9 @@ public class UserController {
 	
 	@Autowired
 	ApplicationsRepository appRepository;
+	
+	@Autowired
+	UserRepository userRepository;
 
 	@RequestMapping(method = RequestMethod.PATCH, value = "/user/profile/{profileId}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> patchProfile(@PathVariable(name = "profileId") String profileId,
@@ -127,7 +131,7 @@ public class UserController {
     public ResponseEntity<?> createProfile( UserProfile profile) {
     
     String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-    User user = userService.findByUsername("imran");
+    User user = userService.findByUsername(currentUserName);
     
     if(user!=null){
 	    profile.setEmailId(user.getEmailid());
@@ -137,7 +141,10 @@ public class UserController {
     }
     UserProfile p;
 	try{
+		user.setProfileComplete(true);
+		userRepository.save(user);
 		p = profileRepository.save(profile);
+		
 	}catch(Exception e){
 		return reportBadRequest(e);
 	}

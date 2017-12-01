@@ -19,7 +19,7 @@ export class ListDialogueComponent implements OnInit {
   item4 : string;
   item5 : string;
 
-  constructor(private dialogueRef : MatDialogRef<ListDialogueComponent>, @Inject(MAT_DIALOG_DATA) private data: any) { }
+  constructor(private dialogueRef : MatDialogRef<ListDialogueComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
     this.listItems = this.data['items'];

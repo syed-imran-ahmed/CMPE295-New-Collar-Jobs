@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {PageEvent} from '@angular/material';
+import { Router } from '@angular/router';
 import {
   RecommendedjobsService,
   ConfigService,
-  CompanyService
+  CompanyService,
+  UserService
 } from '../../service';
 
 @Component({
@@ -26,11 +28,26 @@ export class UserHomeComponent implements OnInit {
 
   constructor(
     private recommendedjobservice: RecommendedjobsService,
-    private companyService: CompanyService
+    private companyService: CompanyService,
+    private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.getData();
+    this.userService.getMyInfo().subscribe(user =>{
+      console.log(user);
+      if(user!=null || user!=''){
+        if(user.companyname==null){
+          if(user.profileComplete){
+            this.getData();
+          }
+          else{
+            this.router.navigate(['/questionnaire']);
+          }
+        }
+    }
+    });
+   
   }
 
   getData(event?:PageEvent)

@@ -44,8 +44,19 @@ public class User implements UserDetails, Serializable {
     
     @Column(name = "companyname")
     private String companyname;
+    
+    @Column(name = "isprofilecomplete")
+    private boolean isProfileComplete;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    public boolean isProfileComplete() {
+		return isProfileComplete;
+	}
+
+	public void setProfileComplete(boolean isProfileComplete) {
+		this.isProfileComplete = isProfileComplete;
+	}
+
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_authority",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))

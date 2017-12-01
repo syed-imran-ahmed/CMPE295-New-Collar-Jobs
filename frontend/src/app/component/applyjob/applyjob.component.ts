@@ -16,7 +16,6 @@ export class ApplyjobComponent implements OnInit {
      }
 
   onApplyClick(): void {
-    console.log(this.data);
     this.authService.applyJob(this.data).subscribe(res=>{
       console.log(res);
     });

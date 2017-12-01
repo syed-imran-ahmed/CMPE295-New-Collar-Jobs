@@ -67,12 +67,27 @@ export class QuestionnaireComponent implements OnInit {
     private authService: AuthService,
     private router: Router
   ) {
+
+    this.userService.getMyInfo().subscribe(user =>{
+      if(user!=null || user!=''){
+        if(user.companyname==null){
+          if(user.profileComplete){
+            this.router.navigate(['/user-home'])
+          }
+          else{
+          }
+        }
+    }
+    });
     this.file = [];
     this.firebase = (<any>window).firebase;
     
    }
 
   ngOnInit() {
+    
+
+
     this.firstFormGroup = this._formBuilder.group({
       age: ['', Validators.required],
       work: ['', Validators.required],
@@ -106,10 +121,8 @@ export class QuestionnaireComponent implements OnInit {
     };
     storageRef.child('images/' + this.image.name).put(this.image, metadata).then(
       snapshot => {
-        console.log(snapshot.metadata);
         const url = snapshot.metadata.downloadURLs[0];
        this.profilePhotoUrl = url;
-       console.log(this.profilePhotoUrl);
       }).catch(function (error) {
       console.error(error);
     });
@@ -117,7 +130,6 @@ export class QuestionnaireComponent implements OnInit {
 
 
   personality1(event) {
-    //console.log(event.value);
     this.personalityOne = event.value;
   }
   personality2(event) {
@@ -160,10 +172,7 @@ onSubmit() {
   // show me the animation
  .delay(1000)
  .subscribe(data => {
-    console.log("user profile successfully posted");
     this.router.navigate(['/']);  
-   
- 
  },
  error => {
   console.log("error occured in posting user profile");

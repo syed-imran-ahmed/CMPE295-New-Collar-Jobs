@@ -12,7 +12,7 @@ export class ImageDialogueComponent implements OnInit {
   image: File;
   quote: string;
   firebase: any;
-  constructor(private dialogueRef: MatDialogRef<ImageDialogueComponent>, @Inject(MAT_DIALOG_DATA) private data: any) { }
+  constructor(private dialogueRef: MatDialogRef<ImageDialogueComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
     console.log('Data is :' + JSON.stringify(this.data));
