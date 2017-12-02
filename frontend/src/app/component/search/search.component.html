@@ -1,6 +1,5 @@
 <br>
 <h1> JOB SEARCH </h1>
-
 <div *ngIf="searched">
   <h3> Search results for <b>{{searchTxt}}</b></h3>
 </div> 
@@ -13,6 +12,7 @@
       content={{job.description}}
       jobid={{job.jobid}}
       buttonText="Apply"
+      imagePath={{job.company.logo}}
     >
     </app-job-card>
 </div>

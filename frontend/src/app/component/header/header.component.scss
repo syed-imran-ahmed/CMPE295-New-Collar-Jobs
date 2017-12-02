@@ -70,6 +70,12 @@
   font-size: 30px;
 }
 
+mat-spinner {
+  position: fixed; /* or absolute */
+  top: 30%;
+  left: 30%;
+  z-index: 999;
+}
 
 /deep/ {
   .app-header-accountMenu.mat-menu-panel {

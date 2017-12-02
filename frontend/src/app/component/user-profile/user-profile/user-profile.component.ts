@@ -18,13 +18,12 @@ export class UserProfileComponent implements OnInit {
   isPesonalityEditable : boolean;
 
   id: string;
-  profilePhotoUrl: string = "http://www.freeiconspng.com/uploads/trump-face-png-21.png";
+  profilePhotoUrl: string = "http://sschit.in/wp-content/uploads/2015/11/headshot.png";
   profileQuote: string = "\"A quotation that captures this person's personality\"";
   age: number = 30;
   work: string = "Engineer";//jobTitle
   family: string = "Single";//familyStatus enum have to map to string values
   location: string = "San Jose, CA, USA";// Location class
-  character: string = "Funny";
 
   //progressBar-One
   label1: string = "Introvert";

@@ -31,10 +31,12 @@ export class UserHomeComponent implements OnInit {
     private companyService: CompanyService,
     private userService: UserService,
     private router: Router
-  ) { }
+  ) {this.submitted=true; }
 
   ngOnInit() {
-    this.userService.getMyInfo().subscribe(user =>{
+    
+    this.userService.getMyInfo()
+    .subscribe(user =>{
       console.log(user);
       if(user!=null || user!=''){
         if(user.companyname==null){
@@ -42,6 +44,7 @@ export class UserHomeComponent implements OnInit {
             this.getData();
           }
           else{
+            this.submitted = false;
             this.router.navigate(['/questionnaire']);
           }
         }
@@ -54,13 +57,9 @@ export class UserHomeComponent implements OnInit {
   {
     this.submitted=true;
     this.recommendedjobservice.getJobs(event)
-    .delay(500)
     .subscribe(res => {
       this.jobs = res.content;
       this.submitted = false;
-      //this.companyService.getCompany(jobs.)
-
-
     }, err => {
       this.submitted = false;
       //TODO: spill out the error

@@ -40,6 +40,7 @@ export class SearchComponent implements OnInit,OnDestroy {
       this.searched=true;
     }
     this.jobs= this.searchService.searchData;
+    console.log(this.jobs);
   }
 
   getSearchData(event?:PageEvent)

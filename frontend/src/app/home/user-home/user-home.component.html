@@ -1,6 +1,6 @@
 <br>
 <h1> RECOMMENDED JOBS</h1>
-<!-- <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner> -->
+<mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
 <div class="content" fxLayout="column" fxLayoutAlign="left none"  *ngFor="let job of jobs">  
     <app-job-card
       fxFlex
@@ -9,6 +9,7 @@
       content={{job.description}}
       jobid={{job.jobid}}
       buttonText="apply"
+      imagePath={{job.company.logo}}
     >
     </app-job-card>
 </div>

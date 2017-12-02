@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   
 
   searchTerm$ = new Subject<string>();
+  submitted  = false;
 
   constructor(
     private userService: UserService,
@@ -26,11 +27,15 @@ export class HeaderComponent implements OnInit {
   }
 
   onSearchClick(searchText: string)
-  {
+  { 
+    this.submitted = true;
     this.searchService.searchEntries(searchText)
     .subscribe(results => {
       this.searchService.searchData = results.content;
-      this.router.navigate(['/']).then(()=>{this.router.navigate(['/search'])});
+      this.router.navigate(['/']).then(()=>{
+        this.submitted = false;
+        this.router.navigate(['/search'])
+      });
     });
   }
 
