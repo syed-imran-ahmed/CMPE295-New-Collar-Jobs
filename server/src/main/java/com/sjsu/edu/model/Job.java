@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -91,6 +91,27 @@ public class Job {
 	public void setCompany(Company company) {
 		this.company = company;
 	}
+	
+	public void setCompanyLogo(String link){
+		this.companyLogo = link;
+	}
+	
+	public String getCompanyLogo(){
+		return this.companyLogo;
+	}
+	
+	public Job(Long jobid, String title, String description, 
+			String city, String state, String country, int salary, String traits, String companyLogo){
+		this.jobid = jobid;
+		this.title = title;
+		this.description = description;
+		this.city = city;
+		this.state = state;
+		this.country = country;
+		this.salary = salary;
+		this.traits = traits;
+		this.companyLogo = companyLogo;
+	}
 
 	@Id
 	@Column(name = "jobid")
@@ -117,6 +138,9 @@ public class Job {
 	
 	@Column(name = "traits")
 	private String traits;
+	
+	@Transient
+	private String companyLogo;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "company_cid")

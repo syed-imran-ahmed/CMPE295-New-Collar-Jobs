@@ -101,14 +101,7 @@ public class UserServiceImpl implements UserService {
 		List<Map<String, Object>> documents = queryResponse.getResults();
 		List<Long> jobIds = new ArrayList<Long>();
 		documents.forEach(document -> {
-			List<String> keys = document.keySet()
-                    .stream()
-                    .filter(s -> s.endsWith("jobid"))
-                    .collect(Collectors.toList());
-			String jobId = String.valueOf(document.get(keys.get(0)));
-			if(jobId.contains(".")){
-				jobId = jobId.substring(0, jobId.indexOf("."));
-			}
+			String jobId = String.valueOf(document.get("jobid"));
 			jobIds.add(Long.parseLong(jobId));
 		});
 		
