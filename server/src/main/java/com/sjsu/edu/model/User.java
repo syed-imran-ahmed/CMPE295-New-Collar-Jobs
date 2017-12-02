@@ -1,6 +1,8 @@
 package com.sjsu.edu.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -16,9 +18,9 @@ import java.util.List;
 @Entity
 @Table(name="USER")
 public class User implements UserDetails, Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
+    @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -49,18 +51,26 @@ public class User implements UserDetails, Serializable {
     private boolean isProfileComplete;
 
     public boolean isProfileComplete() {
-		return isProfileComplete;
-	}
+        return isProfileComplete;
+    }
 
-	public void setProfileComplete(boolean isProfileComplete) {
-		this.isProfileComplete = isProfileComplete;
-	}
+    public void setProfileComplete(boolean isProfileComplete) {
+        this.isProfileComplete = isProfileComplete;
+    }
 
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_authority",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
     private List<Authority> authorities;
+    
+    @OneToMany(orphanRemoval=true, mappedBy = "user", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<Application> applications;
+
+    @JsonIgnore
+    public List<Application> getApplications(Pageable pageable) {
+        return applications;
+    }
 
     public Long getId() {
         return id;
@@ -75,14 +85,14 @@ public class User implements UserDetails, Serializable {
     }
 
     public String getEmailid() {
-		return emailid;
-	}
+        return emailid;
+    }
 
-	public void setEmailid(String emailid) {
-		this.emailid = emailid;
-	}
+    public void setEmailid(String emailid) {
+        this.emailid = emailid;
+    }
 
-	public void setUsername(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
@@ -112,22 +122,22 @@ public class User implements UserDetails, Serializable {
     }
 
     public String getJobtitle() {
-		return jobtitle;
-	}
+        return jobtitle;
+    }
 
-	public void setJobtitle(String jobtitle) {
-		this.jobtitle = jobtitle;
-	}
+    public void setJobtitle(String jobtitle) {
+        this.jobtitle = jobtitle;
+    }
 
-	public String getCompanyname() {
-		return companyname;
-	}
+    public String getCompanyname() {
+        return companyname;
+    }
 
-	public void setCompanyname(String companyname) {
-		this.companyname = companyname;
-	}
+    public void setCompanyname(String companyname) {
+        this.companyname = companyname;
+    }
 
-	public void setAuthorities(List<Authority> authorities) {
+    public void setAuthorities(List<Authority> authorities) {
         this.authorities = authorities;
     }
 

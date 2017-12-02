@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sjsu.edu.model.Applications;
+import com.sjsu.edu.model.Application;
 import com.sjsu.edu.model.Job;
 import com.sjsu.edu.model.User;
 import com.sjsu.edu.model.UserProfile;
-import com.sjsu.edu.repository.ApplicationsRepository;
+import com.sjsu.edu.repository.ApplicationRepository;
 import com.sjsu.edu.repository.JobRepository;
 import com.sjsu.edu.repository.UserProfileRepository;
 import com.sjsu.edu.repository.UserRepository;
@@ -36,51 +36,12 @@ import com.sjsu.edu.service.UserService;
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
 
-	
-	@Autowired
-	ApplicationsRepository appRepository;
-	
-	@Autowired
-	UserRepository userRepository;
-
-	@RequestMapping(method = RequestMethod.PATCH, value = "/user/profile/{profileId}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> patchProfile(@PathVariable(name = "profileId") String profileId,
-			@RequestBody UserProfile partialProfile) {
-		String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-		final UserProfile userProfile = profileRepository.findByUsername(currentUserName);
-
-		if (partialProfile.getBio() != null) {
-			userProfile.setBio(partialProfile.getBio());
-		}
-		if(partialProfile.getFrustrations()!=null) {
-			userProfile.setFrustrations(partialProfile.getFrustrations());
-		}
-		if(partialProfile.getGoals()!=null) {
-			userProfile.setFrustrations(partialProfile.getGoals());
-		}
-		if(partialProfile.getImageURL()!=null) {
-			userProfile.setImageURL(partialProfile.getImageURL());
-		}
-		if(partialProfile.getQuotation()!=null) {
-			userProfile.setQuotation(partialProfile.getQuotation());
-		}
-		if(partialProfile.getPersonality()!=null) {
-			userProfile.setPersonality(partialProfile.getPersonality());
-		}
-		
-		this.profileRepository.save(userProfile);
-		return reportSuccess("Profile patched successfully");
-	}
-
-	@RequestMapping(method = RequestMethod.GET, value = "/user/jobs/")
-	public List<Job> getJobRecommendations(@RequestParam(value = "cityFilter", required = false) boolean cityFilter,
-			@RequestParam(value = "stateFilter", required = false) boolean stateFilter) {
-		String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-		if (currentUserName == null || currentUserName.isEmpty()) {
-			currentUserName = "imran";
-		}
-		return userService.getJobRecommendations(currentUserName, cityFilter, stateFilter);
-	}
+    
+    @Autowired
+    ApplicationRepository appRepository;
+    
+    @Autowired
+    UserRepository userRepository;
 
     @Autowired
     private UserService userService;
@@ -91,21 +52,60 @@ public class UserController {
     @Autowired
     private JobRepository jobRepository;
 
+    @RequestMapping(method = RequestMethod.PATCH, value = "/user/profile/{profileId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> patchProfile(@PathVariable(name = "profileId") String profileId,
+            @RequestBody UserProfile partialProfile) {
+        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+        final UserProfile userProfile = profileRepository.findByUsername(currentUserName);
+
+        if (partialProfile.getBio() != null) {
+            userProfile.setBio(partialProfile.getBio());
+        }
+        if(partialProfile.getFrustrations()!=null) {
+            userProfile.setFrustrations(partialProfile.getFrustrations());
+        }
+        if(partialProfile.getGoals()!=null) {
+            userProfile.setFrustrations(partialProfile.getGoals());
+        }
+        if(partialProfile.getImageURL()!=null) {
+            userProfile.setImageURL(partialProfile.getImageURL());
+        }
+        if(partialProfile.getQuotation()!=null) {
+            userProfile.setQuotation(partialProfile.getQuotation());
+        }
+        if(partialProfile.getPersonality()!=null) {
+            userProfile.setPersonality(partialProfile.getPersonality());
+        }
+        
+        this.profileRepository.save(userProfile);
+        return reportSuccess("Profile patched successfully");
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/user/jobs/")
+    public List<Job> getJobRecommendations(@RequestParam(value = "cityFilter", required = false) boolean cityFilter,
+            @RequestParam(value = "stateFilter", required = false) boolean stateFilter) {
+        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+        if (currentUserName == null || currentUserName.isEmpty()) {
+            currentUserName = "imran";
+        }
+        return userService.getJobRecommendations(currentUserName, cityFilter, stateFilter);
+    }
+
     @RequestMapping( method = RequestMethod.GET, value = "/user/{userId}" )
     public User loadById( @PathVariable Long userId ) {
-    	String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-    	return userService.findByUsername(currentUserName); 
+        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+        return userService.findByUsername(currentUserName); 
     }
 
     @RequestMapping( method = RequestMethod.GET, value= "/user/all")
     public List<User> loadAll() {
-    	String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-    	User user = userService.findByUsername(currentUserName);
-    	if (user!=null)
-    	{
-    		return this.userService.findAll();
-    	}
-    	else return null;
+        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userService.findByUsername(currentUserName);
+        if (user!=null)
+        {
+            return this.userService.findAll();
+        }
+        else return null;
     }
 
     @RequestMapping( method = RequestMethod.GET, value= "/user/reset-credentials")
@@ -134,83 +134,86 @@ public class UserController {
     User user = userService.findByUsername(currentUserName);
     
     if(user!=null){
-	    profile.setEmailId(user.getEmailid());
-	    profile.setFirstName(user.getFirstname());
-	    profile.setLastName(user.getLastname());
-	    profile.setUsername(user.getUsername());
+        profile.setEmailId(user.getEmailid());
+        profile.setFirstName(user.getFirstname());
+        profile.setLastName(user.getLastname());
+        profile.setUsername(user.getUsername());
     }
     UserProfile p;
-	try{
-		user.setProfileComplete(true);
-		userRepository.save(user);
-		p = profileRepository.save(profile);
-		
-	}catch(Exception e){
-		return reportBadRequest(e);
-	}
-	return ResponseEntity.accepted().body(p);
+    try{
+        user.setProfileComplete(true);
+        userRepository.save(user);
+        p = profileRepository.save(profile);
+        
+    }catch(Exception e){
+        return reportBadRequest(e);
+    }
+    return ResponseEntity.accepted().body(p);
     }
     
     @RequestMapping( method = RequestMethod.GET, value= "/user/profile/")
     public UserProfile getProfile() {
         String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-    	return profileRepository.findByUsername(currentUserName);
+        return profileRepository.findByUsername(currentUserName);
     }
     
     @RequestMapping( method = RequestMethod.GET, value= "/user/jobs")
     public Page<Job> getJobRecommendations( Pageable pageable,
-    		@RequestParam(value = "cityFilter", required = false) boolean cityFilter,
-    		@RequestParam(value = "stateFilter", required = false) boolean stateFilter) {
+            @RequestParam(value = "cityFilter", required = false) boolean cityFilter,
+            @RequestParam(value = "stateFilter", required = false) boolean stateFilter) {
         String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
         if(currentUserName == null || currentUserName.isEmpty()){
-        	currentUserName = "imran";
+            currentUserName = "imran";
         }
         
-//		Page<Job> page = new PageImpl<>(userService.getJobRecommendations(currentUserName, cityFilter, stateFilter));
-//		return page;        
+//        Page<Job> page = new PageImpl<>(userService.getJobRecommendations(currentUserName, cityFilter, stateFilter));
+//        return page;        
         
         Page<Job> jobs = jobRepository.findAll(pageable);
-    	return jobs;
+        return jobs;
         
     }
     
     @RequestMapping( method = RequestMethod.GET, value= "/search/jobs")
     public Page<Job> search( Pageable pageable,
-    		@RequestParam(value = "search") String search) {
+            @RequestParam(value = "search") String search) {
         String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
         if(currentUserName == null || currentUserName.isEmpty()){
-        	currentUserName = "imran";
+            currentUserName = "imran";
         }  
         
 //        Page<Job> jobs = jobRepository.findAll(pageable);
-//    	return jobs;
+//        return jobs;
         Page<Job> page = new PageImpl<>(userService.search(search));
-		return page;   
+        return page;   
     }
     
     @RequestMapping( method = RequestMethod.POST, value= "/apply",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ResponseEntity<?> apply( Applications app) {
+    public ResponseEntity<?> apply(@RequestParam Long jobId) {
         String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
         if(currentUserName == null || currentUserName.isEmpty()){
-        	currentUserName = "imran";
+            currentUserName = "imran";
         }  
         User user = userService.findByUsername(currentUserName);
-        app.setUserid(user.getId());
-        Applications application = appRepository.save(app);
-    	return ResponseEntity.accepted().body(application);  
+        Job job = jobRepository.findOne(jobId);
+        Application app = new Application();
+        app.setUser(user);
+        app.setJob(job);
+        Application application = appRepository.save(app);
+        return ResponseEntity.accepted().body(application);  
     }
     
 
-	private ResponseEntity<?> reportSuccess(String message) {
-		Map<String, String> result = new HashMap<>();
-		result.put("result", message);
-		return ResponseEntity.accepted().body(result);
-	}
+    private ResponseEntity<?> reportSuccess(String message) {
+        Map<String, String> result = new HashMap<>();
+        result.put("result", message);
+        return ResponseEntity.accepted().body(result);
+    }
 
-	private ResponseEntity<?> reportBadRequest(Exception e) {
-		Map<String, String> result = new HashMap<>();
-		result.put("result", e.getMessage());
-		return ResponseEntity.badRequest().body(result);
-	}
+    private ResponseEntity<?> reportBadRequest(Exception e) {
+        Map<String, String> result = new HashMap<>();
+        result.put("result", e.getMessage());
+        return ResponseEntity.badRequest().body(result);
+    }
 
 }
