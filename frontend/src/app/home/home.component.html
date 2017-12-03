@@ -24,8 +24,8 @@
     title='"Personas"'
     subTitle="Public"
     imgUrl="assets/image/foo.png"
-    content='This endpoint will present the personas to choose from'
-    apiText="/api/foo"
+    content='Build your profile by choosing your persona type.'
+    
     [responseObj]="fooResponse"
     (apiClick)="makeRequest($event)"
   >
@@ -36,8 +36,8 @@
      title='"Who am I"'
      subTitle="User preferences"
      imgUrl="assets/image/user.png"
-     content='This endpoint will present the user with a list of preferences like farmer / plumber / maker / writer / hacker'
-     apiText="/api/whoami"
+     content='Tell us about your goals, weaknesses, what motivates you and we will tailor the jobs for you.'
+     
      [responseObj]="whoamIResponse"
      (apiClick)="makeRequest($event)"
   >
@@ -49,8 +49,8 @@
      title='"Dazzle Us!"'
      subTitle="Show us what have you done?"
      imgUrl="assets/image/admin.png"
-     content='This endpoint will let the user explain briefly and show what he has created.'
-     apiText="/api/user/all"
+     content='Dazzle us with your bio or the work which you are most proud of to get unique results for jobs.'
+     
      [responseObj]="allUserResponse"
      (apiClick)="makeRequest($event)"
   >

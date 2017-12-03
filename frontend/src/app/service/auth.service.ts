@@ -66,7 +66,7 @@ export class AuthService {
 
   applyJob(data)
   {
-    const body = `jobid=${data.jobid}&userid=0`;
+    const body = `jobId=${data.jobid}`;
     const headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     return this.apiService.post(this.config.apply_url, body, headers);

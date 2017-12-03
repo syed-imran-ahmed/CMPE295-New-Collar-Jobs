@@ -53,4 +53,8 @@ export class UserCardComponent implements OnInit {
 
     console.log(this.expand);
   }
+
+  onCandidateSelect(){
+    console.log("selected");
+  }
 }

@@ -79,6 +79,7 @@ export class JobCardComponent implements OnInit {
     });
   }
   else{
+    console.log("on apply clicked");
     let dialogRef = this.dialog.open(ApplyjobComponent, {
       width: '600px',
       data: { jobid: this.jobid }
