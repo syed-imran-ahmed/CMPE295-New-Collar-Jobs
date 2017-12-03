@@ -6,7 +6,6 @@ import {PageEvent} from '@angular/material';
 
 @Injectable()
 export class CompanyService {
-  
   constructor(
     private apiService: ApiService,
     private config: ConfigService

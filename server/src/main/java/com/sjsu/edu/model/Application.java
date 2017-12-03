@@ -23,7 +23,31 @@ public class Application {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long appid;
     
-    @ManyToOne(fetch = FetchType.EAGER)
+    public long getAppid() {
+		return appid;
+	}
+
+	public void setAppid(long appid) {
+		this.appid = appid;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Job getJob() {
+		return job;
+	}
+
+	public void setJob(Job job) {
+		this.job = job;
+	}
+
+	@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userid")
     private User user;
     
