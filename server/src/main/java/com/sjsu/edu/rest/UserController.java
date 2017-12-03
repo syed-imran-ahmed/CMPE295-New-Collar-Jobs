@@ -18,11 +18,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sjsu.edu.model.Applications;
+import com.sjsu.edu.model.Application;
 import com.sjsu.edu.model.Job;
 import com.sjsu.edu.model.User;
 import com.sjsu.edu.model.UserProfile;
-import com.sjsu.edu.repository.ApplicationsRepository;
+import com.sjsu.edu.repository.ApplicationRepository;
+import com.sjsu.edu.repository.JobRepository;
 import com.sjsu.edu.repository.UserProfileRepository;
 import com.sjsu.edu.repository.UserRepository;
 import com.sjsu.edu.service.UserService;
@@ -37,10 +38,13 @@ public class UserController {
 
 	
 	@Autowired
-	ApplicationsRepository appRepository;
+	ApplicationRepository appRepository;
 	
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	JobRepository jobRepository;
 
 	@RequestMapping(method = RequestMethod.PATCH, value = "/user/profile/{profileId}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> patchProfile(@PathVariable(name = "profileId") String profileId,
@@ -171,15 +175,18 @@ public class UserController {
     }
     
     @RequestMapping( method = RequestMethod.POST, value= "/apply",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ResponseEntity<?> apply( Applications app) {
+    public ResponseEntity<?> apply(@RequestParam Long jobId) {
         String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
         if(currentUserName == null || currentUserName.isEmpty()){
-        	currentUserName = "imran";
+            currentUserName = "imran";
         }  
         User user = userService.findByUsername(currentUserName);
-        app.setUserid(user.getId());
-        Applications application = appRepository.save(app);
-    	return ResponseEntity.accepted().body(application);  
+        Job job = jobRepository.findOne(jobId);
+        Application app = new Application();
+        app.setUser(user);
+        app.setJob(job);
+        Application application = appRepository.save(app);
+        return ResponseEntity.accepted().body(application);  
     }
     
 
