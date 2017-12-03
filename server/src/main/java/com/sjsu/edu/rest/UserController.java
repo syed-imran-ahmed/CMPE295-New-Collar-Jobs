@@ -23,7 +23,6 @@ import com.sjsu.edu.model.Job;
 import com.sjsu.edu.model.User;
 import com.sjsu.edu.model.UserProfile;
 import com.sjsu.edu.repository.ApplicationsRepository;
-import com.sjsu.edu.repository.JobRepository;
 import com.sjsu.edu.repository.UserProfileRepository;
 import com.sjsu.edu.repository.UserRepository;
 import com.sjsu.edu.service.UserService;
@@ -72,24 +71,11 @@ public class UserController {
 		return reportSuccess("Profile patched successfully");
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/user/jobs/")
-	public List<Job> getJobRecommendations(@RequestParam(value = "cityFilter", required = false) boolean cityFilter,
-			@RequestParam(value = "stateFilter", required = false) boolean stateFilter) {
-		String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-		if (currentUserName == null || currentUserName.isEmpty()) {
-			currentUserName = "imran";
-		}
-		return userService.getJobRecommendations(currentUserName, cityFilter, stateFilter);
-	}
-
     @Autowired
     private UserService userService;
     
     @Autowired
     private UserProfileRepository profileRepository;
-    
-    @Autowired
-    private JobRepository jobRepository;
 
     @RequestMapping( method = RequestMethod.GET, value = "/user/{userId}" )
     public User loadById( @PathVariable Long userId ) {
@@ -161,16 +147,12 @@ public class UserController {
     public Page<Job> getJobRecommendations( Pageable pageable,
     		@RequestParam(value = "cityFilter", required = false) boolean cityFilter,
     		@RequestParam(value = "stateFilter", required = false) boolean stateFilter) {
-        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-        if(currentUserName == null || currentUserName.isEmpty()){
-        	currentUserName = "imran";
-        }
+        String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();        
+		Page<Job> page = userService.getJobRecommendations(currentUserName, cityFilter, stateFilter, pageable);
+		return page;        
         
-//		Page<Job> page = new PageImpl<>(userService.getJobRecommendations(currentUserName, cityFilter, stateFilter));
-//		return page;        
-        
-        Page<Job> jobs = jobRepository.findAll(pageable);
-    	return jobs;
+        //Page<Job> jobs = jobRepository.findAll(pageable);
+    	//return jobs;
         
     }
     

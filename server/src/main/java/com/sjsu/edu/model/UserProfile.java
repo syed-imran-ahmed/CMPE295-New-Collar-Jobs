@@ -78,12 +78,12 @@ public class UserProfile {
 		this.motivation = motivation;
 	}
 
-	public List<String> getTraits() {
-		return traits;
+	public Trait getTrait() {
+		return trait;
 	}
 
-	public void setTraits(List<String> traits) {
-		this.traits = traits;
+	public void setTrait(Trait trait) {
+		this.trait = trait;
 	}
 
 	public List<String> getGoals() {
@@ -158,7 +158,7 @@ public class UserProfile {
     Location location;
     Personality personality;
     Motivation motivation;
-    List<String> traits;
+    Trait trait;
     List<String> goals;
     List<String> frustrations;
 
@@ -188,7 +188,11 @@ public class UserProfile {
     }
 
     public enum FamilyStatus {
-	SINGLE, MARRIED, MARRIED_WITH_KIDS, DIVORCED;
+	    SINGLE, MARRIED, MARRIED_WITH_KIDS, DIVORCED;
+    }
+    
+    public enum Trait {
+	    BOOK_SMART, STREET_SMART;
     }
 
     @Data
@@ -231,12 +235,6 @@ public class UserProfile {
 		public void setIncentive(Integer incentive) {
 			this.incentive = incentive;
 		}
-		public Integer getFear() {
-			return fear;
-		}
-		public void setFear(Integer fear) {
-			this.fear = fear;
-		}
 		public Integer getGrowth() {
 			return growth;
 		}
@@ -249,16 +247,8 @@ public class UserProfile {
 		public void setPower(Integer power) {
 			this.power = power;
 		}
-		public Integer getSocial() {
-			return social;
-		}
-		public void setSocial(Integer social) {
-			this.social = social;
-		}
 	Integer incentive;
-	Integer fear;
 	Integer growth;
 	Integer power;
-	Integer social;
     }
 }
