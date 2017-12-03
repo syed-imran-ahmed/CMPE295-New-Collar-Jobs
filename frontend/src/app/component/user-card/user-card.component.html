@@ -1,0 +1,24 @@
+    <mat-card>
+        <img src="{{imagePath || 'http://sschit.in/wp-content/uploads/2015/11/headshot.png'}}" class ="image" align="left" />
+        <mat-card-header>
+          <mat-card-title><b>{{name}}</b></mat-card-title>
+          <mat-card-subtitle>{{quotation}}</mat-card-subtitle>
+        </mat-card-header>
+        <!-- <img src="{{imagePath || 'http://sschit.in/wp-content/uploads/2015/11/headshot.png'}}" class ="image" align="left" /> -->
+        <!-- <img mat-card-image [src]="imagePath"> -->
+        <div >
+        <mat-card-actions  align="end">
+            <button mat-raised-button color="accent" (click)="onButtonClick()">
+                <mat-icon color="primary">person</mat-icon>
+              </button>
+            <button mat-raised-button color="warm" (click)="onCandidateSelect()">
+                <mat-icon color="primary">done</mat-icon>
+            </button>
+        </mat-card-actions>
+      </div>
+        <div [class]="responsePanelClass()" >
+          <pre><b>Current Job Title:</b> {{jobTitle}}</pre>
+          <pre><b>Location:</b> {{location}}</pre>
+          <pre><b>Bio:</b> {{bio}}</pre>
+        </div>
+      </mat-card> 

@@ -16,6 +16,7 @@ import {
   MatPaginatorModule,
   MatDialogModule,
   MatSliderModule,
+  MatRadioModule,
   MatSliderChange,
   MatProgressSpinnerModule,
   MatSnackBarModule,
@@ -67,6 +68,8 @@ import { QuestionnaireComponent } from './component/questionnaire/questionnaire.
 import { UserHomeComponent } from './home/user-home/user-home.component';
 import { SearchComponent } from './component/search/search.component';
 import { ApplyjobComponent } from './component/applyjob/applyjob.component';
+import { ApplicantsComponent } from './home/company-home/applicants/applicants.component';
+import { UserCardComponent } from './component/user-card/user-card.component';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -98,7 +101,9 @@ export function initUserFactory(userService: UserService) {
     QuestionnaireComponent,
     UserHomeComponent,
     SearchComponent,
-    ApplyjobComponent
+    ApplyjobComponent,
+    ApplicantsComponent,
+    UserCardComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -116,6 +121,7 @@ export function initUserFactory(userService: UserService) {
     MatInputModule,
     MatToolbarModule,
     MatCardModule,
+    MatRadioModule,
     MatDialogModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,

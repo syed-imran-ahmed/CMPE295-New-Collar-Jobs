@@ -15,6 +15,11 @@
   border-radius: 50%;
 }
 
+.example-radio-button {
+  padding-left: 15px;
+  margin: 5px;
+}
+
 .quoteProfile{
   background-color:rgb(103, 58, 183);
   font-family:proxima-bold, Helvetica, sans-serif;
@@ -59,6 +64,14 @@ li span {
   font-family: Proxima-Light,Helvetica,sans-serif;
   font-size: 16px;
   text-align:left;
+}
+
+.trait
+{
+  font-family: Proxima-Light,Helvetica,sans-serif;
+  font-size: 16px;
+  text-align:left;
+  margin-left:20px;
 }
 
 .bio{

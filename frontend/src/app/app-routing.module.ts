@@ -17,6 +17,7 @@ import { UserHomeComponent } from './home/user-home';
 import { QuestionnaireComponent } from './component/questionnaire/questionnaire.component';
 import { SearchComponent } from './component/search/search.component';
 import { ApplyjobComponent } from './component/applyjob/applyjob.component';
+import { ApplicantsComponent } from './home/company-home/applicants/applicants.component';
 
 
 export const routes: Routes = [
@@ -79,6 +80,11 @@ export const routes: Routes = [
     path:'apply',
     component:ApplyjobComponent,
     canActivate: [LoginGuard]
+  },
+  {
+    path:'applicants/:id',
+    component:ApplicantsComponent,
+    canActivate: [CompanyGuard]
   },
   {
     path: '404',

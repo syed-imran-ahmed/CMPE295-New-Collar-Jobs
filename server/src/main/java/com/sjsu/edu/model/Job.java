@@ -108,7 +108,6 @@ public class Job {
         return this.companyLogo;
     }
     
-    public Job() {};
     public Job(Long jobid, String title, String description, 
             String city, String state, String country, int salary, String traits, String companyLogo){
         this.jobid = jobid;

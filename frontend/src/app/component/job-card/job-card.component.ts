@@ -21,6 +21,9 @@ export class JobCardComponent implements OnInit {
 
   @Input() imagePath: any;
 
+  @Output()
+  change : EventEmitter<any> = new EventEmitter<any>();
+
   isCompany= false;
   count: number;
 
@@ -47,10 +50,6 @@ export class JobCardComponent implements OnInit {
     else{
       this.expand=false;
     }
-  }
-
-  onApplicantsClick(){
-    
   }
 
   responsePanelClass() {
@@ -91,5 +90,10 @@ export class JobCardComponent implements OnInit {
   }
 }
 
+onApplicantsClick(){
+  //this.change.emit(event);
+  console.log("button clicked")
+  this.change.emit(event);
+}
 
 }

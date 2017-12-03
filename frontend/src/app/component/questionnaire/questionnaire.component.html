@@ -37,6 +37,19 @@
     </div>
     <div class="col-sm-3" style="display: flex;
     flex-direction: column;justify-content: flex-end;">
+    <div class="row custom-margin custom-lr-margin">
+      <div class="col-sm-12 headings">Persona Type</div>
+    </div> 
+    <div class="trait" >
+      <mat-form-field>
+        <mat-select placeholder="Trait Type" formControlName="trait_type" required>
+          <mat-option *ngFor="let s of traits" [value]="s.value">
+            {{ s.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
       <div class="row">
         <div class="col-sm-12 headings custom-margin">Personality</div>
       </div>
@@ -52,10 +65,10 @@
       <div class="row">
         <div class="col-sm-12 headings custom-margin">Motivation</div>
       </div>
-      <app-progress-bar-one class="row" [first_title]="label1" [last_title]="label2" [width]="score1" (change)="motivation1($event)"></app-progress-bar-one>
-      <app-progress-bar-one class="row" [first_title]="label3" [last_title]="label4" [width]="score2" (change)="motivation2($event)"></app-progress-bar-one>
-      <app-progress-bar-one class="row" [first_title]="label5" [last_title]="label6" [width]="score3" (change)="motivation3($event)"></app-progress-bar-one>
-      <app-progress-bar-one class="row" [first_title]="label7" [last_title]="label8" [width]="score4" (change)="motivation4($event)"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="p2label1" [width]="score1" (change)="motivation1($event)"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="p2label3" [width]="score2" (change)="motivation2($event)"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="p2label4" [width]="score3" (change)="motivation3($event)"></app-progress-bar-one>
+      <app-progress-bar-one class="row" [first_title]="p2label5" [width]="score4" (change)="motivation4($event)"></app-progress-bar-one>
     </div>
   </div>
 </div>

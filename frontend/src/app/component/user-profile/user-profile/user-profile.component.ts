@@ -16,6 +16,12 @@ export class UserProfileComponent implements OnInit {
   firebase: any;
   image: File;
   isPesonalityEditable : boolean;
+  disableStreetSmart: string;
+  disableBookSmart:string;
+  selectStreetSmart:string;
+  selectBookSmart:string;
+
+  trait:string;
 
   id: string;
   profilePhotoUrl: string = "http://sschit.in/wp-content/uploads/2015/11/headshot.png";
@@ -50,17 +56,14 @@ export class UserProfileComponent implements OnInit {
   p2label1: string = "Incentives";
   p2width1: number = 30;
 
-  p2label2: string = "Fear";
-  p2width2: number = 60;
+  p2label2: string = "Growth";
+  p2width2: number = 0;
 
-  p2label3: string = "Growth";
+  p2label3: string = "Power";
   p2width3: number = 90;
 
-  p2label4: string = "Power";
-  p2width4: number = 75;
-
-  p2label5: string = "Social";
-  p2width5: number = 40;
+  p2label4: string = "Social";
+  p2width4: number = 0;
 
   /*May not required*/
   p2label6: string = "Traditional Ads";
@@ -83,11 +86,13 @@ export class UserProfileComponent implements OnInit {
     this.profileService.getProfiles().subscribe(
       response => {
         const resp = response;
+        console.log(response);
         this.id = resp['id'];
         this.profilePhotoUrl = resp['imageURL'];
         this.profileQuote = resp['quotation'];
         this.age = parseInt(resp['age'], 10);
         this.work = resp['jobTitle'];
+        this.trait = resp['trait'];
         this.family = resp['familyStatus'];
         const loc = resp['location'];
        // this.location = loc['city'] + ', ' + loc['state'] + ', ' + loc['country'];
@@ -103,10 +108,9 @@ export class UserProfileComponent implements OnInit {
 
         const motivation = resp['motivation'];
         this.p2width1 = motivation['incentive'];
-        this.p2width2 = motivation['fear'];
-        this.p2width3 = motivation['growth'];
-        this.p2width4 = motivation['power'];
-        this.p2width5 = motivation['social'];
+        this.p2width2 = motivation['growth'];
+        this.p2width3 = motivation['power'];
+        this.p2width4 = motivation['social'];
       }
     ,error => {
       console.log('Error in getting userProfile' + error);

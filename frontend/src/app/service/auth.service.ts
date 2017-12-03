@@ -57,8 +57,8 @@ export class AuthService {
    
     imageURL = encodeURIComponent(imageURL);
     console.log(imageURL);
-    const body = `quotation=${formOne.quotation}&age=${formOne.age}&jobTitle=${formOne.work}&familyStatus=${formOne.marital_status}&personality.introvertExtrovert=${personalityOne}&personality.thinkingFeeling=${personalityTwo}&personality.sensingIntuition=${personalityThree}&personality.judgingPerceiving=${personalityFour}&motivation.incentive=${motivationOne}&motivation.fear=${motivationTwo}&motivation.growth=${motivationThree}&motivation.power=${motivationFour}&imageURL=${imageURL}&frustrations=${formTwo.weakness1+","+formTwo.weakness2+","+formTwo.weakness3+","+formTwo.weakness4+","+formTwo.weakness5}&goals=${formTwo.goal1+","+formTwo.goal2+","+formTwo.goal3+","+formTwo.goal4+","+formTwo.goal5}&bio=${formTwo.bio}`;
-    
+    const body = `quotation=${formOne.quotation}&age=${formOne.age}&jobTitle=${formOne.work}&trait=${formOne.trait_type}&familyStatus=${formOne.marital_status}&personality.introvertExtrovert=${personalityOne}&personality.thinkingFeeling=${personalityTwo}&personality.sensingIntuition=${personalityThree}&personality.judgingPerceiving=${personalityFour}&motivation.incentive=${motivationOne}&motivation.growth=${motivationTwo}&motivation.power=${motivationThree}&imageURL=${imageURL}&frustrations=${formTwo.weakness1+","+formTwo.weakness2+","+formTwo.weakness3+","+formTwo.weakness4+","+formTwo.weakness5}&goals=${formTwo.goal1+","+formTwo.goal2+","+formTwo.goal3+","+formTwo.goal4+","+formTwo.goal5}&bio=${formTwo.bio}`;
+    console.log(body);
     const headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     return this.apiService.post(this.config.user_profile, body, headers);

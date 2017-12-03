@@ -1,16 +1,33 @@
 <br>
 <h1> POSTED JOBS </h1>
-<div class="content" fxLayout="column" fxLayoutAlign="left none"  *ngFor="let job of jobs">  
-    <app-job-card
-      fxFlex
-      title={{job.title}}
-      subTitle={{job.location}}
-      content={{job.description}}
-      jobid={{job.jobid}}
-      buttonText="edit"
-      imagePath={{job.companyLogo}}
-    >
-    </app-job-card>
+<mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+<div class="container-fluid text-info">
+    <!-- Second Row-->
+    <div class="row custom-margin" style="display:flex">
+        <div class="col-sm-8" >
+            <div class="row">
+    <div class="content" fxLayout="column" fxLayoutAlign="left none"  *ngFor="let job of jobs">
+          
+              <app-job-card
+                fxFlex
+                title={{job.title}}
+                subTitle={{job.city}},{{job.state}}
+                content={{job.description}}
+                jobid={{job.jobid}}
+                buttonText="edit"
+                imagePath={{job.companyLogo}}
+                (change)="onApplicantsClick($event,job.jobid)"
+              >
+              </app-job-card>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showApplicants" class="col-sm-4" style="display: flex;
+flex-direction: column;">
+</div>
+
+</div>
 </div>
 
 <div class="pagination">

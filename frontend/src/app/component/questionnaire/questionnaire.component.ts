@@ -29,8 +29,13 @@ export class QuestionnaireComponent implements OnInit {
   status = [
     {value: 'SINGLE', viewValue: 'SINGLE'},
     {value: 'MARRIED', viewValue: 'MARRIED'},
-    {value: 'MARRIED_WITH_KIDS', viewValue: 'MARRIED_WITH_KIDS'},
+    {value: 'MARRIED_WITH_KIDS', viewValue: 'MARRIED WITH KIDS'},
     {value: 'DIVORCED', viewValue: 'DIVORCED'}
+  ];
+
+  traits = [
+    {value: 'STREET_SMART', viewValue: 'STREET SMART'},
+    {value: 'BOOK_SMART', viewValue: 'BOOK SMART'},
   ];
 
 
@@ -60,6 +65,20 @@ export class QuestionnaireComponent implements OnInit {
   label7: string = "Judging";
   label8: string = "Perceiving";
   score4: number = 70;
+
+//motivation
+  p2label1: string = "Incentives";
+  p2width1: number = 30;
+
+  p2label3: string = "Growth";
+  p2width3: number = 90;
+
+  p2label4: string = "Power";
+  p2width4: number = 75;
+
+  p2label5: string = "Social";
+  p2width5: number = 40;
+
 
 
   constructor(private _formBuilder: FormBuilder,
@@ -92,7 +111,8 @@ export class QuestionnaireComponent implements OnInit {
       age: ['', Validators.required],
       work: ['', Validators.required],
       marital_status: ['', Validators.required],
-      quotation : ['',Validators.required]
+      quotation : ['',Validators.required],
+      trait_type : ['',Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
       goal1: ['', Validators.required],

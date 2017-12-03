@@ -3,11 +3,10 @@ package com.sjsu.edu.rest;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -21,6 +20,7 @@ import com.sjsu.edu.model.Company;
 import com.sjsu.edu.model.Job;
 import com.sjsu.edu.model.User;
 import com.sjsu.edu.repository.ApplicationRepository;
+import com.sjsu.edu.repository.UserProfileRepository;
 import com.sjsu.edu.service.CompanyService;
 import com.sjsu.edu.service.JobService;
 import com.sjsu.edu.service.UserService;
@@ -44,6 +44,9 @@ public class JobController {
     
     @Autowired
     ApplicationRepository appRepository;
+    
+    @Autowired
+    UserProfileRepository profileRepository;
 
 
     @RequestMapping(method = GET, value = "/job/{jobId}" )
@@ -52,8 +55,15 @@ public class JobController {
     }
     
     @RequestMapping(method = GET, value = "/job/{jobId}/applications" )
-    public Page<Application> getApplicantionsForJob( Pageable pageable, @PathVariable Long jobId ) {
-        return appRepository.findByJobId(jobId, pageable);
+    public List<Application> getApplicantionsForJob( @PathVariable Long jobId ) {
+    	List<Application> apps = appRepository.findByJobId(jobId);
+    	
+    	for(Application app:apps)
+    	{
+    		app.setUserProfile(profileRepository.findByUsername(app.getUser().getUsername()));
+    	}
+    	
+        return apps;
     }
     
     @RequestMapping(method = RequestMethod.POST, value = "/job", consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)

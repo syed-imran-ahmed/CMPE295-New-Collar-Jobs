@@ -58,6 +58,7 @@ export class UserHomeComponent implements OnInit {
     this.submitted=true;
     this.recommendedjobservice.getJobs(event)
     .subscribe(res => {
+      console.log(res.content);
       this.jobs = res.content;
       this.submitted = false;
     }, err => {

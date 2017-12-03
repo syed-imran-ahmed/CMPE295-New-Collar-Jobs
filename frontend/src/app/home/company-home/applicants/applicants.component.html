@@ -1,0 +1,23 @@
+
+<br>
+<h1> Applicants</h1>
+<mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+<!-- <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner> -->
+
+    <div class="content" fxLayout="column" fxLayoutAlign="left none" *ngFor="let u of users">
+     
+            <app-user-card 
+              fxFlex
+              name={{u.firstName}},{{u.lastName}}
+              location={{u.city}},{{u.state}}
+              bio={{u.bio}}
+              userid={{u.id}}
+              buttonText="edit"
+              imagePath={{u.imageURL}}
+              jobTitle={{u.jobTitle}}
+              quotation={{u.quotation}}
+            >
+            </app-user-card>
+      
+    </div>
+  
