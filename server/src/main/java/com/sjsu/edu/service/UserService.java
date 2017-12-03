@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import com.sjsu.edu.model.Application;
 import com.sjsu.edu.model.Job;
 import com.sjsu.edu.model.User;
 
@@ -19,5 +20,6 @@ public interface UserService {
     User findByEmailid(String emailid);
     List<User> findAll ();
     Page<Job> getJobRecommendations(String username, boolean cityFilter, boolean stateFilter, Pageable pageable);
+    List<Application> getApplicationsForUser(String username);
     List<Job> search(String searchString);
 }

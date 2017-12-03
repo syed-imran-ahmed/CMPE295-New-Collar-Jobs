@@ -18,10 +18,12 @@ import com.ibm.watson.developer_cloud.discovery.v1.Discovery;
 import com.ibm.watson.developer_cloud.discovery.v1.model.query.QueryRequest;
 import com.ibm.watson.developer_cloud.discovery.v1.model.query.QueryResponse;
 import com.sjsu.edu.ibm.discovery.DiscoveryAuthFactory;
+import com.sjsu.edu.model.Application;
 import com.sjsu.edu.model.Job;
 import com.sjsu.edu.model.User;
 import com.sjsu.edu.model.UserProfile;
 import com.sjsu.edu.model.UserProfile.Trait;
+import com.sjsu.edu.repository.ApplicationRepository;
 import com.sjsu.edu.repository.JobRepository;
 import com.sjsu.edu.repository.UserProfileRepository;
 import com.sjsu.edu.repository.UserRepository;
@@ -43,6 +45,9 @@ public class UserServiceImpl implements UserService {
     
     @Autowired
     private JobRepository jobRepository;
+    
+    @Autowired
+    private ApplicationRepository appRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -83,6 +88,11 @@ public class UserServiceImpl implements UserService {
 	public User findByEmailid(String emailid) throws UsernameNotFoundException {
 		User u = userRepository.findByEmailid( emailid );
         return u;
+	}
+	
+	@Override
+	public List<Application> getApplicationsForUser(String username){
+		return appRepository.findByUsername(username);
 	}
 	
 	@Override

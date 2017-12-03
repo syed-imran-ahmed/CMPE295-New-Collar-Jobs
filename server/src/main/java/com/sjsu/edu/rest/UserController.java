@@ -160,6 +160,12 @@ public class UserController {
         
     }
     
+    @RequestMapping(method = RequestMethod.GET, value="/user/applications")
+    public List<Application> getMyApplications(){
+    	String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
+    	return userService.getApplicationsForUser(currentUserName);
+    }
+    
     @RequestMapping( method = RequestMethod.GET, value= "/search/jobs")
     public Page<Job> search( Pageable pageable,
     		@RequestParam(value = "search") String search) {
