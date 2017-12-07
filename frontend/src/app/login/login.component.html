@@ -24,9 +24,9 @@
           <button type="submit" [disabled]="!loginForm.form.valid" mat-raised-button color="primary">Login</button>
         </form>
         <br>
-        <div *ngIf="!submitted" >
+        <!-- <div *ngIf="!submitted" >
           <button matTooltip="Reset password if someone has changed it already!" (click)="onResetCredentials()" mat-raised-button color="accent">Reset Credentials</button>
-        </div>
+        </div> -->
 
         <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
         <br>

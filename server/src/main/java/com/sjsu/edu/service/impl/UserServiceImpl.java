@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -56,11 +58,11 @@ public class UserServiceImpl implements UserService {
 	private static final String collectionId = "0d057ffb-35dd-4b19-8d36-8306c6774e96";
 
     public void resetCredentials() {
-        List<User> users = userRepository.findAll();
-        for (User user : users) {
-            user.setPassword(passwordEncoder.encode("123"));
-            userRepository.save(user);
-        }
+    	Authentication currentUser = SecurityContextHolder.getContext().getAuthentication();
+        String username = currentUser.getName();
+        User user =  userRepository.findByUsername(username);
+        user.setPassword(passwordEncoder.encode("test"));
+        userRepository.save(user);
     }
     
     private static final Integer THRESHOLD = 50;
@@ -115,7 +117,8 @@ public class UserServiceImpl implements UserService {
 		String user_entities_ORed = user_entity_types.stream().collect(Collectors.joining("\"%7C\""));
 		
 		System.out.println("enriched_text.entities.types:\"" + user_entities_ORed + "\" %7C enriched_title.concepts.text:\"" + profile.getJobTitle() + "\"");
-		queryBuilder.query("enriched_text.entities.types:\"" + user_entities_ORed + "\" %7C enriched_title.concepts.text:\"" + profile.getJobTitle() + "\"");
+		queryBuilder.query("title:\""+profile.getJobTitle()+ "\" %7C text:\""+profile.getJobTitle()+"\" %7C enriched_text.entities.types:\"" + user_entities_ORed + "\" %7C enriched_title.concepts.text:\"" + profile.getJobTitle() + "\"");
+		//queryBuilder.query("title:\""+profile.getJobTitle()+ "\" %7C text:\""+profile.getJobTitle()+ "\" %7C enriched_title.concepts.text:\"" + profile.getJobTitle() + "\"");
 		Discovery discovery = DiscoveryAuthFactory.getInstance();
 		QueryRequest request = queryBuilder.build();
 		System.out.println(request.toString());
@@ -188,7 +191,7 @@ public class UserServiceImpl implements UserService {
 	public List<Job> search(String queryString){
 		QueryRequest.Builder queryBuilder = new QueryRequest.Builder(environmentId, collectionId);
 		
-		queryBuilder.query("text:\"" + queryString +"\"");
+		queryBuilder.query("text:\"" + queryString +"\" %7Ctitle:\""+queryString +"\"");
 		Discovery discovery = DiscoveryAuthFactory.getInstance();
 		QueryResponse queryResponse = discovery.query(queryBuilder.build()).execute();
 		
